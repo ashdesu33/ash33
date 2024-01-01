@@ -95,6 +95,9 @@ ul{
     transition: top 0.5s; /* Smooth transition for left property */
     z-index: 100;
 }
+.nav i{
+    display: none;
+}
 .nav ul{
     padding-top: 2%;
     line-height: 5vh;
@@ -112,15 +115,22 @@ ul{
         width: 6%;
     }
     .projectContainer{
-        -moz-column-width: 100px;
-        -webkit-column-width: 100px;
-        column-width: 100px;
-        -moz-column-gap: 50px;
-        -webkit-column-gap: 50px;
-        column-gap: 50px;
-        padding: 10%;
-        padding-top: 30%;
-        padding-left: 13%;
+        /* -moz-column-width: 400px;
+        -webkit-column-width: 400px;
+        column-width: 400px; */
+        -moz-column-gap: 60px;
+        -webkit-column-gap: 60px;
+        column-gap: 60px;
+        /* justify-items: center; */
+        padding:8%;
+        padding-top: 5%;
+        /* padding-top: 30%; */
+        display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    width: 180%; /* Adjust as needed */
+        align-items: center;
     }
     .border{
         margin:0;
@@ -133,16 +143,24 @@ ul{
         cursor: pointer; 
         width: 100%; /* Adjusted width */
         margin-bottom: 25px; /* Space between items */
+        
+    }
+    .caption{
+        display: none;
     }
     .project:hover{
         z-index: 1;
         width: 100%;
     }
     .project img{
-        display: none;
+        display: block;
+        width:100%;
     }
     .caption{
         font-size: 13px;
+    }
+    .category{
+        display: none;
     }
     .star {
         display: block;
@@ -155,7 +173,20 @@ ul{
     .border{
         display: none;
     }
+    .nav ul {
+        column-count: 2; /* Create two columns */
+        column-gap: 20px; /* Adjust the gap between columns */
+        font-size: 13px;
 
+    }
+    .nav i{
+        display:contents;
+        margin-top: 0;
+        margin-left: 10px;
+        font-size: 12px;
+        color: #a67979;
+        text-align: right;
+    }
     
 
   }

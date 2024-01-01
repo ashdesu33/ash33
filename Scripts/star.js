@@ -22,8 +22,8 @@ function flashStar(star) {
         star.style.opacity = 1;
         setTimeout(() => {
             star.style.opacity = 0;
-        }, 500); // Visible for 0.5 seconds
-    }, 1000); // Change position and flash every 1 second
+        }, 1000); // Visible for 0.5 seconds
+    }, 5000); // Change position and flash every 1 second
 }
 
 createStars(10); // Create 10 stars, for example

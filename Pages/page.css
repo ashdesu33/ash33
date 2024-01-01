@@ -32,8 +32,8 @@ body{
 @media screen and (min-width: 768px) {
     .container{
         padding-top: 5%;
-        padding-left: 30%;
-        width: 70%;
+        padding-left: 27%;
+        width: 73%;
         overflow: hidden;
     }
     .description{
@@ -57,13 +57,16 @@ body{
     .backdrop-div{
         opacity: 1;
     }
+    .category{
+        display: block;
+    }
     .border{
         font-size: 20px;
         position: fixed;
         transform: rotate(-90deg);
         transform-origin: right top;
         top:60px;
-        left:-530px;
+        right:77vw;
         display: block;
     }
     

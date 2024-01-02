@@ -201,6 +201,9 @@ ul{
         color: #a67979;
         text-align: right;
     }
+    #homenav{
+        top:70vh;
+    }
     
 
   }

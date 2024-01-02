@@ -105,7 +105,18 @@ ul{
 .star{
     display: none;
 }
+.fav{
+    position:fixed;
+    padding-left: 35vw;
+    max-width:20%;
+    z-index: 1;
+
+}
 @media screen and (min-width: 768px) {
+    .fav{
+        padding-left: 45vw;
+        max-width:5%;
+    }
     /* Desktop styles here */
     .head{
       padding-left: 1.5rem;

@@ -94,7 +94,9 @@ body{
 .prev:hover, .next:hover {
     background-color: rgba(0,0,0,0.8);
 }
+
 @media screen and (min-width: 768px) {
+
     .container{
         padding-top: 5%;
         padding-left: 27%;

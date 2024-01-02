@@ -29,16 +29,28 @@
                     <p class="content">The <i><a href="https://www.theindy.org/about">College Hill Independent</a></i> is a Providence-based publication written, illustrated, designed, and edited by students from Brown University and the Rhode Island School of Design.</p>
                     <br>
                     <p class="content">As one of the design editors for Indy Vol 47 & 48, Ash is responsible for designer hiring, coordination between the creative and editor team, and the final organization of each. Collaboratively designed the identity and volume layout with Sam Stewart and Gina Kang. </p>
-                 
+                    <br>
+                    <br>
+                    <p class="content"><b><a href="cyborg.html"><-previous project</a></b></p>
+                    <br>
+                    <p class="content"><b><a href="oneway.html">next project-></a></b></p>
 
                 </div>
                 <div class="imagery">
-                    <img src="../Image/indy/page.png">
-                    <img src="../Image/indy/page2.png">
-                    <img src="../Image/indy/page3.png">
-                    <img src="../Image/indy/page4.png">
-                    <img src="../Image/indy/page5.png">
-                    <img src="../Image/indy/page6.png">
+                    <img src="../Image/indy/page.png" onclick="openModal(this)">
+                    <img src="../Image/indy/page2.png"onclick="openModal(this)">
+                    <img src="../Image/indy/page3.png"onclick="openModal(this)">
+                    <img src="../Image/indy/page4.png"onclick="openModal(this)">
+                    <img src="../Image/indy/page5.png"onclick="openModal(this)">
+                    <img src="../Image/indy/page52.png"onclick="openModal(this)">
+                    <img src="../Image/indy/page6.png"onclick="openModal(this)">
+                </div>
+
+                <div id="imageModal" class="modal">
+                    <span class="close" onclick="closeModal()">&times;</span>
+                    <img class="modal-content" id="enlargedImage">
+                    <a class="prev" onclick="changeImage(-1)">&#10094;</a>
+                    <a class="next" onclick="changeImage(1)">&#10095;</a>
                 </div>
             </div>
            
@@ -50,10 +62,11 @@
                 <li><a href="cake.html">+ The Birthday Cake</a></li>
                 <li><a href="collection.html">+ Collection of Knots</a></li>
                 <li><a href="cyborg.html">+ Cyborg Manifesto</a></li>
-                <li>+ Random Thoughts </li>
                 <li><a href="indy.html">+ Indy</a></li>
+                <li><a href="oneway.html">+ One Way Space</a></li>
+                <li><a href="random.html">+ Random Thoughts </a></li>
                 <li>+ Which Window Will Your Arms Reach? </li>  
-                <li>+ One Way Space</li>
+                
             </ul>
         
     </nav>

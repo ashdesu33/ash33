@@ -40,11 +40,18 @@
 
                 </div>
                 <div class="imagery">
-                    <img src="../Image/Birthdaycake/cale.gif">
-                    <img src="../Image/Birthdaycake/pre.png">
-                    <img src="../Image/Birthdaycake/pre2.png">
-                    <img src="../Image/Birthdaycake/pre3.png">
-                    <img src="../Image/Birthdaycake/pre4.png">
+                    <img src="../Image/Birthdaycake/cale.gif"onclick="openModal(this)">
+                    <img src="../Image/Birthdaycake/pre.png"onclick="openModal(this)">
+                    <img src="../Image/Birthdaycake/pre2.png"onclick="openModal(this)">
+                    <img src="../Image/Birthdaycake/pre3.png"onclick="openModal(this)">
+                    <img src="../Image/Birthdaycake/pre4.png"onclick="openModal(this)">
+                </div>
+
+                <div id="imageModal" class="modal">
+                    <span class="close" onclick="closeModal()">&times;</span>
+                    <img class="modal-content" id="enlargedImage">
+                    <a class="prev" onclick="changeImage(-1)">&#10094;</a>
+                    <a class="next" onclick="changeImage(1)">&#10095;</a>
                 </div>
             </div>
            
@@ -56,10 +63,11 @@
                 <li><a href="cake.html">+ The Birthday Cake</a></li>
                 <li><a href="collection.html">+ Collection of Knots</a></li>
                 <li><a href="cyborg.html">+ Cyborg Manifesto</a></li>
-                <li>+ Random Thoughts </li>
+                <li><a href="indy.html">+ Indy</a></li>
+                <li><a href="oneway.html">+ One Way Space</a></li>
+                <li><a href="random.html">+ Random Thoughts </a></li>
                 <li>+ Which Window Will Your Arms Reach? </li>  
-                <li>+ Indy</li>
-                <li>+ One Way Space</li>
+                
             </ul>
         
     </nav>

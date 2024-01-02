@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://use.typekit.net/lwm3pvk.css">
+        <title>Ash Ma</title>
+        <link rel="stylesheet" href="../style.css">
+        <link rel="stylesheet" href="page.css">
+    </head>
+    <body>
+        <header>
+            <div class ="head">
+                <a href="../home.html">ASH MA</a>
+                <p class="desktop"> archive</p>
+                <img class="mobile" onclick=loadNav() src="../Image/littlething.gif">
+                <a id="about" href="about.html">About Me</a>
+            </div>
+            <div class="backdrop-div"></div>
+        </header>
+        <div class="border">
+            <p>*******************************************************************</p>
+        </div>
+        <main>
+            <div class="container">
+                <div class="description">
+                    <p class="title">One Way Space</p>
+                    <p class="category">Identity,Book Cover Design / 2023</p>
+                    <p class="content">Owspace(One Way Space) is a creative and humanitarian company based in Beijing that focuses on short film production and publishing. </p>
+                    <br>
+                    <p class="content">Ash was responsible for Owspace’s book promotion events’ visual design during June-August, 2023. </p>
+                    <br>
+                    <p class="content"><b>Selected Works:</b></p>
+                    <br>
+                    <p class="content">+ Visual Design for promotional event of <i>The Serpentine Band</i> by Mu Ming</p>
+                    <br>
+                    <p class="content">+ Cover design for <i>The Performer by Lu Yinyin</i></p>
+                    <br>
+                    <br>
+                    <p class="content"><b><a href="indy.html"><-previous project</a></b></p>
+                    <br>
+                    <p class="content"><b><a href="random.html">next project-></a></b></p>
+                 
+
+                </div>
+                <div class="imagery">
+                    <img src="../Image/oneway/page.png" onclick="openModal(this)">
+                    <img src="../Image/oneway/page2.png"onclick="openModal(this)">
+                    <img src="../Image/oneway/page3.png"onclick="openModal(this)">
+                    <img src="../Image/oneway/page4.png"onclick="openModal(this)">
+                    <img src="../Image/oneway/page5.png"onclick="openModal(this)">
+                </div>
+
+                <div id="imageModal" class="modal">
+                    <span class="close" onclick="closeModal()">&times;</span>
+                    <img class="modal-content" id="enlargedImage">
+                    <a class="prev" onclick="changeImage(-1)">&#10094;</a>
+                    <a class="next" onclick="changeImage(1)">&#10095;</a>
+                </div>
+            </div>
+           
+        </main>
+        <nav class="nav">
+            
+            <ul>
+                <li><a href="end.html">+ The Will Till the End</a></li>
+                <li><a href="cake.html">+ The Birthday Cake</a></li>
+                <li><a href="collection.html">+ Collection of Knots</a></li>
+                <li><a href="cyborg.html">+ Cyborg Manifesto</a></li>
+                <li><a href="indy.html">+ Indy</a></li>
+                <li><a href="oneway.html">+ One Way Space</a></li>
+                <li><a href="random.html">+ Random Thoughts </a></li>
+                <li>+ Which Window Will Your Arms Reach? </li>  
+                
+            </ul>
+        
+    </nav>
+        <script src="../Scripts/load.js"></script>
+</html>

@@ -7,7 +7,7 @@ const projects =[
         page:'Pages/end.html'
     },
     {
-        cover:"Image/Birthdaycake/preview_pix.png",
+        cover:"Image/Birthdaycake/cale.gif",
         title:"Birthdaycake",
         category:["Code[OpenGL],Blender,Drawing"],
         class:'prj1',
@@ -35,11 +35,18 @@ const projects =[
         page:'Pages/indy.html'
     },
     {
+        cover:"Image/oneway/page.png",
+        title:"One Way Space",
+        category:["Identity","Book"],
+        class:'prj5',
+        page:'Pages/oneway.html'
+    },
+    {
         cover:"Image/Random Thoughts/cover.JPG",
         title:"Random Thoughts",
         category:["Book","Drawings"],
-        class:'prj5',
-        page:''
+        class:'prj6',
+        page:'Pages/random.html'
     },
    
     // {

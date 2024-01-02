@@ -22,7 +22,7 @@ function addProject(){
         if (window.innerWidth > 768) { // Mobile device breakpoint
             for (let i = 0; i < projects.length; i++) {
                 let pro = document.querySelector('.prj' + i);
-                drag(pro); // Assuming drag() is defined to handle dragging
+                
         }
     }
 }

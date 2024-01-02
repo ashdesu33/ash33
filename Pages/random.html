@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://use.typekit.net/lwm3pvk.css">
+        <title>Ash Ma</title>
+        <link rel="stylesheet" href="../style.css">
+        <link rel="stylesheet" href="page.css">
+    </head>
+    <body>
+        <header>
+            <div class ="head">
+                <a href="../home.html">ASH MA</a>
+                <p class="desktop"> archive</p>
+                <img class="mobile" onclick=loadNav() src="../Image/littlething.gif">
+                <a id="about" href="about.html">About Me</a>
+            </div>
+            <div class="backdrop-div"></div>
+        </header>
+        <div class="border">
+            <p>*******************************************************************</p>
+        </div>
+        <main>
+            <div class="container">
+                <div class="description">
+                    <p class="title">Random Thoughts</p>
+                    <p class="category">Drawings, Zine / 2023</p>
+                    <p class="content">Random Thoughts is a collection of drawings, doodling, and life fragments from Ash. </p>
+                    <br>
+                    <p class="content"><i>everything and nothing was forever</i></p>
+                    <br>
+                    <br>
+                    <p class="content"><b><a href="oneway.html"><-previous project</a></b></p>
+
+
+                </div>
+                <div class="imagery">
+                    <img src="../Image/Random Thoughts/page.png" onclick="openModal(this)">
+                    <img src="../Image/Random Thoughts/page2.png"onclick="openModal(this)">
+                    <img src="../Image/Random Thoughts/page3.png"onclick="openModal(this)">
+                    <img src="../Image/Random Thoughts/page4.png"onclick="openModal(this)">
+                    <img src="../Image/Random Thoughts/page5.png"onclick="openModal(this)">
+                    <img src="../Image/Random Thoughts/page6.png"onclick="openModal(this)">
+                    <img src="../Image/Random Thoughts/page7.png"onclick="openModal(this)">
+                    <img src="../Image/Random Thoughts/page8.png"onclick="openModal(this)">
+                    <img src="../Image/Random Thoughts/page9.png"onclick="openModal(this)">
+                    <img src="../Image/Random Thoughts/page10.png"onclick="openModal(this)">
+                    <img src="../Image/Random Thoughts/page11.png"onclick="openModal(this)">
+                    <img src="../Image/Random Thoughts/page12.png"onclick="openModal(this)">
+                    <img src="../Image/Random Thoughts/page13.png"onclick="openModal(this)">
+                    <img src="../Image/Random Thoughts/page14.png"onclick="openModal(this)">
+                    <img src="../Image/Random Thoughts/page15.png"onclick="openModal(this)">
+                    <img src="../Image/Random Thoughts/page16.png"onclick="openModal(this)">
+                    <img src="../Image/Random Thoughts/page17.png"onclick="openModal(this)">
+                </div>
+
+                <div id="imageModal" class="modal">
+                    <span class="close" onclick="closeModal()">&times;</span>
+                    <img class="modal-content" id="enlargedImage">
+                    <a class="prev" onclick="changeImage(-1)">&#10094;</a>
+                    <a class="next" onclick="changeImage(1)">&#10095;</a>
+                </div>
+            </div>
+           
+        </main>
+        <nav class="nav">
+            
+            <ul>
+                <li><a href="end.html">+ The Will Till the End</a></li>
+                <li><a href="cake.html">+ The Birthday Cake</a></li>
+                <li><a href="collection.html">+ Collection of Knots</a></li>
+                <li><a href="cyborg.html">+ Cyborg Manifesto</a></li>
+                <li><a href="indy.html">+ Indy</a></li>
+                <li><a href="oneway.html">+ One Way Space</a></li>
+                <li><a href="random.html">+ Random Thoughts </a></li>
+                <li>+ Which Window Will Your Arms Reach? </li>  
+                
+            </ul>
+        
+    </nav>
+        <script src="../Scripts/load.js"></script>
+</html>

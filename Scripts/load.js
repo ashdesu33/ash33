@@ -27,14 +27,15 @@ function startAutoScroll() {
     const interval = 20; // Milliseconds between each scroll step
 
     function scrollStep() {
-        console.log(gallery);
-        if (gallery.scrollLeft >= (gallery.scrollWidth - gallery.clientWidth)) {
+        if(gallery.scrollLeft >= (gallery.scrollWidth - gallery.clientWidth)) {
             // Reset scroll to start
             gallery.scrollLeft = 0;
             scrollAmount = 0;
         } else {
             gallery.scrollLeft += step;
             scrollAmount += step;
+            console.log(gallery.clientWidth);
+            console.log(gallery.scrollWidth);
         }
     }
 
@@ -45,7 +46,45 @@ function startAutoScroll() {
 if(isHomePage && isDesktopView){
     navBar.style.top = '70vh'; 
     window.onload = function() {
-        startAutoScroll();
+        // startAutoScroll();
     };
 
+}
+
+
+let currentIndex = 0; // To keep track of the current image
+
+function openModal(clickedImage) {
+    console.log("click");
+    const modal = document.getElementById('imageModal');
+    const enlargedImg = document.getElementById('enlargedImage');
+    enlargedImg.src = clickedImage.src;
+    modal.style.display = "block";
+
+    // Find index of clicked image
+    const images = document.querySelector('.imagery').getElementsByTagName('img');
+    for (let i = 0; i < images.length; i++) {
+        if (images[i].src === clickedImage.src) {
+            currentIndex = i;
+            break;
+        }
+    }
+}
+
+function closeModal() {
+    document.getElementById('imageModal').style.display = "none";
+}
+
+function changeImage(step) {
+    const images = document.querySelector('.imagery').getElementsByTagName('img');
+    currentIndex += step;
+
+    // Loop back if out of range
+    if (currentIndex >= images.length) {
+        currentIndex = 0;
+    } else if (currentIndex < 0) {
+        currentIndex = images.length - 1;
+    }
+
+    document.getElementById('enlargedImage').src = images[currentIndex].src;
 }

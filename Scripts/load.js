@@ -1,6 +1,6 @@
 const navBar = document.querySelector('nav');
     const isDesktopView = window.matchMedia("(min-width: 768px)").matches;
-    const isHomePage = window.location.pathname === '/' || window.location.pathname === '/home.html';
+    const isHomePage = window.location.pathname === `https://github.com/AshMa1022/ash33/` || window.location.pathname === '/home.html';
 function loadNav(){
     
     console.log(isDesktopView);

@@ -1,20 +1,20 @@
 const projects =[
     {
-        cover:"Image/will to the end/layout.png",
+        cover:"Image/will to the end/layout.jpg",
         title:"The Will to the End",
         category:["Editorial,Web,Book"],
         class:'prj0',
         page:'Pages/end.html'
     },
     {
-        cover:"Image/Birthdaycake/cale.gif",
+        cover:"Image/Birthdaycake/cake.gif",
         title:"Birthdaycake",
         category:["Code[OpenGL],Blender,Drawing"],
         class:'prj1',
         page:'Pages/cake.html'
     },
     {
-        cover:"Image/Collection/collection.png",
+        cover:"Image/Collection/collection.jpg",
         title:"Collection of Knots",
         category:["Poster","Sign"],
         class:'prj2',
@@ -28,14 +28,14 @@ const projects =[
         page:'Pages/cyborg.html'
     },
     {
-        cover:"Image/indy/page2.png",
+        cover:"Image/indy/page2-min.png",
         title:"The Indy",
         category:["Editorial","Identity"],
         class:'prj4',
         page:'Pages/indy.html'
     },
     {
-        cover:"Image/oneway/page.png",
+        cover:"Image/oneway/page.jpg",
         title:"One Way Space",
         category:["Identity","Book"],
         class:'prj5',

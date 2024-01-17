@@ -19,6 +19,10 @@ body{
     height: 8%;
     z-index: 0;
   }
+  .self{
+    display: none;
+    
+}
 .head{
     width: 100%-10px;
     top:0;
@@ -29,7 +33,7 @@ body{
     justify-content: space-between; /* Distribute items evenly and justify them */
     align-items: center; 
     position: fixed;
-    font-size: 20px;
+    font-size: 16px;
     z-index: 1;
 }
 a{
@@ -37,10 +41,10 @@ a{
 }
 #about{
     font-family: "Libre Barcode 128 Text";
-    font-size: 32px;
+    font-size: 28px;
 }
 .head img{
-    width: 20%;
+    width: 15%;
 }
 .opening{
     position: absolute;
@@ -99,6 +103,7 @@ ul{
     display: none;
 }
 .nav ul{
+    font-size: small;
     padding-top: 2%;
     line-height: 5vh;
 }
@@ -108,37 +113,38 @@ ul{
 .fav{
     position:fixed;
     padding-left: 35vw;
-    max-width:20%;
+    max-width:15%;
     z-index: 1;
 
 }
+
+    
+
 @media screen and (min-width: 768px) {
     .fav{
         padding-left: 45vw;
         max-width:5%;
+        display: none;
     }
     /* Desktop styles here */
     .head{
-      padding-left: 1.5rem;
-      padding-right: 1.5rem;
-    }
-    .head img{
-        width: 6%;
-    }
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+      }
+      .head img{
+          width: 6%;
+          display: none;
+      }
+
     .projectContainer{
-        /* -moz-column-width: 400px;
-        -webkit-column-width: 400px;
-        column-width: 400px; */
-        /* justify-items: center; */
         padding:8%;
-        padding-top: 2%;
+        padding-top: 5%;
         padding-left: 2%;
-        /* padding-top: 30%; */
         display: flex;
     flex-direction: row;
     overflow-x: auto;
     scroll-behavior: smooth;
-    width: 160%; /* Adjust as needed */
+    width: 2200px;
     align-items:center;
     column-gap: 70px;
     }
@@ -204,6 +210,20 @@ ul{
     #homenav{
         top:70vh;
     }
+    .introd{
+        padding-top: 1rem;
+        display: inline-flex;
+    }
+    .self{
+        color:#a67979;
+        font-size: 10px;
+        padding-left: 2rem;
+        display: block;
+    }
+    .self p{
+        margin:0;
+    }
+    
     
 
   }

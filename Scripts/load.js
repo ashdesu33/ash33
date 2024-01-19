@@ -46,7 +46,7 @@ function startAutoScroll() {
 
 
 if(isHomePage && isDesktopView){
-    navBar.style.top = '70vh'; 
+    navBar.style.top = '82vh'; 
     window.onload = function() {
         // startAutoScroll();
     };

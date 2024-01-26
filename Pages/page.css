@@ -116,9 +116,10 @@ hr{
 @media screen and (min-width: 768px) {
 
     .container{
-        padding-top: 5%;
+        padding-top: 4%;
         padding-left: 27%;
         width: 73%;
+        margin: 0;
         overflow: hidden;
     }
     .arrow{
@@ -171,6 +172,20 @@ hr{
     .head img{
         width: 6%;
         display: block;
+    }
+
+   
+    .backdrop-div{
+        border-bottom: #a67979;
+    }
+    #upline{
+        color:rgba(194, 168, 168, 0.2);
+        border-color:rgba(194, 168, 168, 0.25) ;
+        position: fixed;
+        width:100vw;
+        z-index: 100;
+        top:7%;
+
     }
 
     

@@ -11,17 +11,27 @@
 </head>
 <body>
     <header>
-        <img class="fav" src="../Image/favicon.png">
-        <div class ="head">
-            <a href="../home.html">ASH MA</a>
-            <p class="desktop"> archive</p>
-            <img class="mobile" onclick=loadNav() src="../Image/littlething.gif">
-            
-            <a id="about" href="about.html">About Me</a>
-        </div>
+        <!-- <img class="fav" src="../Image/favicon.png"> -->
+        <header>
+            <img class="fav" src="../Image/favicon.png">
+            <div class ="head">
+                <a href="../home.html">ASH MA</a>
+                <div class="menu" onclick=loadNav()>
+                    <img src="../Image/favicon.png">
+                    <a onclick=loadNav()>. menu</a>
+                </div>
+                <div class="menu" onclick="goTo('archive.html')">
+                    <img src="../Image/littlething.gif">
+                    <a href="archive.html">archive</a>
+                </div>
+                <a id="about" href="about.html">About Me</a>
+            </div>
+            <div class="backdrop-div"></div>
+        </header>
         <div class="backdrop-div"></div>
     </header>
     <main>
+        <hr id="upline">
         <div class="content">
             <p>Ash Ma{馬文晴} is a graphic designer/painter/coder based in Providence, RI.
             They are pursuing a BFA in graphic design at the Rhode Island School of Design.</p>
@@ -51,6 +61,7 @@
 </nav>
     <script src="../Scripts/rain.js"></script>
     <script src="../Scripts/load.js"></script>
+    <script src="../Scripts/homepage.js"></script>
 
 </body>
 </html>

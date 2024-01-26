@@ -117,6 +117,9 @@ ul{
     z-index: 1;
 
 }
+.menu{
+    display: none;
+}
 
     
 
@@ -136,42 +139,49 @@ ul{
           display: none;
       }
 
-    .projectContainer{
-        padding:8%;
-        padding-top: 9%;
+      .projectContainer {
+        padding: 8%;
+        padding-top: 4%;
         padding-left: 2%;
         display: flex;
-    flex-direction: row;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    width: 2300px;
-    align-items:center;
-    column-gap: 70px;
-    }
-    .scroll{
+        flex-direction: row;
         overflow-x: auto;
         scroll-behavior: smooth;
+        width: 3400px;
+        align-items: center;
+        column-gap: 0px;
     }
-    .border{
-        margin:0;
+    .body {
+        -ms-overflow-style: none;  /* Internet Explorer 10+ */
+        scrollbar-width: none;  /* Firefox */
+        overflow-x: auto;
     }
-    .project{
-
-        transition: width 0.5s; 
+    
+    .projectContainer::-webkit-scrollbar {
+        display: none;  /* Safari and Chrome */
+    }
+    
+    .border {
+        margin: 0;
+    }
+    
+    .project {
+        transition: width 0.5s;
         width: 100%; /* Adjusted width */
-        margin-right: 100px; /* Space between items */
-        
+        margin-right: 30px; /* Space between items */
+        object-fit:cover;/* Maintain aspect ratio */
     }
     .caption{
         display: none;
     }
-    .project:hover{
+    /* .project:hover{
         z-index: 1;
         width: 120%; 
-    }
+    } */
     .project img{
-        display: block;
-        width:200%;
+        width: 500px; /* Adjusted width */
+        height: 350px; /* Fixed height */
+        object-fit: cover; /* Maintain aspect ratio */
     }
     .project img:hover{
         box-shadow: 0px 0px 30px rgba(234, 168, 168, 0.5);  
@@ -227,7 +237,28 @@ ul{
     .self p{
         margin:0;
     }
-    
+
+    .menu{
+        display: grid;
+        align-items: center;
+        align-content: center;
+        width: 60px;
+        color:#a67979;
+        height:7vh;
+        transition: border 0.1s;
+    }
+    .menu img{
+        display: block;
+        width: 50px;
+    }
+    .menu a{
+        margin:0;
+        padding:0;
+        font-size: 10px;
+        padding-left: 0.3rem;
+        
+    }
+
     
 
   }

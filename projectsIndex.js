@@ -58,3 +58,12 @@ const projects =[
     // }
 
 ]
+
+const archive=[
+    {title:"In the land of everything",
+     category:"Book,Riso",
+     img:["Image/archive/quilt.jpg"],
+     year:"2023",
+     description:""
+    }
+]

@@ -12,7 +12,7 @@ function loadNav(){
             navBar.style.top = '100vh'; // Move out
         } else {
             if(isDesktopView){
-                navBar.style.top = '70vh';
+                navBar.style.top = '82vh';
             }
             else{
                 navBar.style.top = '50vh'; // Move in

@@ -10,13 +10,14 @@ function createStars(numberOfStars) {
 
 function flashStar(star) {
     setInterval(() => {
-        const x = Math.random() * window.innerWidth;
+        const x = Math.random() * 3400;
         const y = Math.random() * window.innerHeight;
         const size = Math.random() * 20 + 10; // Size between 10px and 30px
 
         star.style.left = `${x}px`;
         star.style.top = `${y}px`;
         star.style.fontSize = `${size}px`;
+        star.style.color='aliceblue';
 
         // Flash the star
         star.style.opacity = 1;
@@ -26,4 +27,4 @@ function flashStar(star) {
     }, 5000); // Change position and flash every 1 second
 }
 
-createStars(10); // Create 10 stars, for example
+createStars(50); // Create 10 stars, for example

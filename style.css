@@ -134,6 +134,7 @@ ul{
     
 
 @media screen and (min-width: 768px) {
+
     .fav{
         padding-left: 45vw;
         max-width:5%;
@@ -151,7 +152,7 @@ ul{
 
       .projectContainer {
         padding: 8%;
-        padding-top: 6%;
+        padding-top: 4%;
         padding-left: 2%;
         display: flex;
         flex-direction: row;
@@ -161,15 +162,37 @@ ul{
         align-items: center;
         column-gap: 0px;
     }
-    .body {
+    body {
         -ms-overflow-style: none;  /* Internet Explorer 10+ */
         scrollbar-width: none;  /* Firefox */
         overflow-x: auto;
+        overflow-y: hidden;
     }
     
     .projectContainer::-webkit-scrollbar {
         display: none;  /* Safari and Chrome */
     }
+    /* Custom scrollbar styles */
+    ::-webkit-scrollbar {
+        width: 0px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: #f3d5d5;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        border-style: solid;
+        background-color:aliceblue ;
+        border-radius: 10px;
+        border-color: #F8F2F2;
+        width: 25px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: #dababa;
+    }
+
     
     .border {
         margin: 0;
@@ -189,8 +212,8 @@ ul{
         width: 120%; 
     } */
     .project img{
-        width: 500px; /* Adjusted width */
-        height: 350px; /* Fixed height */
+        width: 550px; /* Adjusted width */
+        height: 400px; /* Fixed height */
         object-fit: cover; /* Maintain aspect ratio */
     }
     .project img:hover{

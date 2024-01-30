@@ -20,6 +20,7 @@ body{
 
 .imagery{
     padding-bottom: 70%;
+    overflow-y: auto;
 }
 .border{
     display: none;
@@ -120,6 +121,9 @@ hr{
 }
 
 @media screen and (min-width: 768px) {
+    body{
+        overflow: auto;
+    }
 
     .container{
         padding-top: 4%;
@@ -148,6 +152,7 @@ hr{
     }
     .imagery{
         padding-bottom: 0%;
+        overflow-y: auto;
     }
     .backdrop-div{
         opacity: 1;

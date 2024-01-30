@@ -23,7 +23,9 @@ hr{
 }
 .archiveContainer{
     flex:0.9;
+    padding-right: 0;
     overflow-y: scroll;
+    overflow-x: hidden;
 }
 .display_arc{
     flex: 1.1;
@@ -35,6 +37,7 @@ hr{
     display: flex;
     flex-direction: column; /* To layout children vertically */
     overflow-y:auto; /* Allows scrolling if content overflows */
+    overflow-x: hidden;
     padding: 2rem;
     padding-top: 0;
 }

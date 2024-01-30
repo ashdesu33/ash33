@@ -8,11 +8,11 @@ function loadNav(){
     console.log(isDesktopView);
     // Only toggle the navigation bar if we're not in desktop view
     if (!isHomePage || !isDesktopView) {
-        if (navBar.style.top === '50vh'||(navBar.style.top === '82vh')){
+        if (navBar.style.top === '50vh'||(navBar.style.top === '80vh')){
             navBar.style.top = '100vh'; // Move out
         } else {
             if(isDesktopView){
-                navBar.style.top = '82vh';
+                navBar.style.top = '80vh';
             }
             else{
                 navBar.style.top = '50vh'; // Move in
@@ -46,7 +46,7 @@ function startAutoScroll() {
 
 
 if(isHomePage && isDesktopView){
-    navBar.style.top = '82vh'; 
+    navBar.style.top = '80vh'; 
     window.onload = function() {
         // startAutoScroll();
     };

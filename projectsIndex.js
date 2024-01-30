@@ -88,7 +88,7 @@ const archive=[
     },
     {title:"Ways of Communication",
     category:"Editorial",
-    img:["../Image/archive/communicate.GIF","../Image/archive/communicate.PNG","../Image/archive/communicate2.PNG","../Image/archive/c1.jpg",
+    img:["../Image/archive/communicate.gif","../Image/archive/communicate.PNG","../Image/archive/communicate2.PNG","../Image/archive/c1.jpg",
     "../Image/archive/16.jpg","../Image/archive/12.jpg","../Image/archive/communicate3.PNG"],
     year:"2023",
     class:"Type III",

@@ -1,4 +1,4 @@
-main img{
+#rain{
     width: 90vw;
     top:30%;
     left:5%;
@@ -20,6 +20,10 @@ body{
 .content2{
     padding-top: 500px;
 }
+#upline{
+    display: none;
+
+}
 
 #rainContainer {    
     z-index: -1;
@@ -33,9 +37,15 @@ body{
     height: 100vh;
     font-weight: 800;
 }
+@media screen and (min-width: 568px){
+    .fav{
+        display: none;
+    }
+
+}
 @media screen and (min-width: 768px) {
 
-    main img{
+    #rain{
         width: 50vw;
         top:20%;
         left:25%;

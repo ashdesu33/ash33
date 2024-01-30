@@ -112,6 +112,12 @@ hr{
 .arrow.rotated {
     transform: rotate(180deg); /* Rotate the arrow */
 }
+@media screen and (min-width: 568px){
+    .fav{
+        display: none;
+    }
+
+}
 
 @media screen and (min-width: 768px) {
 

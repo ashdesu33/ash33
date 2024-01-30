@@ -11,14 +11,17 @@
     <link rel="stylesheet" href="archive.css">
     
 </head>
+
 <body>
+    
+    <!-- top nav bar -->
     <header>
         <img class="fav" src="../Image/favicon.png">
         <div class ="head">
             <a href="../home.html">ASH MA</a>
             <div class="menu" onclick=loadNav()>
                 <img src="../Image/favicon.png">
-                <a>. menu</a>
+                <a>featured</a>
             </div>
             <div class="menu">
                 <img src="../Image/littlething.gif">
@@ -28,19 +31,99 @@
         </div>
         <div class="backdrop-div"></div>
     </header>
+    <div id="disable-overlay" style="display: none;">
+        <p>Sorry still working on the smaller screen...(;w;)
+            <pre>
+                (\(\ 
+                ( -.-)
+                o_(")(")
+            </pre>
+        </p>
+    </div>
+    <hr id="upline">
+
+    <!-- archive list -->
     <main>
         <hr id="upline">
-        <div class="contain">
-            <div class="chart">
+        <div class="mainpage">
+            <div class="archiveContainer">
+                <pre>
+             \\         |\      _,,,---,,_   \\\\\
+                   ZZZzz /,`.-'`'    -.  ;-;;,_                \\\\
+    \\\      \\\        |,4-  ) )-,_. ,\ (  `'-'   \\\   
+              \\    \\\'---''(_/--'  `-'\_)             \\\
+                       \\\\ /////////    \\\\\\\
+               </pre>
+            <div class="list"></div>
+            <pre>
 
+
+
+
+                
+
+
+
+              \\                        \\\\\
+              * * *           \\\\\
+             * .   *    |\    _,,,---,,_     \\\\\
+              * * *   !! /o`.-'`'    -.  ;-;;,_                \\\\
+    \\\      \\\        |o4-  ) )-,_. ,\ (  `'-'   \\\   
+              \\    \\\'---''(_/--'  `-'\_)             \\\
+                          \\\\ /////////    \\\\\\\
+        \\\\\                  
+
+
+            </pre>
+            </div>
+            <div class="display_arc">
+                <pre>
+
+                
+                                                                                                                                 
+ ,---.  ,------.,--.   ,------. ,-----.,--------.      ,---.     
+ '   .-' |  .---'|  |   |  .---''  .--./'--.  .--'     /  O  \     
+ `.  `-. |  `--, |  |   |  `--, |  |       |  |       |  .-.  |      
+ .-'    ||  `---.|  '--.|  `---.'  '--'\   |  |       |  | |  |      
+ `-----' `------'`-----'`------' `-----'   `--'       `--' `--'       
+  
+ 
+                                                               
+,------. ,------.  ,-----.      ,--.,------. ,-----.,--------. 
+|  .--. '|  .--. ''  .-.  '     |  ||  .---''  .--./'--.  .--' 
+|  '--' ||  '--'.'|  | |  |,--. |  ||  `--, |  |       |  |    
+|  | --' |  |\  \ '  '-'  '|  '-'  /|  `---.'  '--'\   |  |    
+`--'     `--' '--' `-----'  `-----' `------' `-----'   `--'    
+                                                               
+
+                                                                                    
+,--------. ,-----.      ,---. ,--------. ,---.  ,------. ,--------.      ,-.,----.  
+'--.  .--''  .-.  '    '   .-''--.  .--'/  O  \ |  .--. ''--.  .--'     /  /'.-.  | 
+   |  |   |  | |  |    `.  `-.   |  |  |  .-.  ||  '--'.'   |  |       /  /   .' <  
+   |  |   '  '-'  '    .-'    |  |  |  |  | |  ||  |\  \    |  |       \  \ /'-'  | 
+   `--'    `-----'     `-----'   `--'  `--' `--'`--' '--'   `--'        \  \`----'  
+                                                                          `-'        
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                        <a href="https://patorjk.com/software/taag/#p=display&f=Big&t=%0A">ASCII CREDIT</a>
+                   
+                </pre>
             </div>
         </div>
         
-        <div>
-            <img style="height:50%;width:auto;"src="../Image/archive/standstill2.gif">
-            <figcaption style="font-size:small;position:fixed; top:50%;left:50%"> Working in progress..</figcaption>
-        </div>
 
+        
     </main>
     <nav class="nav">
         
@@ -52,13 +135,28 @@
             <li><a href="indy.html">+ Indy</a></li>
             <li><a href="oneway.html">+ One Way Space</a></li>
             <li><a href="random.html">+ Random Thoughts </a></li>
-            <li>+ Which Window Will Your Arms Reach? </li>  
+            <li><a href="archive.html">+ Which Window Will Your Arms Reach?</a></li>  
             
         </ul>
     
 </nav>
+
     <script src="../Scripts/rain.js"></script>
     <script src="../Scripts/load.js"></script>
+    <script src="../projectsIndex.js"></script>
+    <script src="../Scripts/archive.js"></script>
+    <script>
+        function checkWindowSize() {
+            if (window.innerWidth < 1000) {
+                document.getElementById("disable-overlay").style.display = "block";
+            } else {
+                document.getElementById("disable-overlay").style.display = "none";
+            }
+        }
+    
+        window.onresize = checkWindowSize;
+        window.onload = checkWindowSize; // Check on initial load
+    </script>
 
 </body>
 </html>

@@ -7,6 +7,13 @@ const projects =[
         page:'Pages/end.html'
     },
     {
+        cover:"Image/oneway/page.jpg",
+        title:"One Way Space",
+        category:["Identity","Book"],
+        class:'prj5',
+        page:'Pages/oneway.html'
+    },
+    {
         cover:"Image/Birthdaycake/cake.gif",
         title:"Birthdaycake",
         category:["Code[OpenGL],Blender,Drawing"],
@@ -33,13 +40,6 @@ const projects =[
         category:["Editorial","Identity"],
         class:'prj4',
         page:'Pages/indy.html'
-    },
-    {
-        cover:"Image/oneway/page.jpg",
-        title:"One Way Space",
-        category:["Identity","Book"],
-        class:'prj5',
-        page:'Pages/oneway.html'
     },
     {
         cover:"Image/Random Thoughts/cover.JPG",

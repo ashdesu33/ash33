@@ -1,5 +1,12 @@
 const projects =[
     {
+        cover:"Image/Knoll/cover.png",
+        title:"Knoll Workplace Research Library",
+        category:["Branding"],
+        class:'prj0',
+        page:'Pages/knoll.html'
+    },
+    {
         cover:"Image/will to the end/layout.jpg",
         title:"The Will to the End",
         category:["Editorial,Web,Book"],
@@ -47,15 +54,7 @@ const projects =[
         category:["Book","Drawings"],
         class:'prj6',
         page:'Pages/random.html'
-    },
-   
-    // {
-    //     cover:"Image/WWYAR/standstill.gif",
-    //     title:"Which Window Will Your Arm Reach?",
-    //     category:["Film"],
-    //     class:'prj5',
-    //     page:''
-    // }
+    }
 
 ]
 
@@ -137,3 +136,7 @@ const archive=[
     }
 
 ]
+
+function goTo(page){
+    window.location.href = page;
+}

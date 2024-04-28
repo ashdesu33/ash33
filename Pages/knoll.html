@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://use.typekit.net/lwm3pvk.css">
+        <title>Ash Ma</title>
+        <link rel="stylesheet" href="../style.css">
+        <link rel="stylesheet" href="page.css">
+        <link rel="icon" type="image/png" href="../Image/favicon.png" >
+    </head>
+    <body>
+        <header>
+            <hr id="upline">
+            <img class="fav" src="../Image/favicon.png">
+            <div class ="head">
+                <a href="../home.html">ASH MA</a>
+                <p class="desktop"> archive</p>
+                <img class="mobile" onclick=loadNav() src="../Image/littlething.gif">
+                <a id="about" href="about.html">About Me</a>
+            </div>
+            <div class="backdrop-div"></div>
+        </header>
+        <div class="border">
+            <p>*******************************************************************</p>
+        </div>
+        <main>
+            <div class="container">
+                <div class="description">
+                    <span class="arrow">↓</span>
+                    <p class="title">Knoll Workplace Research Library</p>
+                    <p class="category">Branding / 2024</p>
+                    <p class="content">How can we make the workplace better? The Knoll Workplace Research Library is dedicated to providing innovative insights on creating superior work environments. With this commitment in mind, the rebranding project of the Knoll Research Library derived from the idea of “dashes”. Not only do these dashes serve to define clean spaces,
+                        but they are also the most simple unit in the formulation of idea sketches. </p>
+                   
+                    <div class="to">
+                    <hr>
+                    <p class="content"><b><a href="end.html">next project</a></b></p>
+                    </div>
+                </div>
+                <div class="imagery">
+                    <video autoplay loop muted playsinline>
+                        <source src="../Image/Knoll/adjust.mp4" type="video/mp4">
+                    </video>
+                    <img src="../Image/Knoll/knoll_brandguide2.png" onclick="openModal(this)">
+                    <img src="../Image/Knoll/slides.gif" onclick="openModal(this)">
+                    <img src="../Image/Knoll/knoll.png" onclick="openModal(this)">
+                    <video autoplay loop muted playsinline>
+                        <source src="../Image/Knoll/element.mp4" type="video/mp4">
+                    </video>
+                    <img src="../Image/Knoll/knoll2.png" onclick="openModal(this)">
+                    <img src="../Image/Knoll/knoll3.png" onclick="openModal(this)">
+                    <img src="../Image/Knoll/knoll4.png" onclick="openModal(this)">
+                    <img src="../Image/Knoll/knoll5.png" onclick="openModal(this)">
+                    <img src="../Image/Knoll/knoll6.png" onclick="openModal(this)">
+                    <video autoplay loop muted playsinline>
+                        <source src="../Image/Knoll/final video.mp4" type="video/mp4">
+                    </video>
+                    <img src="../Image/Knoll/knoll7.png" onclick="openModal(this)">
+                    <img src="../Image/Knoll/knoll8.png" onclick="openModal(this)">
+
+                    
+                </div>
+
+                <div id="imageModal" class="modal">
+                    <span class="close" onclick="closeModal()">&times;</span>
+                    <img class="modal-content" id="enlargedImage">
+                    <a class="prev" onclick="changeImage(-1)">&#10094;</a>
+                    <a class="next" onclick="changeImage(1)">&#10095;</a>
+                </div>
+            </div>
+           
+        </main>
+        <nav class="nav">
+            
+            <ul>
+                
+            </ul>
+        
+    </nav>
+        <script src="../Scripts/load.js"></script>
+        <script src="../projectsIndex.js"></script>
+        <script src="../Scripts/feature_nav.js"></script>
+</html>

@@ -5,7 +5,7 @@ body{
     padding-top: 18%;
     width: 100%;
 }
-.container img{
+.container img, video{
     width: 100%;
     margin-top:-5px;
 }

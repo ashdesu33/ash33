@@ -241,7 +241,7 @@ ul{
         transition: box-shadow 0.5s;
     }
     .project img:hover{
-        box-shadow: 0px 0px 50px rgb(243, 193, 255);  
+        box-shadow: 0px 0px 50px rgb(208, 121, 121);  
     }
     .caption{
         font-size: 13px;

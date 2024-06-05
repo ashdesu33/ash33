@@ -4,7 +4,7 @@ function feature_nav(){
     const currentPage = window.location.pathname;
     projects.forEach((project, index) => {
         
-        if (currentPage.endsWith('home.html')) {
+        if (currentPage.endsWith('index.html')) {
             navContainer += `<li><a href="${project.page}">+ ${project.title}</a><i>(${project.category})</i></li>`
         }
         else{

@@ -1,6 +1,6 @@
 const navBar = document.querySelector('nav');
 const pathParts = window.location.pathname.split('/');
-const isHomePage = pathParts.length === 2 && (pathParts[1] === '' || pathParts[1] === 'home.html');
+const isHomePage = pathParts.length === 2 && (pathParts[1] === '' || pathParts[1] === 'index.html');
     const isDesktopView = window.matchMedia("(min-width: 768px)").matches;
    
 function loadNav(){

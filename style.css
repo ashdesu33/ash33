@@ -1,8 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Barcode+128+Text&display=swap');
+@font-face {
+    font-family: 'Elm';
+    src: url('font/Elm-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Elm Mono';
+    src: url('font/Elm-Mono.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
 body{
-    background: #F8F2F2;
+    background: #e9e9e9;
     color:#555151;
-    font-family: "input-mono", monospace;
+    font-family:"Elm Mono";
     font-weight: 400;
     font-style: normal;
 }
@@ -16,7 +28,7 @@ body{
 }
 
 .backdrop-div{
-    background: #F8F2F2;
+    background: #e9e9e9;
     opacity: 1;
     backdrop-filter: blur(10px); 
     position: fixed;
@@ -47,6 +59,7 @@ body{
 }
 a{
     text-decoration: none;
+    color:#555151;
 }
 #about{
     font-family: "Libre Barcode 128 Text";
@@ -105,13 +118,14 @@ ul{
 .nav{
     width: 100vw;
     height: 100vh;
-    background-color: #f3d5d5;
+    background-color: rgba(255, 215, 215,1);
     color:rgb(80, 20, 80);
     position: fixed;
     top: 100vh;
     left: 0; /* Start off-screen */
     transition: top 0.5s; /* Smooth transition for left property */
     z-index: 100;
+    
 }
 .nav i{
     display: none;
@@ -120,6 +134,15 @@ ul{
     font-size: small;
     padding-top: 2%;
     line-height: 5vh;
+}
+.nav hr{
+    border-color:#806464;
+    border-width: 0.1px;
+    margin:0;
+    border:0.1;
+}
+.nav ul li{
+    break-inside: avoid;
 }
 .star{
     display: none;
@@ -162,7 +185,7 @@ ul{
     .head{
         padding-left: 1.5rem;
         padding-right: 1.5rem;
-        background-color:#F8F2F2;;
+        background-color:#e9e9e9;
         box-shadow: #a67979;
         
       }
@@ -172,15 +195,16 @@ ul{
       }
 
       .projectContainer {
-        padding: 8%;
+        /* padding: 8%; */
         padding-top: 3%;
         padding-left: 2%;
         display: flex;
         flex-direction: row;
-        overflow-x: auto;
+        flex-wrap: wrap;
+        overflow-x: hidden;
         scroll-behavior: smooth;
-        width: 3400px;
-        align-items: center;
+        width: 100vw;
+        height: 100vh;
         column-gap: 0px;
         
     }
@@ -188,7 +212,7 @@ ul{
         -ms-overflow-style: none;  /* Internet Explorer 10+ */
         scrollbar-width: none;  /* Firefox */
         overflow-x: auto;
-        overflow-y: hidden;
+        overflow-y: auto;
     }
     
     .projectContainer::-webkit-scrollbar {
@@ -211,9 +235,9 @@ ul{
         width: 25px;
     }
 
-    ::-webkit-scrollbar-thumb:hover {
+    /* ::-webkit-scrollbar-thumb:hover {
         background: #dababa;
-    }
+    } */
 
     
     .border {
@@ -222,7 +246,7 @@ ul{
     
     .project {
         transition: width 0.5s;
-        width: 100%; /* Adjusted width */
+        width: 30%; /* Adjusted width */
         margin-right: 30px; /* Space between items */
         object-fit:cover;/* Maintain aspect ratio */
     }
@@ -234,14 +258,13 @@ ul{
         width: 120%; 
     } */
     .project img{
-        width: 500px; /* Adjusted width */
-        height: 400px; /* Fixed height */
+        width: 100%;
         object-fit: cover; /* Maintain aspect ratio */
-        box-shadow: 0px 10px 30px rgb(255, 197, 197);  
+        box-shadow: 0px 0px 0px rgb(255, 197, 197);  
         transition: box-shadow 0.5s;
     }
     .project img:hover{
-        box-shadow: 0px 0px 50px rgb(208, 121, 121);  
+        box-shadow: 0px 0px 30px rgb(209, 140, 140);  
     }
     .caption{
         font-size: 13px;
@@ -260,16 +283,30 @@ ul{
     .border{
         display: none;
     }
-    .nav ul {
-        
-        column-gap: 20px; /* Adjust the gap between columns */
-        font-size: 13px;
-        margin:0;
-        line-height: 23px;
-        column-count: 2;
-
+    .nav{
+        display: flex;
+        justify-content: center;
+        width: 100vw;
+        box-shadow: 10 px 10px 10px 10px rgb(185, 149, 149);
     }
-    .nav i{
+
+    .nav ul {
+        margin:0;
+        width: 100vw;
+        margin-top: 10px;
+        margin-right:10px;
+        column-gap: 5%; /* Adjust the gap between columns */
+        font-size: 13px;
+        line-height: 23px;
+        column-count: 3;
+    }
+    .nav li:hover{
+        transition: background-color  0.5s;
+        background-color: #c8c8c8;
+        color:#dababa;
+    }
+    .nav span{
+        font-family: 'Franklin Gothic Medium', sans-serif;
         display:contents;
         margin-top: 0;
         margin-left: 10px;
@@ -290,6 +327,9 @@ ul{
         font-size: 10px;
         padding-left: 2rem;
         display: block;
+    }
+    #archive{
+        font-size: 12px;
     }
     .self p{
         margin:0;

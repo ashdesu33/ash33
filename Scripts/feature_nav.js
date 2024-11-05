@@ -5,11 +5,11 @@ function feature_nav(){
     projects.forEach((project, index) => {
         
         if (currentPage.endsWith('index.html')) {
-            navContainer += `<li><a href="${project.page}">+ ${project.title}</a><i>(${project.category})</i></li>`
+            navContainer += `<li><hr><a href="${project.page}">+ ${project.title} </a><span>(${project.category})</span></li>`
         }
         else{
             const projectPage = project.page.replace('Pages/', '');
-            navContainer += `<li><a href="${projectPage}">+ ${project.title}</a><i>(${project.category})</i></li>`
+            navContainer += `<li><hr><a href="${projectPage}">+ ${project.title} </a><span>(${project.category})</span></li>`
         }
     });
     navbar.innerHTML += navContainer;

@@ -8,7 +8,7 @@ function feature_nav(){
             navContainer += `<li><hr><a href="${project.page}">+ ${project.title} </a><span>(${project.category})</span></li>`
         }
         else{
-            const projectPage = project.page.replace('/Pages/', '');
+            const projectPage = project.page.replace('Pages/', '');
             navContainer += `<li><hr><a href="${projectPage}">+ ${project.title} </a><span>(${project.category})</span></li>`
         }
     });

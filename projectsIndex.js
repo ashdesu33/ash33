@@ -14,11 +14,11 @@ const projects =[
         page:'Pages/end.html'
     },
     {
-        cover:"Image/oneway/page.jpg",
-        title:"One Way Space",
-        category:["Identity","Book"],
-        class:'prj5',
-        page:'Pages/oneway.html'
+        cover:"Image/archive/yearbook24/1.jpg",
+        title:"RISD 2024 Yearbook",
+        category:["Book"],
+        class:'Design Guild',
+        page:'Pages/yearbook.html'
     },
     {
         cover:"Image/Birthdaycake/cake.gif",
@@ -59,6 +59,14 @@ const projects =[
 ]
 
 const archive=[
+    {title:"Into the Woods",
+        category:"Promotion",
+        img:["../Image/archive/artistball/artist-ball-animation_update.gif","../Image/archive/artistball/4.png",
+            ,"../Image/archive/artistball/5.png"],
+        year:"2024",
+        class:"Design Guild",
+        description:"2024 RISD Artist Ball Poster, collaborate with Andrew Liu and Maggie Xian."
+    },
     {title:"Heads in the cloud",
      category:"Promotion",
      img:["../Image/archive/clouds-05.jpg","../Image/archive/clouds-1.jpg","../Image/archive/clouds-02.jpg","../Image/archive/clouds-04.jpg","../Image/archive/clouds-03.jpg"],
@@ -84,6 +92,15 @@ const archive=[
      year:"2023",
      class:"RISD Riso Workshop",
      description:"2-4 color riso printed zine, featuring films taken in China. Recoding this land of everything."
+    },
+    {
+        title:"One Way Space",
+        category:["Identity","Book"],
+        img:["../Image/oneway/page.jpg","../Image/oneway/identity.png","../Image/oneway/page2.png","../Image/oneway/insert2.png",
+            "../Image/oneway/page3.jpg","../Image/oneway/page4.png","../Image/oneway/page5.png"],
+        year:"2023",
+        class:"One Way Space",
+        description:"Book cover & Event Identity design for Owspace. Art Director: Li Zhaolu",
     },
     {title:"Ways of Communication",
     category:"Editorial",
@@ -123,17 +140,20 @@ const archive=[
       care and collaboration. Project collaborated with Radhika Chauhan.`
     },
     {title:"Poster Collection",
-     category:"Promotion",
-     img:[""],
-     year:"General",
-     description:""
-    },
-    {title:"Sketchbook",
-     category:"Drawings",
-     img:[""],
-     year:"General",
-     description:""
-    }
+        category:"Promotion",
+        img:["../Image/archive/pos/1.png","../Image/archive/pos/2.png","../Image/archive/pos/3.png",
+           "../Image/archive/pos/6.jpg"],
+        year:"General",
+        class:"",
+        description:""
+       }
+    // },
+    // {title:"Sketchbook",
+    //  category:"Drawings",
+    //  img:[""],
+    //  year:"General",
+    //  description:""
+    // }
 
 ]
 

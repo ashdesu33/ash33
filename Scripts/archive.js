@@ -24,6 +24,38 @@ archive.forEach((project, index) => {
 });
 archiveContainer.innerHTML += projectContainer;
 
+function initialDisplay(){
+    const projectDisplayArea = document.querySelector('.display_arc');
+    projectDisplayArea.innerHTML = `
+        <div class="project-content">
+            <div class="index_img"></div>
+            </div>
+        `;
+     
+    const projectContent = projectDisplayArea.querySelector('.project-content');
+    const imgContainer = projectDisplayArea.querySelector('.index_img');
+    let imagesLoaded = 0;
+    const totalImages = archive.length-1;
+
+    archive.forEach((project,index) => {
+        const imgElement = new Image();
+        imgElement.onload = () => {
+            imagesLoaded++;
+            if (imagesLoaded === totalImages) {
+                projectContent.style.opacity = 1;
+            }
+        };
+        imgElement.classList.add("index");
+        imgElement.addEventListener("click", function() {
+            displayProject(project, index);
+        });
+        
+        imgElement.src = project.img[0];
+        imgContainer.appendChild(imgElement);
+    });
+
+}
+
 function displayProject(project,index) {
         // Reset the background color for all projects
         document.querySelectorAll('.arc_prj').forEach(el => {
@@ -32,6 +64,7 @@ function displayProject(project,index) {
     
         // Highlight the selected project
         const selectedProject = document.querySelectorAll('.arc_prj')[index];
+        console.log(index);
         if (selectedProject) {
             selectedProject.classList.add('arc_prj_selected');
         }
@@ -89,5 +122,6 @@ function displayProject(project,index) {
         imgContainer.appendChild(imgElement);
     });
 }
+initialDisplay();
 
 

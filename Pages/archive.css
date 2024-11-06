@@ -138,4 +138,21 @@ hr{
     top:40%;
     left:5%;
 }
+.index_img{
+    padding-top: 5%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    width: 100%;
+}
+.index{
+    align-self: flex-start;
+    width:30%; /* Allows the container to take 30% width and grow or shrink if necessary */
+    margin: 10px;
+    margin-bottom: 40px;
+    box-sizing: border-box;
+    max-height: 150px;
+    object-fit: contain;
+}
+
 

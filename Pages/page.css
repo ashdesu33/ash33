@@ -125,11 +125,14 @@ hr{
     body{
         overflow: auto;
     }
+    .head{
+        z-index: 20;
+    }
 
     .container{
         padding-top: 4%;
-        padding-left: 27%;
-        width: 73%;
+        padding-left: 23%;
+        width: 77%;
         margin: 0;
         overflow: hidden;
     }

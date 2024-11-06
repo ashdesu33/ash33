@@ -1,4 +1,11 @@
 const projects =[
+{
+    cover:"Image/Liz/5.png",
+    title:"el lissitzky",
+    category:["Editorial, Packaging"],
+    class:'prj0',
+    page:'Pages/liz.html'
+},
     {
         cover:"Image/Knoll/cover.png",
         title:"Knoll Workplace Research Library",
@@ -62,7 +69,7 @@ const archive=[
     {title:"Into the Woods",
         category:"Promotion",
         img:["../Image/archive/artistball/artist-ball-animation_update.gif","../Image/archive/artistball/4.png",
-            ,"../Image/archive/artistball/5.png"],
+            "../Image/archive/artistball/5.png"],
         year:"2024",
         class:"Design Guild",
         description:"2024 RISD Artist Ball Poster, collaborate with Andrew Liu and Maggie Xian."

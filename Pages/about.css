@@ -44,11 +44,14 @@ body{
 
 }
 @media screen and (min-width: 768px) {
-
+    
+    .head{
+        z-index: 20;
+    }
     #rain{
-        width: 50vw;
-        top:20%;
-        left:25%;
+        width: 30vw;
+        top:30%;
+        left:35%;
         height: auto;
         position: absolute;
         z-index: -2;
@@ -56,7 +59,7 @@ body{
     .content{
         padding-left: 20px;
         padding-right: 70%;
-        padding-top:5%;
+        padding-top:8%;
         font-size: 12px;
         color:rgb(85, 12, 152);
     }

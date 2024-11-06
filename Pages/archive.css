@@ -10,7 +10,9 @@ hr{
     display: block;
     position: relative;
 }
-
+.head{
+    padding-bottom: 0;
+}
 
 .mainpage{
     display: flex;
@@ -31,6 +33,7 @@ hr{
     flex: 1.1;
     border-left-style: solid;
     border-color: #c6b1b1;
+    border-width: 0.1px;
     height: 88vh;
     background: #F8F2F2;
     z-index: 10;

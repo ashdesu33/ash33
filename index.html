@@ -13,16 +13,17 @@
         <div class ="head">
             <div class="introd">
             <a href="index.html">ASH MA</a>
-            <div class="self">
-                <p>Ash Ma is a graphic designer base in Providence,RI</p>
-                <p>Currently @ <a href="https://risdguild.com/">RISD Design Guild</a>, <a href="https://www.theindy.org/">Indy</a></p>
-                <p>Previously @ <a href="https://www.owspace.com/">One Way Space</a></p>
-                <p><a href="https://www.instagram.com/ashdesu_33/">ins</a>  |  <a href="https://www.linkedin.com/in/wenqing-ma-0a3104220/">linkedin</a>  |  <a href="https://github.com/ashdesu33">github</a></p>
+                <div class="self">
+                    <p>Ash Ma is a graphic designer base in Providence,RI</p>
+                    <p>Currently @ <a href="https://risdguild.com/">RISD Design Guild</a>, <a href="https://www.theindy.org/">Indy</a></p>
+                    <p>Previously @ <a href="https://www.owspace.com/">One Way Space</a></p>
+                    <p><a href="https://www.instagram.com/ashdesu_33/">ins</a>  |  <a href="https://www.linkedin.com/in/wenqing-ma-0a3104220/">linkedin</a>  |  <a href="https://github.com/ashdesu33">github</a></p>
+                </div>
             </div>
-        </div>
-            <a class="self" href="Pages/archive.html" id="archive"> archive</a>
+            <a class="self"  id="show" onclick="showProject()"> ⭑show</a>
+            <a class="self" id="archive" href="Pages/archive.html" > archive</a>
            
-            <img class="mobile" src="Image/favicon.png" onclick="loadNav()">
+            <a class="mobile" onclick="loadNav()">featured</a>
             <a id="about" href="Pages/about.html">About Me</a>
         </div>
         <div class="backdrop-div"></div>
@@ -30,22 +31,23 @@
     <hr id="upline">
     
     <nav class="nav" id="homenav">
-        
             <ul>
-               
-                
             </ul>
-        
     </nav>
-    
+    <div class="clock">
+        <div class="clock-face">
+            <div class="hand hour-hand"></div>
+            <div class="hand minute-hand"></div>
+            <div class="hand second-hand"></div>
+            <div class="center"></div>
+        </div>
+    </div>
     <main>
        
             <div class="projectContainer"id="scroll">
-
-                <video autoplay loop muted playsinline>
-                    <source src="Image/bg.mp4">
-                </video>
             </div>
+
+            
         
             
         
@@ -63,5 +65,6 @@
     <script src="Scripts/load.js"></script>
     <script src="Scripts/feature_nav.js"></script>
     <script src="Scripts/star.js"></script>
+    <script src="Scripts/clock.js"></script>
 </body>
 </html>

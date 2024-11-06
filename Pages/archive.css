@@ -94,6 +94,7 @@ hr{
     padding:0 1rem 0 1rem;
     border-bottom-style: solid;
     border-color: #c6b1b1;
+    border-width: 0.1px;
     margin:0;
     background-color: aliceblue;
 }

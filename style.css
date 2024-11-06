@@ -110,8 +110,7 @@ ul{
 .nav{
     width: 100vw;
     height: 100vh;
-    background-color: rgb(238, 214, 214);
-    color:rgb(80, 20, 80);
+    background-color:#f1d2d2;
     position: fixed;
     top: 100vh;
     left: 0; /* Start off-screen */

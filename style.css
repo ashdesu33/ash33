@@ -329,8 +329,14 @@ ul{
         width: 30%; /* Adjusted width */
         margin-right: 30px; /* Space between items */
         object-fit:cover;/* Maintain aspect ratio */
-        pointer-events: auto;
+        pointer-events: none;
        
+    }
+    .project.visible{
+        pointer-events: auto;
+    }
+    .project:hover{
+        text-decoration: none;
     }
     #show{
         font-size: 10pt;
@@ -394,6 +400,9 @@ ul{
         transition: background-color  0.5s;
         background-color: #c8c8c8;
         color:#dababa;
+    }
+    .nav a:hover{
+        text-decoration: none;
     }
     .nav span{
         font-family: 'Franklin Gothic Medium', sans-serif;

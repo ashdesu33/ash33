@@ -12,14 +12,18 @@ function loadNav(){
         || navBar.style.top === '45vh'){
             navBar.style.top = '100vh'; // Move out
         } 
-    else {
-        if(isDesktopView){
-            navBar.style.top = '80vh';
-        }
         else{
             navBar.style.top = '45vh'; // Move in
         }
+    }
+    else {
+        if( navBar.style.top =='100vh'){
+            navBar.style.top = '80vh';
         }
+        else{
+            navBar.style.top = '100vh'; // Move out
+        }
+        
     }
     
 

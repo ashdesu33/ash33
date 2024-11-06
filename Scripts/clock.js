@@ -26,5 +26,10 @@ setClock();
 function showProject(){
     const container = document.querySelector('.projectContainer');
     container.classList.toggle('visible');
+    const projects = document.querySelectorAll('.project');
+    projects.forEach(element => {
+        element.classList.toggle('visible');
+    });
+
 }
 

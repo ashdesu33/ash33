@@ -7,6 +7,7 @@
     <title>Ash Ma</title>
     <link rel="icon" type="image/png" href="Image/favicon.png" >
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="archive.css">
 </head>
 <body>
     <header>
@@ -21,14 +22,13 @@
                 </div>
             </div>
             <a class="self"  id="show" onclick="showProject()"> ⭑show</a>
-            <a class="self" id="archive" href="Pages/archive.html" > archive</a>
+            <a class="self" id="archive" onclick="toArchive()" > archive</a>
            
             <a class="mobile" onclick="loadNav()">featured</a>
             <a id="about" href="Pages/about.html">About Me</a>
         </div>
         <div class="backdrop-div"></div>
     </header>
-    <hr id="upline">
     
     <nav class="nav" id="homenav">
             <ul>
@@ -47,6 +47,55 @@
             <div class="projectContainer"id="scroll">
             </div>
 
+            <div id="disable-overlay" style="display: none;">
+                <p>Sorry still working on the smaller screen...(;w;)
+                    <pre>
+                        (\(\ 
+                        ( -.-)
+                        o_(")(")
+                    </pre>
+                </p>
+            </div>
+          
+        
+        
+                <div class="mainpage">
+                    <div class="archiveContainer">
+        
+                       <pre>
+                     \\         |\      _,,,---,,_   \\\\\
+                           ZZZzz /,`.-'`'    -.  ;-;;,_                \\\\
+            \\\      \\\        |,4-  ) )-,_. ,\ (  `'-'   \\\   
+                      \\    \\\'---''(_/--'  `-'\_)             \\\
+                               \\\\ /////////    \\\\\\\
+                       </pre>
+                    <div class="list"></div>
+                    <pre>
+        
+        
+        
+        
+                        
+        
+        
+        
+                      \\                        \\\\\
+                      * * *           \\\\\
+                     * .   *    |\    _,,,---,,_     \\\\\
+                      * * *   !! /o`.-'`'    -.  ;-;;,_                \\\\
+            \\\      \\\        |o4-  ) )-,_. ,\ (  `'-'   \\\   
+                      \\    \\\'---''(_/--'  `-'\_)             \\\
+                                  \\\\ /////////    \\\\\\\
+                \\\\\                  
+        
+        
+                    </pre> 
+                    </div>
+                <div class="display_arc">
+ 
+                </div>
+                </div>
+
             
         
             
@@ -63,6 +112,7 @@
     <script src="projectsIndex.js"></script>
     <script src="Scripts/homepage.js"></script>
     <script src="Scripts/load.js"></script>
+    <script src="Scripts/archive.js"></script>
     <script src="Scripts/feature_nav.js"></script>
     <script src="Scripts/star.js"></script>
     <script src="Scripts/clock.js"></script>

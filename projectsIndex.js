@@ -66,6 +66,14 @@ const projects =[
 ]
 
 const archive=[
+    {
+        title:"All Project",
+        category:"",
+        img:[],
+        year:"",
+        class:"",
+        description:""
+    },
     {title:"Into the Woods",
         category:"Promotion",
         img:["../Image/archive/artistball/artist-ball-animation_update.gif","../Image/archive/artistball/4.png",

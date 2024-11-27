@@ -29,7 +29,7 @@ p{
     display: none;
 }
 .category_a{
-    display: block;
+    display: none;
     margin: 12px;
     position: absolute;
     left:60%;
@@ -79,6 +79,7 @@ p{
 .prj_img {
     width: 100%;
     display: flex;
+    min-height: 300px;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap; /* If you want images to wrap to next line on overflow */
@@ -102,7 +103,7 @@ p{
     justify-content: flex-end;
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 700px) {
     p{
         color:#a67979;
         font-size: 12px;;
@@ -220,7 +221,7 @@ pre{
 }
 
 .category_a{
-    display: block;
+    display: none;
     margin: 12px;
     position: absolute;
     left:25%;
@@ -275,4 +276,12 @@ pre{
     max-height: 150px;
     object-fit: contain;
 }
+}
+@media screen and (min-width:1048px){
+    .category_a{
+        display: block;
+        margin: 12px;
+        position: absolute;
+        left:25%;
+    }
 }

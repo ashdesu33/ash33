@@ -19,7 +19,7 @@
     border-radius: 50%;
     position: relative;
     top:50px;
-    left:20%;
+    left:10%;
     background: white;
     z-index: -30;
 }
@@ -242,7 +242,7 @@ ul{
 
     
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 900px) {
     .caption{
         display: none;
     }

@@ -1,24 +1,31 @@
 const projects =[
-{
-    cover:"Image/Liz/5.png",
-    title:"el lissitzky",
-    category:["Editorial, Packaging"],
-    class:'prj0',
-    page:'Pages/liz.html'
-},
-    {
-        cover:"Image/Knoll/cover.png",
-        title:"Knoll Workplace Research Library",
-        category:["Branding"],
-        class:'prj0',
-        page:'Pages/knoll.html'
-    },
     {
         cover:"Image/will to the end/layout.jpg",
         title:"The Will to the End",
         category:["Editorial,Web,Book"],
         class:'prj0',
         page:'Pages/end.html'
+    },
+    {
+        cover:"Image/indy/page2-min.png",
+        title:"The Indy",
+        category:["Editorial","Identity"],
+        class:'prj4',
+        page:'Pages/indy.html'
+    },
+    {
+        cover:"Image/Liz/5.png",
+        title:"el lissitzky",
+        category:["Editorial, Packaging"],
+        class:'prj0',
+        page:'Pages/liz.html'
+    },
+    {
+        cover:"Image/Knoll/cover.png",
+        title:"Knoll Workplace Research Library",
+        category:["Branding"],
+        class:'prj0',
+        page:'Pages/knoll.html'
     },
     {
         cover:"Image/archive/yearbook24/1.jpg",
@@ -28,18 +35,18 @@ const projects =[
         page:'Pages/yearbook.html'
     },
     {
-        cover:"Image/Birthdaycake/cake.gif",
-        title:"Birthdaycake",
-        category:["Code[OpenGL],Blender,Drawing"],
-        class:'prj1',
-        page:'Pages/cake.html'
-    },
-    {
         cover:"Image/Collection/collection.jpg",
         title:"Collection of Knots",
         category:["Poster","Sign"],
         class:'prj2',
         page:'Pages/collection.html'
+    },
+    {
+        cover:"Image/Birthdaycake/cake.gif",
+        title:"Birthdaycake",
+        category:["Code[OpenGL],Blender,Drawing"],
+        class:'prj1',
+        page:'Pages/cake.html'
     },
     {
         cover:"Image/Cyborg Manifesto/cyborg.gif",
@@ -48,13 +55,7 @@ const projects =[
         class:'prj3',
         page:'Pages/cyborg.html'
     },
-    {
-        cover:"Image/indy/page2-min.png",
-        title:"The Indy",
-        category:["Editorial","Identity"],
-        class:'prj4',
-        page:'Pages/indy.html'
-    },
+
     {
         cover:"Image/Random Thoughts/cover.JPG",
         title:"Random Thoughts",
@@ -82,23 +83,23 @@ const archive=[
         class:"Design Guild",
         description:"2024 RISD Artist Ball Poster, collaborate with Andrew Liu and Maggie Xian."
     },
+    {title:"Which Window will Your Arms Reach",
+        category:"Promotion",
+        img:["../Image/archive/window.gif","../Image/archive/window-06.jpg","../Image/archive/window-08.jpg",
+        "../Image/archive/window-09.jpg","../Image/archive/window-10.jpg","../Image/archive/window2.gif","../Image/archive/window-07.jpg",
+        "../Image/archive/window3.gif","../Image/archive/window-11.jpg"],
+        year:"2023",
+        class:"Design Studio 3",
+        description:`Which Window will Your Arms Reach took inpiration from a poem 床边小舞曲 written by 可仔(Ke Zai).
+        This project is intended to bring female domestic workers voices to the public, raising awareness and recognition of their labor.
+        The original and translated poem can be found in this <a href="https://www.are.na/block/24691378">link</a>.`
+       },
     {title:"Heads in the cloud",
      category:"Promotion",
      img:["../Image/archive/clouds-05.jpg","../Image/archive/clouds-1.jpg","../Image/archive/clouds-02.jpg","../Image/archive/clouds-04.jpg","../Image/archive/clouds-03.jpg"],
      year:"2023",
      class:"Design Guild",
      description:"Heads in the cloud proposes visual design for RISD Artist Ball 2023. With Riso printed poster, hand rings, and tickets."
-    },
-    {title:"Which Window will Your Arms Reach",
-     category:"Promotion",
-     img:["../Image/archive/window.gif","../Image/archive/window-06.jpg","../Image/archive/window-08.jpg",
-     "../Image/archive/window-09.jpg","../Image/archive/window-10.jpg","../Image/archive/window2.gif","../Image/archive/window-07.jpg",
-     "../Image/archive/window3.gif","../Image/archive/window-11.jpg"],
-     year:"2023",
-     class:"Design Studio 3",
-     description:`Which Window will Your Arms Reach took inpiration from a poem 床边小舞曲 written by 可仔(Ke Zai).
-     This project is intended to bring female domestic workers voices to the public, raising awareness and recognition of their labor.
-     The original and translated poem can be found in this <a href="https://www.are.na/block/24691378">link</a>.`
     },
     {title:"In the land of everything",
      category:"Editorial,Riso",

@@ -1,8 +1,49 @@
 const navBar = document.querySelector('nav');
 const pathParts = window.location.pathname.split('/');
 const isHomePage = pathParts.length === 2 && (pathParts[1] === '' || pathParts[1] === 'index.html');
-    const isDesktopView = window.matchMedia("(min-width: 768px)").matches;
-   
+    
+const isDesktopView = window.matchMedia("(min-width: 768px)").matches;
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const imagery = document.querySelector(".imagery");
+        const lazyImages = document.querySelectorAll(".lazy");
+        let loadedCount = 0;
+    
+        const checkAllImagesLoaded = () => {
+            if (loadedCount === lazyImages.length) {
+                imagery.classList.add("loaded"); // Reveal the imagery container
+            }
+        };
+    
+        lazyImages.forEach((image, index) => {
+            const src = image.dataset.src;
+            image.src = src;
+    
+            image.onload = () => {
+                setTimeout(() => {
+                    image.classList.add("visible"); // Staggered effect
+                }, index * 150); // Adjust the delay for staggering
+                loadedCount++;
+                checkAllImagesLoaded();
+            };
+    
+            image.onerror = () => {
+                console.error(`Image failed to load: ${src}`);
+                loadedCount++;
+                checkAllImagesLoaded();
+            };
+    
+            // For cached images
+            if (image.complete) {
+                image.onload();
+            }
+        });
+    
+        // Check immediately in case no images need loading
+        if (lazyImages.length === 0 || loadedCount === lazyImages.length) {
+            checkAllImagesLoaded();
+        }
+    });
 function loadNav(){
     
     console.log(isDesktopView);

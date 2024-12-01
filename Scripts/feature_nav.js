@@ -1,5 +1,6 @@
 let navContainer = "";
 const navbar = document.querySelector('.nav ul');
+console.log(window.location.pathname);
 function feature_nav(){
     const currentPage = window.location.pathname;
     projects.forEach((project, index) => {

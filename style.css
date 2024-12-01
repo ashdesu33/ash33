@@ -19,7 +19,7 @@
     border-radius: 50%;
     position: relative;
     top:50px;
-    left:10%;
+    left:0%;
     background: white;
     z-index: -30;
 }
@@ -299,25 +299,6 @@ ul{
         transform: translateY(0);
     }
     
-    .projectContainer::-webkit-scrollbar {
-        display: none;  /* Safari and Chrome */
-    }
-    /* Custom scrollbar styles */
-    ::-webkit-scrollbar {
-        width: 0px;
-    }
-
-    ::-webkit-scrollbar-track {
-        background: #f3d5d5;
-    }
-
-    ::-webkit-scrollbar-thumb {
-        border-style: solid;
-        background-color:aliceblue ;
-        border-radius: 10px;
-        border-color: #F8F2F2;
-        width: 25px;
-    }
 
     /* ::-webkit-scrollbar-thumb:hover {
         background: #dababa;

@@ -141,24 +141,25 @@ pre{
     color:#775656;
 }
 .archiveContainer{
-    flex:0.9;
+    flex:0.8;
     padding-right: 0;
+    margin:0;
     overflow-x: hidden;
     padding-bottom: 10%;
 }
 .display_arc{
-    flex: 1.1;
+    flex: 1.2;
     border-left-style: solid;
     border-color: #c6b1b1;
     border-width: 0.1px;
-    height: 88vh;
+    height: 120vh;
     background: #F8F2F2;
     z-index: 10;
+    margin:0;
     display: flex;
     flex-direction: column; /* To layout children vertically */
-
     padding: 2rem;
-    padding-top: 5%;
+    padding-top: 1%;
     padding-bottom: 10%;
 }
 .project-content {
@@ -218,6 +219,7 @@ pre{
 }
 .arc_prj:hover, .arc_prj_selected{
     background-color: #f3d5d5;
+    transition: background-color 0.3s ease;
 }
 
 .category_a{
@@ -275,7 +277,23 @@ pre{
     box-sizing: border-box;
     max-height: 150px;
     object-fit: contain;
+    transition: filter 1s ease, transform 1s ease;
 }
+.index {
+    transition: filter 1s ease, transform 1s ease;
+}
+
+.index:hover {
+    transform: scale(1); /* Slight zoom-in effect */
+}
+
+.grayscale {
+    filter: grayscale(100%);
+    opacity:0.5;
+    transition: filter 1s ease, opacity 1s ease;
+}
+
+
 }
 @media screen and (min-width:1048px){
     .category_a{

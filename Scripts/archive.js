@@ -5,7 +5,7 @@ archive.forEach((project, index) => {
     if(index ===0){
         projectContainer += `
     <div class="arc_prj" style="border-top-style:solid;" onclick='initialDisplay()'>
-        <p class="title">${project.title}</p>
+        <p class="title" style="color: #000000;">${project.title}</p>
         <p class="category_a">${project.category}</p>
         <p class="year">${project.year}</p>
     </div>
@@ -15,7 +15,8 @@ archive.forEach((project, index) => {
     }
     else{
     projectContainer += `
-    <div class="arc_prj" onclick='displayProject(${JSON.stringify(project)}, ${index})'>
+    <div class="arc_prj" onclick='${project.page ? `goTo(${JSON.stringify(project.page)})` 
+        : `displayProject(${JSON.stringify(project)}, ${index})`}'>
         <p class="title">${project.title}</p>
         <p class="category_a">${project.category}</p>
         <p class="year">${project.year}</p>
@@ -26,36 +27,91 @@ archive.forEach((project, index) => {
 });
 archiveContainer.innerHTML += projectContainer;
 
-function initialDisplay(){
+function initialDisplay() {
+    // Remove selected class from all project arcs
+    document.querySelectorAll('.arc_prj').forEach(el => {
+        el.classList.remove('arc_prj_selected');
+    });
+
+    // Select the first project arc and mark it as selected
+    const selectedProject = document.querySelectorAll('.arc_prj')[0];
+    if (selectedProject) {
+        selectedProject.classList.add('arc_prj_selected');
+    }
+
+    // Update the project display area
     const projectDisplayArea = document.querySelector('.display_arc');
     projectDisplayArea.innerHTML = `
         <div class="project-content">
             <div class="index_img"></div>
-            </div>
-        `;
-     
+        </div>
+    `;
+
     const projectContent = projectDisplayArea.querySelector('.project-content');
     const imgContainer = projectDisplayArea.querySelector('.index_img');
     let imagesLoaded = 0;
-    const totalImages = archive.length-1;
+    const totalImages = archive.length - 1;
 
-    archive.forEach((project,index) => {
-        if(index!=0){
-        const imgElement = new Image();
-        imgElement.onload = () => {
-            imagesLoaded++;
-            if (imagesLoaded === totalImages) {
-                projectContent.style.opacity = 1;
-            }
-        };
-        imgElement.classList.add("index");
-        imgElement.addEventListener("click", function() {
-            displayProject(project, index);
-        });
-        
-        imgElement.src = project.img[0];
-        imgContainer.appendChild(imgElement);
-    }
+    archive.forEach((project, index) => {
+        if (index != 0) {
+            // Create a new image element for each project
+            const imgElement = new Image();
+
+            // Set an onload listener to track image loading
+            imgElement.onload = () => {
+                imagesLoaded++;
+                if (imagesLoaded === totalImages) {
+                    projectContent.style.opacity = 1; // Show content once all images are loaded
+                }
+            };
+
+            // Add the "index" class to the image
+            imgElement.classList.add("index");
+
+            // Attach click event to each image to trigger the corresponding project's display function
+            imgElement.addEventListener("click", function () {
+                // Trigger the same click event as the corresponding project arc
+                const projectArc = document.querySelectorAll('.arc_prj')[index];
+                if (projectArc) {
+                    projectArc.click();
+                }
+            });
+
+            // Add hover functionality
+            imgElement.addEventListener("mouseover", function () {
+                // Add 'arc_prj_selected' to the corresponding project arc
+                const projectArc = document.querySelectorAll('.arc_prj')[index];
+                if (projectArc) {
+                    projectArc.classList.add('arc_prj_selected');
+                }
+
+                // Make all other images grayscale
+                document.querySelectorAll('.index').forEach(img => {
+                    if (img !== imgElement) {
+                        img.style.filter = 'grayscale(100%)';
+                    }
+                });
+            });
+
+            imgElement.addEventListener("mouseout", function () {
+                // Remove 'arc_prj_selected' from the corresponding project arc
+                const projectArc = document.querySelectorAll('.arc_prj')[index];
+                if (projectArc) {
+                    projectArc.classList.remove('arc_prj_selected');
+                }
+
+                // Remove grayscale filter from all images
+                document.querySelectorAll('.index').forEach(img => {
+                    img.style.filter = 'none';
+                });
+            });
+
+            // Set the source for the image
+            imgElement.src = project.img[0];
+
+            // Append the image to the container
+            imgContainer.appendChild(imgElement);
+        }
     });
 
 }

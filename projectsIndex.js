@@ -21,6 +21,13 @@ const projects =[
         page:'Pages/liz.html'
     },
     {
+        cover:"Image/vok/doc8.jpg",
+        title:"Völklingen Ironworks",
+        category:["Branding"],
+        class:'prj0',
+        page:'Pages/vok.html'
+    },
+    {
         cover:"Image/Knoll/cover.png",
         title:"Knoll Workplace Research Library",
         category:["Branding"],
@@ -54,15 +61,15 @@ const projects =[
         category:["Editorial","Book"],
         class:'prj3',
         page:'Pages/cyborg.html'
-    },
-
-    {
-        cover:"Image/Random Thoughts/cover.JPG",
-        title:"Random Thoughts",
-        category:["Book","Drawings"],
-        class:'prj6',
-        page:'Pages/random.html'
     }
+
+    // {
+    //     cover:"Image/Random Thoughts/cover.JPG",
+    //     title:"Random Thoughts",
+    //     category:["Book","Drawings"],
+    //     class:'prj6',
+    //     page:'Pages/random.html'
+    // }
 
 ]
 

@@ -338,7 +338,7 @@ ul{
         max-height: 40vh;
         object-fit: cover; /* Maintain aspect ratio */
         box-shadow: 0px 0px 0px rgb(255, 197, 197);  
-        transition: box-shadow 0.5s, filter 0.1s;
+        transition: box-shadow 0.5s;
         filter:sepia(1) saturate(90%) hue-rotate(310deg);
     }
     .project img:hover{

@@ -8,6 +8,28 @@ function setClock() {
 
     const seconds = now.getSeconds();
     const secondsDegrees = ((seconds / 60) * 360) + 90;
+    if(secondsDegrees >= 90 && secondsDegrees <= 180){
+        let adding = (secondsDegrees - 90)/90 * 10 + 8;
+        secondHand.style.width = adding + '%';
+        secondHand.style.left = (62 - (secondsDegrees - 90)/90 * 10) + '%';
+    }
+    else if(secondsDegrees > 180 && secondsDegrees <= 270){
+        let adding = -(secondsDegrees - 180)/90 * 10 + 18;
+        secondHand.style.width = adding + '%';
+        secondHand.style.left = (52 + (secondsDegrees - 180)/90 * 10) + '%';
+
+    }
+    else if(secondsDegrees > 270 && secondsDegrees <= 360){
+        let adding = (secondsDegrees - 270)/90 * 10 + 8;
+        secondHand.style.width = adding + '%';
+        secondHand.style.left = (62 - (secondsDegrees - 270)/90 * 10) + '%';
+
+    }
+    else{
+        let adding = -(secondsDegrees - 360)/90 * 10 + 18;
+        secondHand.style.width = adding + '%';
+        secondHand.style.left = (52 + (secondsDegrees - 360)/90 * 10) + '%';
+    }
     secondHand.style.transform = `rotate(${secondsDegrees}deg)`;
 
     const minutes = now.getMinutes();

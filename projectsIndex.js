@@ -82,62 +82,62 @@ const archive=[
         class:"",
         description:""
     },
-    {
-        title:"The Will to the End",
-        category:["Ed,Web"],
-        img:["Image/will to the end/layout.jpg"],
-        year:"2023",
-        class:'TypeIII',
-        page:'Pages/end.html'
-    },
-    {
-        title:"The Indy",
-        img:["Image/indy/page2-min.png"],
-        category:["Ed"],
-        year:"2024",
-        class:'The College Hill Independence',
-        page:'Pages/indy.html'
-    },
-    {
-        title:"el lissitzky",
-        img:["Image/Liz/5.png"],
-        category:["Ed"],
-        year:"2024",
-        class:'Grad Type III',
-        page:'Pages/liz.html'
-    },
-    {
-        title:"RISD 2024 Yearbook",
-        img:["Image/archive/yearbook24/1.jpg"],
-        year:"2024",
-        category:["Ed"],
-        class:'Design Guild',
-        page:'Pages/yearbook.html'
-    },
-    {
-        title:"Knoll Workplace Research Library",
-        img:["Image/Knoll/cover.png"],
-        year:"2024",
-        category:["Id"],
-        class:'Design Studio 4',
-        page:'Pages/knoll.html'
-    },
-    {
-        title:"Collection of Knots",
-        img:["Image/Collection/collection.jpg"],
-        year:"2023",
-        category:["Poster","Sign"],
-        class:'Design Studio 3',
-        page:'Pages/collection.html'
-    },
-    {
-        title:"Cyborg Manifesto",
-        img:["Image/Cyborg Manifesto/cyborg.gif"],
-        year:"2022",
-        category:["Ed"],
-        class:'Design Studio 1',
-        page:'Pages/cyborg.html'
-    },
+    // {
+    //     title:"The Will to the End",
+    //     category:["Ed,Web"],
+    //     img:["Image/will to the end/layout.jpg"],
+    //     year:"2023",
+    //     class:'TypeIII',
+    //     page:'Pages/end.html'
+    // },
+    // {
+    //     title:"The Indy",
+    //     img:["Image/indy/page2-min.png"],
+    //     category:["Ed"],
+    //     year:"2024",
+    //     class:'The College Hill Independence',
+    //     page:'Pages/indy.html'
+    // },
+    // {
+    //     title:"el lissitzky",
+    //     img:["Image/Liz/5.png"],
+    //     category:["Ed"],
+    //     year:"2024",
+    //     class:'Grad Type III',
+    //     page:'Pages/liz.html'
+    // },
+    // {
+    //     title:"RISD 2024 Yearbook",
+    //     img:["Image/archive/yearbook24/1.jpg"],
+    //     year:"2024",
+    //     category:["Ed"],
+    //     class:'Design Guild',
+    //     page:'Pages/yearbook.html'
+    // },
+    // {
+    //     title:"Knoll Workplace Research Library",
+    //     img:["Image/Knoll/cover.png"],
+    //     year:"2024",
+    //     category:["Id"],
+    //     class:'Design Studio 4',
+    //     page:'Pages/knoll.html'
+    // },
+    // {
+    //     title:"Collection of Knots",
+    //     img:["Image/Collection/collection.jpg"],
+    //     year:"2023",
+    //     category:["Poster","Sign"],
+    //     class:'Design Studio 3',
+    //     page:'Pages/collection.html'
+    // },
+    // {
+    //     title:"Cyborg Manifesto",
+    //     img:["Image/Cyborg Manifesto/cyborg.gif"],
+    //     year:"2022",
+    //     category:["Ed"],
+    //     class:'Design Studio 1',
+    //     page:'Pages/cyborg.html'
+    // },
     {title:"Into the Woods",
         category:"Promo",
         img:["../Image/archive/artistball/artist-ball-animation_update.gif","../Image/archive/artistball/4.png",
@@ -218,14 +218,14 @@ const archive=[
       Made in found fabric scraps, it is intended to explore color and surface in a versatile form, with 
       care and collaboration. Project collaborated with Radhika Chauhan.`
     },
-    {
-        title:"Birthdaycake",
-        img:["Image/Birthdaycake/cake.gif"],
-        category:["Code,Blender"],
-        year:"2023",
-        class:'CSCI 1230',
-        page:'Pages/cake.html'
-    },
+    // {
+    //     title:"Birthdaycake",
+    //     img:["Image/Birthdaycake/cake.gif"],
+    //     category:["Code,Blender"],
+    //     year:"2023",
+    //     class:'CSCI 1230',
+    //     page:'Pages/cake.html'
+    // },
     {title:"Poster Collection",
         category:"Promo",
         img:["../Image/archive/pos/1.png","../Image/archive/pos/2.png","../Image/archive/pos/4.png",

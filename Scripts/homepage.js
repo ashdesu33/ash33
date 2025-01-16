@@ -15,7 +15,30 @@ function addProject(){
     document.querySelector('.projectContainer').innerHTML = currentContent + projectContainer;
 }
 
+
+
+
 addProject();
+const projectsElements = document.querySelectorAll('.project');
+console.log(projectsElements);
+  projectsElements.forEach(projectElement => {
+    const caption = projectElement.querySelector('.category');
+    const caption2 = projectElement.querySelector('.caption');
+    const image = projectElement.querySelector('img');
+
+    // Add mouseenter event to show the caption
+    image.addEventListener('mouseenter', () => {
+      caption.style.opacity = 1; 
+      caption2.style.opacity = 1;   
+    });
+
+    // Add mouseleave event to hide the caption
+    image.addEventListener('mouseleave', () => {
+      caption.style.opacity = 0; 
+      caption2.style.opacity = 0;  
+    });
+  });
+
 
 function toArchive(){
   const mainpage = document.querySelector('.mainpage');

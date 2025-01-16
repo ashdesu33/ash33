@@ -117,6 +117,7 @@ function initialDisplay() {
 }
 
 function displayProject(project,index) {
+    console.log(index);
         // Reset the background color for all projects
         document.querySelectorAll('.arc_prj').forEach(el => {
             el.classList.remove('arc_prj_selected');

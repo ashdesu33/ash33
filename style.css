@@ -163,6 +163,7 @@ ul{
     margin-bottom: 0;
     color: #555151;
     font-size: 16px;
+    font-family: 'Franklin Gothic Medium', sans-serif;
 }
 .border{
     text-align: center;
@@ -174,6 +175,7 @@ ul{
     margin-top: 0;
     font-size: 12px;
     color: #a67979;
+    font-family: 'Franklin Gothic Medium', sans-serif;
  
 }
 .nav{
@@ -275,24 +277,23 @@ ul{
       }
 
       .projectContainer {
-        padding-top: 15%;
-        padding-left: 2%;
         display: flex;
         opacity: 1;
-        transform: translateY(20px); /* Start position (20px below) */
+        padding-left: 2%;
+        transform: translateY(20px);
         transition: opacity 0.5s ease, transform 0.5s ease;
         flex-direction: row;
         flex-wrap: wrap;
         overflow-x: hidden;
         scroll-behavior: smooth;
         width: 100vw;
-        height: 70vh;
+        height: 90vh;
         column-gap: 0px;
-        margin-bottom: 15%;
         margin-top: 0;
-        overflow-y: auto;
         pointer-events: none;
         justify-content: space-between;
+        align-content: center;
+        padding-bottom: 10vh;
         
     }
     .projectContainer.visible{
@@ -330,7 +331,10 @@ ul{
     }
 
     .caption{
-        display: none;
+        display: inline-flex;
+        opacity: 0;
+        padding-top: 0.5em;
+        transition: 0.5s linear opacity;
     }
   
     .project img{
@@ -350,7 +354,11 @@ ul{
         font-size: 13px;
     }
     .category{
-        display: none;
+        display: inline-flex;
+        opacity: 0;
+        margin-top: 2px;
+        padding:0;
+        transition: 0.5s linear opacity;
     }
     .star {
         display: block;
@@ -449,18 +457,19 @@ ul{
         cursor: url('font/no.ico'),default;
     }
     .clock-wrapper {
-        background-color: aliceblue;
+    background-color: aliceblue;
     padding: 20px;
     width: 100%;
     height: 20vh;
     border-radius: 10px;  
-    position: absolute;  /* Absolute positioning to control placement */
-    z-index: -20;   
-    top: calc(100vh - 20vh);
+    position: absolute; 
+    z-index: 10;   
+    top: 80vh;
+    display: flex;
     }
     .clock {
     width: 80%;
-    height: 80%;
+    height: 70%;
     border: 3px solid #a67979;
     border-style: dotted;
     border-radius: 50%;
@@ -531,14 +540,10 @@ ul{
   }
 
 @media screen and (min-width: 1000px) {
-  .projectContainer {
-
-    padding-top: 8%;
-    }
   .project{
     max-width: 15%;
   }  
   .clock-wrapper{
-    top:88vh;
+    top:80vh;
   }
 }   

@@ -146,6 +146,24 @@ const archive=[
         class:"Design Guild",
         description:"2024 RISD Artist Ball Poster, collaborate with Andrew Liu and Maggie Xian."
     },
+    {title:"RISD Orientation 2028",
+        category:"Id",
+        img:["../Image/archive/orientation/banner.gif","../Image/archive/orientation/1.png",
+            "../Image/archive/orientation/2.png","../Image/archive/orientation/links.gif",
+            "../Image/archive/orientation/loop_ring.gif",
+            "../Image/archive/orientation/3.png"
+        ],
+        year:"2024",
+        class:"Design Guild",
+        description:"RISD Orientation Identity inspired by the friendship bracelet. Design with Hanna Jeong, Maggie Xian, Andrew Liu"
+    },
+    {title:"Elm",
+        category:"Type",
+        img:["../Image/archive/elm/regular.png","../Image/archive/elm/1.jpg","../Image/archive/elm/2.jpg"],
+        year:"2024",
+        class:"Grad Type Design",
+        description:"Elm is a textface designed for small-size poems. Inspired by Elm by Sylvia Plath."
+    },
     {title:"Which Window will Your Arms Reach",
         category:"Promo",
         img:["../Image/archive/window.gif","../Image/archive/window-06.jpg","../Image/archive/window-08.jpg",
@@ -228,9 +246,10 @@ const archive=[
     // },
     {title:"Poster Collection",
         category:"Promo",
-        img:["../Image/archive/pos/1.png","../Image/archive/pos/2.png","../Image/archive/pos/4.png",
+        img:["../Image/archive/pos/1.png","../Image/archive/pos/2.png","../Image/archive/pos/Frame 7.png",
+            "../Image/archive/pos/4.png",
             "../Image/archive/pos/5.png","../Image/archive/pos/3.png",
-           "../Image/archive/pos/6.jpg"],
+           "../Image/archive/pos/6.jpg", "../Image/archive/pos/draw.png"],
         year:"General",
         class:"",
         description:""

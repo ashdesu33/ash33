@@ -29,8 +29,10 @@ body{
 
 .content{
     font-size: 12px;
+    line-height: 14px;
     color: #a67979;
     margin:0;
+    font-family: 'Franklin Gothic Medium', sans-serif;
 }
 hr{
     color: #a67979;
@@ -184,7 +186,8 @@ hr{
         top:8%;
     }
     .content{
-        font-size: 11px;
+        font-size: 12px;
+        line-height: 15px;
         color: #a67979;
         margin:0;
     }

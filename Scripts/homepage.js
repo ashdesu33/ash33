@@ -46,6 +46,7 @@ function toArchive(){
         mainpage.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 }
+
 window.addEventListener('scroll', function () {
   const mainpage = document.querySelector('.mainpage');
   const arc = document.querySelector('.archiveContainer');

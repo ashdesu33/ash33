@@ -1,5 +1,6 @@
 let navContainer = "";
 const navbar = document.querySelector('.nav ul');
+const navbar_ft = document.querySelector('.c2 ul');
 console.log(window.location.pathname);
 function feature_nav(){
     const currentPage = window.location.pathname;
@@ -16,4 +17,11 @@ function feature_nav(){
     navbar.innerHTML += navContainer;
   
 }
+function toTop(){
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth' 
+    });
+  }
 feature_nav();

@@ -2,25 +2,57 @@ body{
     background: #e9e9e9;
     
 }
+.footer{
+    font-family: 'Franklin Gothic Medium',sans-serif;
+    display: flex;
+    background-color: #f3d5d5;
+    padding:10px;
+    padding-top: 3rem;
+}
+#top{
+    font-family: Elm Mono;
+    font-size: 15px;
+}
+.c2{
+    padding-left: 10em;
+}
+.c2 p{
+    padding-bottom: 10px;
+}
+.c2 ul{
+    padding-left:0;
+}
+.c2 li{
+    padding-bottom: 0.5rem;
+    border-top: solid;
+    display: inline-flex;
+    margin-right: 20px;
+}
 .container{
-    padding-top: 18%;
+    padding-top: 10%;
     width: 100%;
 }
 .container img, video{
     width: 100%;
     margin-top:-5px;
 }
+#upline{
+    display: none;
+}
 .description{
     font-size: 16px;
     margin:0;
     background-color: rgba(240, 248, 255,0.85);
     padding:15px;
-    position:fixed;
+    position:flex;
     bottom:0;
+}
+.arrow{
+    display: none;
 }
 
 .imagery{
-    padding-bottom: 70%;
+    padding-bottom: 0%;
     overflow-y: auto;
 }
 .border{
@@ -111,7 +143,7 @@ hr{
 }
 
 .imagery.loaded {
-    position:absolute;
+    position:block;
     opacity: 1;
     transform: translateY(0);
     z-index: -100;
@@ -167,23 +199,42 @@ hr{
 
     .container{
         padding-top: 4%;
-        padding-left: 23%;
-        width: 77%;
+        padding-left: 0%;
+        padding-bottom: 0;
+        width: 100%;
         margin: 0;
         overflow: hidden;
     }
+    .title{
+        margin:0;
+        font-size: 15px;
+        padding-right: 5em;
+    }
+    .category{
+        opacity: 1;
+    }
+    .type{
+        font-size:13px;
+    }
     .arrow{
         display: none;
+    }
+    .project-description{
+        width: 40%;
+        padding-left: 1rem;
     }
     .description{
         font-size: 13px;
         margin:0;
         left:0;
-        width:20%;
+        width:100%;
         background-color: rgba(240, 248, 255,0.85);
         padding:20px;
-        position:fixed;
+        padding-left: 1rem;
+        position:relative;
         top:8%;
+        display: inline-flex;
+        gap:20px;
     }
     .content{
         font-size: 12px;
@@ -228,7 +279,9 @@ hr{
         width: 6%;
         display: block;
     }
-
+    .footer{
+        padding-top: 5em;
+    }
    
     .backdrop-div{
         border-bottom: #a67979;
@@ -241,6 +294,9 @@ hr{
         z-index: 100;
         top:7%;
 
+    }
+    .c2 p{
+        padding-bottom: 0px;
     }
 
     

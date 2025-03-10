@@ -60,13 +60,14 @@ function initialDisplay() {
             // Set an onload listener to track image loading
             imgElement.onload = () => {
                 imagesLoaded++;
-                if (imagesLoaded === totalImages) {
+                if (index === totalImages || index + 3 === imagesLoaded) {
                     projectContent.style.opacity = 1; // Show content once all images are loaded
                 }
             };
 
             // Add the "index" class to the image
             imgElement.classList.add("index");
+
 
             // Attach click event to each image to trigger the corresponding project's display function
             imgElement.addEventListener("click", function () {
@@ -108,6 +109,7 @@ function initialDisplay() {
 
             // Set the source for the image
             imgElement.src = project.img[0];
+            imgElement.loading="lazy";
 
             // Append the image to the container
             imgContainer.appendChild(imgElement);

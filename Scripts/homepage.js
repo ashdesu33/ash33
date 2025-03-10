@@ -1,18 +1,30 @@
 function addProject(){
-    let projectContainer ="";
+  const projectContainer = document.querySelector('.projectContainer');
     const currentContent = document.querySelector('.projectContainer').innerHTML;
-
+    let delay = 0;
     projects.forEach((project) => {
-        projectContainer += `
-          <div class="project"onclick="goTo('${project.page}');">
-            <img src="${project.cover}" alt="${project.title}" />
-            <p class="caption">${project.title}</p>
-            <p class="category">${project.category}</p>
-            <p class="border">＊═─═─═─═─═─═─＊═─═─═─═─═─═─＊    ＊═─═─═─═─═─═─＊═─═─═─═─═─═─*</p>
+      const projectElement = document.createElement("div");
+      projectElement.classList.add("project");
+      projectElement.style.opacity = "0"; // Initially hidden
+      projectElement.style.transform = "translateY(20px)"; // Move down
+
+      projectElement.innerHTML = `
+          <img src="${project.cover}" alt="${project.title}" onclick="goTo('${project.page}');" />
+          <div class='project-info'>
+              <p class="caption">${project.title}</p>
+              <p class="category">${project.category}</p>
           </div>
-        `;
+      `;
+
+      // Add a slight delay before showing each project
+      setTimeout(() => {
+          projectElement.style.opacity = "1";
+          projectElement.style.transform = "translateY(0)";
+      }, delay);
+
+      delay += 80; // Increase delay for the next project
+      projectContainer.appendChild(projectElement);
       });
-    document.querySelector('.projectContainer').innerHTML = currentContent + projectContainer;
 }
 
 
@@ -25,6 +37,7 @@ console.log(projectsElements);
     const caption = projectElement.querySelector('.category');
     const caption2 = projectElement.querySelector('.caption');
     const image = projectElement.querySelector('img');
+    
 
     // Add mouseenter event to show the caption
     image.addEventListener('mouseenter', () => {
@@ -44,6 +57,7 @@ function toArchive(){
   const mainpage = document.querySelector('.mainpage');
     if (mainpage) {
         mainpage.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        loadNav();
     }
 }
 

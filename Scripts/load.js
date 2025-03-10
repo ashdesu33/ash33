@@ -44,10 +44,9 @@ const isDesktopView = window.matchMedia("(min-width: 768px)").matches;
             checkAllImagesLoaded();
         }
     });
+
 function loadNav(){
     
-    console.log(isDesktopView);
-    // Only toggle the navigation bar if we're not in desktop view
     if ( !isDesktopView) {
         if ((navBar.style.top === '80vh') || navBar.style.top === '50vh'
         || navBar.style.top === '45vh'){
@@ -67,7 +66,6 @@ function loadNav(){
         
     }
     
-
 }
 function startAutoScroll() {
     const gallery = document.getElementById('scroll');
@@ -137,22 +135,3 @@ function changeImage(step) {
 
     document.getElementById('enlargedImage').src = images[currentIndex].src;
 }
-
-document.addEventListener('DOMContentLoaded', function() {
-    const arrow = document.querySelector('.description .arrow');
-    let isDescriptionVisible = true;
-
-    arrow.addEventListener('click', function() {
-        const description = this.parentElement;
-        
-        if (isDescriptionVisible) {
-            description.style.transform = 'translateY(80%)'; // Move out of screen
-            this.classList.add('rotated'); // Rotate arrow
-        } else {
-            description.style.transform = 'translateY(0)'; // Move back to original position
-            this.classList.remove('rotated'); // Revert arrow rotation
-        }
-
-        isDescriptionVisible = !isDescriptionVisible;
-    });
-});

@@ -23,6 +23,7 @@ p{
     overflow-x: hidden;
     padding-bottom: 10%;
     padding-top: 5%;
+    
     color:#a67979;
 }
 .display_arc{
@@ -134,7 +135,7 @@ hr{
     left:0;
     top:8%;
     width:100vw;
-    height: 90vh;
+    height: 100vh;
     z-index: 10;
     margin:0;
     background-color: aliceblue;
@@ -191,9 +192,10 @@ pre{
 }
 
 .prj_img img {
-    max-width: 100%;
+    max-width: 85%;
     height: auto;
     margin: 10px; /* Spacing between images */
+    background-color: #f3d5d5;
 }
 .subject {
     color:#775656;

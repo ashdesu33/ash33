@@ -51,7 +51,7 @@ const projects =[
     {
         cover:"Image/Birthdaycake/cake.gif",
         title:"Birthdaycake",
-        category:["Code[OpenGL],Blender,Drawing"],
+        category:["Code,Blender"],
         class:'prj1',
         page:'Pages/cake.html'
     },

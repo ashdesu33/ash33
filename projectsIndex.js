@@ -164,6 +164,16 @@ const archive=[
         class:"Design Guild",
         description:"RISD Orientation Identity inspired by the friendship bracelet. Design with Hanna Jeong, Maggie Xian, Andrew Liu"
     },
+    {title:"ODC 2024",
+        category:"Id",
+        img:["../Image/archive/odc_1.gif","../Image/archive/odc_1.png",
+            "../Image/archive/odc_2.png","../Image/archive/concept.gif","../Image/archive/odc_4.png", 
+            "../Image/archive/odc_5.png","../Image/archive/odc_6.png","../Image/archive/odc_7.png"
+        ],
+        year:"2024",
+        class:"another design lab",
+        description:"Design pitch for Developer Conference 2024 base on the infinite possibilities inside the empty bracket."
+    },
     {title:"Elm",
         category:"Type",
         img:["../Image/archive/elm/regular.png","../Image/archive/elm/1.jpg","../Image/archive/elm/2.jpg"],
@@ -233,6 +243,14 @@ const archive=[
    <b>1.</b> <i>a dialogue with people who are really closed in my life(my mother, my friend, and my partner)</i>
    <br><b>2.</b> <i>the context of the conversation</i>
    <br><b>3.</b> <i>a reflection letter to the person I had a conversation with.</i>`
+    },
+    {
+        title:"Cyborg Manifesto",
+        img:["Image/Cyborg Manifesto/cyborg.gif"],
+        year:"2022",
+        category:["Ed"],
+        class:'Design Studio 1',
+        page:'Pages/cyborg.html'
     },
     {title:"Color Quilt",
      category:"Text",

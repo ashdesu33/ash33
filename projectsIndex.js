@@ -49,19 +49,26 @@ const projects =[
         page:'Pages/collection.html'
     },
     {
+        cover:"Image/printer/cover.gif",
+        title:"Thinking about the Plotter [ongoing]",
+        category:["CTC","Web"],
+        class:'prj4',
+        page:'Pages/printer.html'
+    },
+    {
         cover:"Image/Birthdaycake/cake.gif",
         title:"Birthdaycake",
         category:["Code,Blender"],
         class:'prj1',
         page:'Pages/cake.html'
-    },
-    {
-        cover:"Image/Cyborg Manifesto/cyborg.gif",
-        title:"Cyborg Manifesto",
-        category:["Editorial","Book"],
-        class:'prj3',
-        page:'Pages/cyborg.html'
     }
+    // {
+    //     cover:"Image/Cyborg Manifesto/cyborg.gif",
+    //     title:"Cyborg Manifesto",
+    //     category:["Editorial","Book"],
+    //     class:'prj3',
+    //     page:'Pages/cyborg.html'
+    // }
 
     // {
     //     cover:"Image/Random Thoughts/cover.JPG",

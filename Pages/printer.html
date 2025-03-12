@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://use.typekit.net/lwm3pvk.css">
+        <title>Ash Ma</title>
+        <link rel="stylesheet" href="../style.css">
+        <link rel="stylesheet" href="page.css">
+        <link rel="icon" type="image/png" href="../Image/favicon.png" >
+    </head>
+    <body>
+        <header>
+            <hr id="upline">
+            <div class ="head">
+                <a href="../index.html">ASH MA</a>
+                <p class="desktop"> archive</p>
+                <a class="mobile" onclick=loadNav()>featured</a>
+                <a id="about" href="about.html">About Me</a>
+            </div>
+            <div class="backdrop-div"></div>
+        </header>
+        <div class="border">
+        </div>
+        <main>
+            <div class="container">
+                <div class="description">
+                    <span class="arrow">↓</span>
+                    <p class="title">Thinking about the Plotter</p>
+                    <div class="type">
+                        <p class="content" style="color:rgb(142, 92, 112)">for Ambient Interface</p>
+                        <p class="category" style="color:rgb(142, 92, 112)">CTC, Web / 2025</p>
+                        <br>
+                    </div>
+                    <div class="project-description">
+                    <p class="content"> This project is an extended experiment about sound-making visualizers. Taking the form of a pen plotter(something that is in between the human printing and the digital printing),I want to pay attention to how the movement(labor) defines the sound, and how sound finds traces in a graphical language.  </p>
+                    <br>
+                    <p class="content">There is something that is so mundane in the rotation of the motors yet precisely pinpoints my most native appreciation to live in an able yet disabled body.</p>
+                 
+                    </div>
+                    <div class="to">
+                    <hr>
+
+                    <p class="content"><b><a href="indy.html">previous project</a></b></p>
+                    <p class="content"><b><a href="vok.html">next project</a></b></p>
+                    </div>
+                </div>
+                <div class="imagery">
+                    <img src="../Image/printer/cover.jpg" onclick="openModal(this)">
+                    <img src="../Image/printer/comp.png" onclick="openModal(this)">
+                    <div style="display: inline-flex; width: 80%;padding:10%;justify-content: space-around;">
+                        <img src="../Image/printer/p2.jpg" onclick="openModal(this)" style="width: 40%;height: auto; margin:10px;">
+                        <img src="../Image/printer/p1.jpg" onclick="openModal(this)"style="width: 40%;height: auto;margin:10px;">
+                        
+                    </div>
+                    <p class="content" style="display:flex; justify-content: space-around; font-size: 15px;">The "failed" printing of Cornelius Cardew's <i>Treatise 04</i> & <i>Treatise 05 </i> </p>
+                    <div style="display: inline-flex; width: 80%;padding:10%;justify-content: space-around;">
+                        <img src="../Image/printer/p4.jpg" onclick="openModal(this)" style="width: 40%;height: auto;">
+                        <img src="../Image/printer/p5.jpg" onclick="openModal(this)"style="width: 40%;height: auto;">
+                        
+                    </div>
+                    <video id="video1" autoplay loop muted playsinline>
+                        <source src="../Image/printer/printer.mp4" type="video/mp4">
+                    </video>
+                    <button class="soundToggle" data-video="video1">🔇 Unmute</button>
+                    <img src="../Image/printer/comp2.png" onclick="openModal(this)">
+                    <div style="display: inline-flex; width: 80%;padding:10%;justify-content: space-around;">
+                        <img src="../Image/printer/web_demo1.gif" onclick="openModal(this)" style="width: 40%;height: auto;">
+                        <img src="../Image/printer/web_demo2.gif" onclick="openModal(this)"style="width: 40%;height: auto;">
+                        
+                    </div>
+                    <img src="../Image/printer/comp.png" onclick="openModal(this)">
+                    <div style="display: inline-flex; width: 80%;padding:10%;justify-content: space-around;">
+                        <img src="../Image/printer/p3.jpg" onclick="openModal(this)" style="width: 60%;height: auto;">
+                        <img src="../Image/printer/p6.jpg" onclick="openModal(this)"style="width: 30%;height: auto;">
+                        
+                    </div>
+
+                    <video id="video2" autoplay loop muted playsinline>
+                        <source src="../Image/printer/clip1_3.mp4" type="video/mp4">
+                    </video>
+                    <button class="soundToggle" data-video="video2">🔇 Unmute</button>
+
+                    
+                </div>
+
+                <div id="imageModal" class="modal">
+                    <span class="close" onclick="closeModal()">&times;</span>
+                    <img class="modal-content" id="enlargedImage">
+                    <a class="prev" onclick="changeImage(-1)">&#10094;</a>
+                    <a class="next" onclick="changeImage(1)">&#10095;</a>
+                </div>
+                <div class="footer">
+                    <a id="top" onclick="toTop()"> BACK TO TOP</a>
+                    <div class="c2 content">
+                        <p class="content"><b><a href="indy.html">previous project: The Indy</a></b></p>
+                        <p class="content"><b><a href="vok.html">next project: Völklingen Ironworks</a></b></p>
+                    </div>
+                </nav>
+                </div>
+            </div>
+           
+        </main>
+        <nav class="nav" style="top: 100vh;">
+            
+            <ul>            
+            </ul>
+        
+    </nav>
+    <script src="../projectsIndex.js"></script>
+    <script src="../Scripts/feature_nav.js"></script>
+        <script src="../Scripts/load.js"></script>
+        <script src="../Scripts/sound.js"></script>
+</html>

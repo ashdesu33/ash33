@@ -7,13 +7,6 @@ const projects =[
         page:'Pages/end.html'
     },
     {
-        cover:"Image/indy/page2-min.png",
-        title:"The Indy",
-        category:["Editorial","Identity"],
-        class:'prj4',
-        page:'Pages/indy.html'
-    },
-    {
         cover:"Image/Liz/5.png",
         title:"el lissitzky",
         category:["Editorial, Packaging"],
@@ -35,6 +28,13 @@ const projects =[
         page:'Pages/knoll.html'
     },
     {
+        cover:"Image/indy/page2-min.png",
+        title:"The Indy",
+        category:["Editorial","Identity"],
+        class:'prj4',
+        page:'Pages/indy.html'
+    },
+    {
         cover:"Image/archive/yearbook24/1.jpg",
         title:"RISD 2024 Yearbook",
         category:["Book"],
@@ -49,7 +49,7 @@ const projects =[
         page:'Pages/collection.html'
     },
     {
-        cover:"Image/printer/cover.gif",
+        cover:"Image/printer/web_demo1.gif",
         title:"Thinking about the Plotter [ongoing]",
         category:["CTC","Web"],
         class:'prj4',
@@ -144,6 +144,21 @@ const archive=[
     //     category:["Ed"],
     //     class:'Design Studio 1',
     //     page:'Pages/cyborg.html'
+    // },
+    // {title:"Feetwashing Heaven",
+    //     category:"Exhib",
+    //     img:["../Image/archive/feet/cover.JPG",
+    //         "../Image/archive/feet/ASH_MA_FWH_1.jpg",
+    //         "../Image/archive/feet/ASH_MA_FWH_2.jpg",
+    //         "../Image/archive/feet/ASH_MA_FWH_3.jpg",
+    //         "../Image/archive/feet/p1.JPG",
+    //         "../Image/archive/feet/p2.JPG",
+            
+
+    //     ],
+    //     year:"2025",
+    //     class:"Collaborate Self-initiated Project",
+    //     description:""
     // },
     {title:"Into the Woods",
         category:"Promo",

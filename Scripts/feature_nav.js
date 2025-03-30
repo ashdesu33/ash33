@@ -5,10 +5,13 @@ const navbar_ft = document.querySelector('.c2 ul');
 console.log(window.location.pathname);
 function feature_nav(){
     const currentPage = window.location.pathname;
-    nav.innerHTML += `<div class='featuretab'onclick='loadNav()'><p>FEATURED</p></div>`;
+    if (currentPage.endsWith('index.html') || window.location.pathname === '/') {
+        nav.innerHTML += `<div class='featuretab'onclick='loadNav()'><p>FEATURED</p></div>`;
+    }
     projects.forEach((project, index) => {
         
         if (currentPage.endsWith('index.html') || window.location.pathname === '/') {
+            
             navContainer += `<li onclick="goTo('${project.page}');"><hr><a href="${project.page}">+ ${project.title} </a><span>(${project.category})</span></li>`
         }
         else{

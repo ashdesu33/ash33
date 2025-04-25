@@ -57,7 +57,7 @@ function toArchive(){
   const mainpage = document.querySelector('.mainpage');
     if (mainpage) {
         mainpage.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        loadNav();
+        // loadNav();
     }
 }
 

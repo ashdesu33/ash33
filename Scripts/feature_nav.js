@@ -31,17 +31,17 @@ function toTop(){
   }
 feature_nav();
 
-function checkScrollPosition() {
-    const projectContainer = document.querySelector('.mainpage');
-    if (!projectContainer) return;
+// function checkScrollPosition() {
+//     const projectContainer = document.querySelector('.mainpage');
+//     if (!projectContainer) return;
 
-    const rect = projectContainer.getBoundingClientRect();
-    const isAtTop = rect.top <= window.innerHeight * 0.2 && rect.bottom > 0;
+//     const rect = projectContainer.getBoundingClientRect();
+//     const isAtTop = rect.top <= window.innerHeight * 0.2 && rect.bottom > 0;
 
-    if (isAtTop) {
-        loadNav();
-    }
-}
+//     if (isAtTop) {
+//         loadNav();
+//     }
+// }
 
 
 

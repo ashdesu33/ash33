@@ -181,8 +181,8 @@ const archive=[
     },
     {title:"ODC 2024",
         category:"Id",
-        img:["../Image/archive/odc_1.gif","../Image/archive/odc_1.png",
-            "../Image/archive/odc_2.png","../Image/archive/concept.gif","../Image/archive/odc_4.png", 
+        img:["../Image/archive/odc_1.gif","../Image/archive/odc_2.png","../Image/archive/odc_1.png",
+            "../Image/archive/concept.gif","../Image/archive/odc_4.png", 
             "../Image/archive/odc_5.png","../Image/archive/odc_6.png","../Image/archive/odc_7.png"
         ],
         year:"2024",

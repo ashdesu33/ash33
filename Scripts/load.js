@@ -57,11 +57,11 @@ function loadNav(){
         }
     }
     else {
-        if( navBar.style.top =='100vh'){
-            navBar.style.top = '80vh';
+        if( navBar.style.top =='80vh'){
+            navBar.style.top = '100vh';
         }
         else{
-            navBar.style.top = '100vh'; // Move out
+            navBar.style.top = '80vh'; // Move out
         }
         
     }
@@ -90,13 +90,7 @@ function startAutoScroll() {
 }
 
 
-if(isHomePage && isDesktopView){
-    navBar.style.top = '80vh'; 
-    window.onload = function() {
-        // startAutoScroll();
-    };
 
-}
 
 
 let currentIndex = 0; // To keep track of the current image

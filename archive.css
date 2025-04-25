@@ -135,7 +135,7 @@ hr{
     left:0;
     top:8%;
     width:100vw;
-    height: 100vh;
+    /* height: 100vh; */
     z-index: 10;
     margin:0;
     background-color: aliceblue;
@@ -144,16 +144,16 @@ pre{
     color:#775656;
 }
 .archiveContainer{
-    flex:0.8;
+    flex:0.5;
     padding-right: 0;
     margin:0;
     overflow-x: hidden;
-    overflow-y: hidden;
+    /* overflow-y: hidden; */
     height: 100%;
     padding-bottom: 0%;
 }
 .display_arc{
-    flex: 1.2;
+    flex: 0.5;
     border-left-style: solid;
     border-color: #c6b1b1;
     border-width: 0.1px;
@@ -271,16 +271,16 @@ pre{
     padding-top: 5%;
     display: flex;
     flex-wrap: wrap;
-    align-items: flex-start;
-    width: 100%;
+    padding-left: 5%;
+    width: 90%;
+    
 }
 .index{
-    align-self: flex-start;
-    width:30%; /* Allows the container to take 30% width and grow or shrink if necessary */
+    align-self: center;
+    width:20%; 
     margin: 10px;
     margin-bottom: 40px;
     box-sizing: border-box;
-    max-height: 150px;
     object-fit: contain;
     transition: filter 1s ease, transform 1s ease;
 }
@@ -305,6 +305,6 @@ pre{
         display: block;
         margin: 12px;
         position: absolute;
-        left:25%;
+        left:30%;
     }
 }

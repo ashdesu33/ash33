@@ -160,6 +160,15 @@ const archive=[
     //     class:"Collaborate Self-initiated Project",
     //     description:""
     // },
+    {
+        title:"Here for Now",
+        category:["Web"],
+        img:["../Image/archive/herefornow.png"],
+        year:"2025",
+        class:'Design Studio 4',
+        page:'https://www.herefornow.risd.gd/'
+
+    },
     {title:"Into the Woods",
         category:"Promo",
         img:["../Image/archive/artistball/artist-ball-animation_update.gif","../Image/archive/artistball/4.png",

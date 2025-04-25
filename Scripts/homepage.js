@@ -61,24 +61,24 @@ function toArchive(){
     }
 }
 
-window.addEventListener('scroll', function () {
-  const mainpage = document.querySelector('.mainpage');
-  const arc = document.querySelector('.archiveContainer');
-  const dis = document.querySelector('.display_arc');
-  const rect = mainpage.getBoundingClientRect();
+// window.addEventListener('scroll', function () {
+//   const mainpage = document.querySelector('.mainpage');
+//   const arc = document.querySelector('.archiveContainer');
+//   const dis = document.querySelector('.display_arc');
+//   const rect = mainpage.getBoundingClientRect();
 
-  // Check if the top of `.mainpage` is at the top of the viewport
-  if (rect.top <= 100) {
-    console.log('hit');
-      // Freeze scrolling when `.mainpage` hits the top
-      arc.style.overflow = 'auto';
-      dis.style.overflow = 'auto';
-  } else {
-      // Re-enable scrolling when not at the top
-      arc.style.overflow = 'hidden';
-      dis.style.overflow = 'hidden';
-  }
-});
+//   // Check if the top of `.mainpage` is at the top of the viewport
+//   if (rect.top <= 100) {
+//     console.log('hit');
+//       // Freeze scrolling when `.mainpage` hits the top
+//       arc.style.overflow = 'auto';
+//       dis.style.overflow = 'auto';
+//   } else {
+//       // Re-enable scrolling when not at the top
+//       arc.style.overflow = 'hidden';
+//       dis.style.overflow = 'hidden';
+//   }
+// });
 
 
 

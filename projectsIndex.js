@@ -160,6 +160,17 @@ const archive=[
     //     class:"Collaborate Self-initiated Project",
     //     description:""
     // },
+    {title:"Feet-washing Heaven",
+        category:"Exhib",
+        img:["../Image/archive/fwh/Frame 1.png","../Image/archive/fwh/Frame 2.png","../Image/archive/fwh/Frame 3.png",
+            "../Image/archive/fwh/Frame 4.png","../Image/archive/fwh/Frame 5.png","../Image/archive/fwh/Frame 6.png",
+            "../Image/archive/fwh/Frame 7.png","../Image/archive/fwh/Frame 8.png",
+            "../Image/archive/fwh/Frame 9.png","../Image/archive/fwh/Frame 10.png"
+        ],
+        year:"2025",
+        class:"Collaborative Study Project",
+        description:"Drawing inspiration from the space we live in, we(Ash Ma, Lily Wu, Nor Wu) use everyday objects to construct non-sense dialogues. Together, we soak our feet in the warm water of collective making, letting the rituals wash over the boundaries of reason.  The installations are relics of our mundane life in the sanctuary of our imaginative Feet-washing House. "
+    },
     {
         title:"Here for Now",
         category:["Web"],

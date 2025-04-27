@@ -68,10 +68,12 @@ p{
 .project-content p{
     font-size: 12px;
     margin:0;
-    padding-top: 5px;
+    /* padding-top: 3px; */
 }
 .divider{
-    margin-bottom: 10px;
+    border-top: #bb9a9a solid 1px;
+    /* margin-bottom: 10px; */
+    margin-right: 5%;
 }
 [class^="mobile_display"]{
     background-color: #fcf2f2;
@@ -94,6 +96,7 @@ p{
 }
 .subject {
     color:#775656;
+    padding-bottom: 5px;
 }
 .text{
     display: flex;
@@ -102,7 +105,9 @@ p{
     flex:1;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: flex-start;
+    border-top: #bb9a9a solid 1px;
+    margin-right:5%;
 }
 
 @media screen and (min-width: 700px) {
@@ -144,7 +149,7 @@ pre{
     color:#775656;
 }
 .archiveContainer{
-    flex:0.5;
+    /* flex:0.5; */
     padding-right: 0;
     margin:0;
     overflow-x: hidden;
@@ -153,23 +158,21 @@ pre{
     padding-bottom: 0%;
 }
 .display_arc{
-    flex: 0.5;
+    flex: 1;
     border-left-style: solid;
     border-color: #c6b1b1;
     border-width: 0.1px;
-    height: 100%;
-    background: #F8F2F2;
+    background: #f6f6f6;
     z-index: 10;
     margin:0;
     display: flex;
     flex-direction: column; /* To layout children vertically */
-    padding: 2rem;
-    padding-top: 1%;
-    padding-bottom: 4%;
+    /* padding-bottom: 4%; */
 }
 .project-content {
     opacity: 0; /* Initially hidden */
     transition: opacity 1s; /* Smooth transition for the opacity */
+    padding-bottom: 0;
 }
 #description {
     font-size: 11px;
@@ -178,35 +181,50 @@ pre{
 .project-content p{
     font-size: 12px;
     margin:0;
-    padding-top: 5px;
+    /* padding-top: 3px; */
 }
 .divider{
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
 }
 .prj_img {
     width: 100%;
+    padding-top:10%;
     display: flex;
-    justify-content: center;
+    flex-direction: row;
+    flex-wrap: nowrap; 
+    justify-content: flex-start; 
     align-items: center;
-    flex-wrap: wrap; /* If you want images to wrap to next line on overflow */
+    overflow-x: auto; 
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    
 }
 
 .prj_img img {
-    max-width: 85%;
-    height: auto;
-    margin: 10px; /* Spacing between images */
+    flex: 0 0 auto; /* <- prevent shrinking */
+    max-height: 500px; 
+    margin: 10px;
 }
 .subject {
     color:#775656;
+    padding-bottom: 8px;
 }
 .text{
     display: flex;
+    width:84%;
+    margin:0;
+    padding-left: 8%;
+    padding-right: 8%;
+    padding-bottom: 5%;
+    padding-top:5%;
+    background-color: #feeded;
 }
 .col{
     flex:1;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: flex-start;
 }
 
 .arc_prj{

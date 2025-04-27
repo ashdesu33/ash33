@@ -146,13 +146,12 @@ function displayProject(project,index) {
     }
     projectDisplayArea.innerHTML = `
         <div class="project-content">
-            <div class="prj_img"></div>
             <div class ="text">
                 <div class="col">
-                    <div class="divider">
+                    
                         <p> title </p>
                         <p class="subject">${project.title}</p>
-                    </div>
+                  
 
                     <div class="divider">
                         <p> category </p>
@@ -175,6 +174,7 @@ function displayProject(project,index) {
                     <p id="description">${project.description}</p>
                 </div>
             </div>
+            <div class="prj_img"></div>
         </div>
     `;
 

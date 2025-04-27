@@ -295,8 +295,8 @@ pre{
 }
 .index{
     align-self: center;
-    width:20%; 
-    margin: 10px;
+    width:15%; 
+    margin: 20px;
     margin-bottom: 40px;
     box-sizing: border-box;
     object-fit: contain;
@@ -305,7 +305,6 @@ pre{
 .index {
     transition: filter 1s ease, transform 1s ease;
 }
-
 .index:hover {
     transform: scale(1); /* Slight zoom-in effect */
 }

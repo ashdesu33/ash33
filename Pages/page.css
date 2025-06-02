@@ -3,15 +3,14 @@ body{
     
 }
 .footer{
-    font-family: 'Franklin Gothic Medium',sans-serif;
     display: flex;
-    background-color: #f3d5d5;
+    background-color: #ffffff;
     padding:10px;
     padding-top: 3rem;
     margin:0;
 }
+
 #top{
-    font-family: Elm Mono;
     font-size: 15px;
 }
 .c2{
@@ -65,7 +64,6 @@ body{
     line-height: 14px;
     color: #a67979;
     margin:0;
-    font-family: 'Franklin Gothic Medium', sans-serif;
 }
 hr{
     color: #a67979;
@@ -212,7 +210,7 @@ button {
     }
 
     .container{
-        padding-top: 4%;
+        padding-top: 2%;
         padding-left: 0%;
         padding-bottom: 0;
         width: 100%;
@@ -246,7 +244,7 @@ button {
         padding:20px;
         padding-left: 1rem;
         position:relative;
-        top:8%;
+        top:7%;
         display: inline-flex;
         gap:20px;
     }

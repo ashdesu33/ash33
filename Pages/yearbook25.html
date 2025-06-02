@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://use.typekit.net/lwm3pvk.css">
+        <title>Ash Ma</title>
+        <link rel="icon" type="image/png" href="../Image/favicon.png" >
+        <link rel="stylesheet" href="../style.css">
+        <link rel="stylesheet" href="page.css">
+    </head>
+    <body>
+        <header>
+            <div class ="head">
+                <a href="../index.html">ASH MA</a>
+                <p class="desktop"> archive</p>
+                <a class="mobile" onclick=loadNav()>featured</a>
+                <a id="about" href="about.html">About Me</a>
+            </div>
+            <div class="backdrop-div"></div>
+        </header>
+        <div class="border">
+        </div>
+        <main>
+            <hr id="upline">
+            <div class="container">
+                <div class="description">
+                    <span class="arrow">↓</span>
+                    <p class="title">RISD Yearbook 2024</p>
+                    <div class="type">
+                    <p class="content" style="color:rgb(142, 92, 112)">for Rhode Island School of Design</p>
+                    <p class="category" style="color:rgb(142, 92, 112)">Editorial / 2024</p>
+                    <br>
+                    </div>
+                    <div class="project-description">
+                    <p class="content"> The 2025 yearbook is a celebration of what we carry with us and the moments we hold close. Each student page is personalized—decorated and curated like a proud, well-loved fridge door. We dedicate this yearbook as a keepsake for the graduating class of 2025. What’s yours? </p>
+                    <br>
+                    <p class="content"> Design with the best people @ <a href="https://risdguild.com/">Design Guild</a></p>
+                    <br>
+                    <p class="content">Team:
+                        Andrew Haoyuan Liu,
+                        Annabel Gillespie,
+                        Ash Wenqing Ma,
+                        Hannah Hye-eun Jeong,
+                        Hyunmin Kim,
+                        Jyot Kaur Thind,
+                        Kay Gahyun Kim,
+                        Li Huang,
+                        Maggie Meitong Xian,
+                        Minah Erin Kim,
+                        Nadine Macapagal,
+                        Nicole Jiawei Sun,
+                        Punch Kulphisanrat,
+                        Ryan Shangyun Yan</p>
+                    <br>
+                </div>
+                    <div class="to">
+                    <hr>
+                    <p class="content"><b><a href="vok.html">next project</a></b></p>
+                    </div>
+
+                 
+
+                </div>
+                <div class="imagery">
+                    <img src="../Image/yearbook25/portfolio_pdf_0531.webp"onclick="openModal(this)">
+                    <img src="../Image/yearbook25/yearbook252.webp"onclick="openModal(this)">
+                    <img src="../Image/yearbook25/yearbook253.webp"onclick="openModal(this)">
+                    <img src="../Image/yearbook25/yearbook254.webp"onclick="openModal(this)">
+                    <img src="../Image/yearbook25/yearbook255.webp"onclick="openModal(this)">
+                    <img src="../Image/yearbook25/yearbook256.webp"onclick="openModal(this)">
+                </div>
+
+                <div id="imageModal" class="modal">
+                    <span class="close" onclick="closeModal()">&times;</span>
+                    <img class="modal-content" id="enlargedImage">
+                    <a class="prev" onclick="changeImage(-1)">&#10094;</a>
+                    <a class="next" onclick="changeImage(1)">&#10095;</a>
+                </div>
+                <div class="footer">
+                    <a id="top" onclick="toTop()"> BACK TO TOP</a>
+                    <div class="c2 content">
+                    <p class="content"><b><a href="vok.html">next project: Völklingen Ironworks</a></b></p>
+                </div>
+            </div>
+            </div>
+           
+        </main>
+        <nav class="nav" style="top: 100vh;">
+            
+            <ul>            
+            </ul>
+        
+    </nav>
+    <script src="../projectsIndex.js"></script>
+    <script src="../Scripts/feature_nav.js"></script>
+    <script src="../Scripts/load.js"></script>
+</html>

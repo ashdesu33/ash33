@@ -52,8 +52,10 @@ p{
 .mainpage{
     border-top: #dab0b0 solid;
     background-color: aliceblue;
-    z-index: 10;
+    z-index: 100000;
+    position:relative;
     overflow-x: hidden;
+    margin-bottom: 0;
 }
 
 .project-content {
@@ -129,9 +131,7 @@ hr{
     display: block;
     position: relative;
 }
-.head{
-    padding-bottom: 0;
-}
+
 
 .mainpage{
     pointer-events: auto;

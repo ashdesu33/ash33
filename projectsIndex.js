@@ -1,67 +1,109 @@
 const projects =[
     {
-        cover:"Image/will to the end/layout.jpg",
-        title:"The Will to the End",
-        category:["Editorial,Web,Book"],
-        class:'prj0',
-        page:'Pages/end.html'
-    },
-    {
-        cover:"Image/Liz/5.png",
-        title:"el lissitzky",
-        category:["Editorial, Packaging"],
-        class:'prj0',
-        page:'Pages/liz.html'
+        title: "RISD Yearbook 2025",
+        category:["Editorial"],
+        cover: "Image/yearbook25/portfolio_pdf_0531.png",
+        webpCover: "Image/yearbook25/portfolio_pdf_0531.webp",
+        page: "Pages/yearbook25.html",
+        time: "2025",
+        client: "for Rhode Island School of Design",
+        team:"with Design Guild",
+        description:"The 2025 yearbook is a celebration of what we carry with us and the moments we hold close. Each student page is personalized—decorated and curated like a proud, well-loved fridge door. We dedicate this yearbook as a keepsake for the graduating class of 2025. What’s yours?" ,
     },
     {
         cover:"Image/vok/doc8.jpg",
         title:"Völklingen Ironworks",
         category:["Branding"],
         class:'prj0',
-        page:'Pages/vok.html'
+        page:'Pages/vok.html',
+        time: "2024",
+        client: "Grad Type III",
+        team:"instructed by Doug Scott",
+        description:"Speculative branding project for UNESCO World Heritage site Völklingen Ironworks, with custom type design inspired by the architect jungle of the factory." ,
+    },
+    
+    {
+        title:"Here for Now",
+        category:["Web"],
+        cover:["../Image/archive/herefornow.png"],
+        time: "2025",
+        client: "RISD GD",
+        team:"with Ashley Cai & Li Huang",
+        page:'https://www.herefornow.risd.gd/',
+        description:"Web design & development for RISD GD senior show. To be is to leave a trace—however slight, however fleeting. Seen, felt, then gone, reminding us that we, too, are only here for now.",
+    
+    },
+    {
+        cover:"Image/Liz/5.png",
+        title:"el lissitzky",
+        category:["Editorial, Packaging"],
+        class:'prj0',
+        page:'Pages/liz.html',
+        client: "Grad Type III",
+        team:"instructed by Doug Scott",
+        description:"If you can see the sound in El Lissitzky's work... Vinyl design featuring El Lissitzky's take on typography."
+    },
+    {
+        cover:"Image/will to the end/layout.jpg",
+        title:"The Will to the End",
+        category:["Editorial,Web,Book"],
+        class:'prj0',
+        page:'Pages/end.html',
+        time: "2023",
+        client: "for Type III",
+        team:"instructed by Jacek Mrowczyk",
+        description:"The Will to the End is a little book in discussion of life’s termination, weaving together individual narratives and research on euthanasia and palliative care."
     },
     {
         cover:"Image/Knoll/cover.png",
         title:"Knoll Workplace Research Library",
         category:["Branding"],
         class:'prj0',
-        page:'Pages/knoll.html'
+        page:'Pages/knoll.html',
+        time: "2023",
+        client: "for Design Studio 4",
+        team:"instructed by Mingkyoung Kim",
+        description:"The Knoll Workplace Research Library is dedicated to providing innovative insights on creating superior work environments. With this commitment in mind, the rebranding project of the Knoll Research Library derived from the idea of “dashes”. Not only do these dashes serve to define clean spaces, but they are also the most simple unit in the formulation of idea sketches."
     },
-    {
-        cover:"Image/indy/page2-min.png",
-        title:"The Indy",
-        category:["Editorial","Identity"],
-        class:'prj4',
-        page:'Pages/indy.html'
-    },
-    {
-        cover:"Image/archive/yearbook24/1.jpg",
-        title:"RISD 2024 Yearbook",
-        category:["Book"],
-        class:'Design Guild',
-        page:'Pages/yearbook.html'
-    },
+    // {
+    //     cover:"Image/indy/page2-min.png",
+    //     title:"The Indy",
+    //     category:["Editorial","Identity"],
+    //     class:'prj4',
+    //     page:'Pages/indy.html'
+    // },
+    // {
+    //     cover:"Image/archive/yearbook24/1.jpg",
+    //     title:"RISD 2024 Yearbook",
+    //     category:["Book"],
+    //     class:'Design Guild',
+    //     page:'Pages/yearbook.html'
+    // },
     {
         cover:"Image/Collection/collection.jpg",
         title:"Collection of Knots",
         category:["Poster","Sign"],
         class:'prj2',
-        page:'Pages/collection.html'
+        page:'Pages/collection.html',
+        time: "2023",
+        client: "for Design Studio 3",
+        team:"instructed by Rene Payne",
+        description:"The Collection of Knots is a poster series organizing 50 knots in the category of [Knots that are Knots] and “Knots that are not Knots]. It later extended to a mini-exhibition that allowed people to knot their own collection, with corresponding instruction of tiding the knot. ",
     },
-    {
-        cover:"Image/printer/web_demo1.gif",
-        title:"Thinking about the Plotter [ongoing]",
-        category:["CTC","Web"],
-        class:'prj4',
-        page:'Pages/printer.html'
-    },
-    {
-        cover:"Image/Birthdaycake/cake.gif",
-        title:"Birthdaycake",
-        category:["Code,Blender"],
-        class:'prj1',
-        page:'Pages/cake.html'
-    }
+    // {
+    //     cover:"Image/printer/web_demo1.gif",
+    //     title:"Thinking about the Plotter [ongoing]",
+    //     category:["CTC","Web"],
+    //     class:'prj4',
+    //     page:'Pages/printer.html'
+    // },
+    // {
+    //     cover:"Image/Birthdaycake/cake.gif",
+    //     title:"Birthdaycake",
+    //     category:["Code,Blender"],
+    //     class:'prj1',
+    //     page:'Pages/cake.html'
+    // }
     // {
     //     cover:"Image/Cyborg Manifesto/cyborg.gif",
     //     title:"Cyborg Manifesto",

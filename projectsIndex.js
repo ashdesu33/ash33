@@ -203,7 +203,7 @@ const archive=[
     //     description:""
     // },
     {title:"Feet-washing Heaven",
-        category:"Exhib",
+        category:"Exhibition",
         img:["../Image/archive/fwh/Frame 1.png","../Image/archive/fwh/Frame 2.png","../Image/archive/fwh/Frame 3.png",
             "../Image/archive/fwh/Frame 4.png","../Image/archive/fwh/Frame 5.png","../Image/archive/fwh/Frame 6.png",
             "../Image/archive/fwh/Frame 7.png","../Image/archive/fwh/Frame 8.png",
@@ -214,16 +214,16 @@ const archive=[
         description:"Drawing inspiration from the space we live in, we(Ash Ma, Lily Wu, Nor Wu) use everyday objects to construct non-sense dialogues. Together, we soak our feet in the warm water of collective making, letting the rituals wash over the boundaries of reason.  The installations are relics of our mundane life in the sanctuary of our imaginative Feet-washing House. "
     },
     {
-        title:"Here for Now",
-        category:["Web"],
-        img:["../Image/archive/herefornow.png"],
+        title:"RISD Yearbook 2024",
+        category:["Editorial"],
         year:"2025",
-        class:'Design Studio 4',
-        page:'https://www.herefornow.risd.gd/'
+        class:'Rhode Island School of Design',
+        img:["../Image/archive/yearbook24/1.jpg","../Image/archive/yearbook24/3.jpg","../Image/archive/yearbook24/4.jpg","../Image/archive/yearbook24/5.jpg"],
+        description:"The 2024 yearbook takes the viewer away from their common beginnings at RISD into an imagined future where each graduating student is famous. Where and who will they be by 2034? Design with wonderful people @ Design Guild",
 
     },
     {title:"Into the Woods",
-        category:"Promo",
+        category:"Promotion",
         img:["../Image/archive/artistball/artist-ball-animation_update.gif","../Image/archive/artistball/4.png",
             "../Image/archive/artistball/5.png"],
         year:"2024",
@@ -231,7 +231,7 @@ const archive=[
         description:"2024 RISD Artist Ball Poster, collaborate with Andrew Liu and Maggie Xian."
     },
     {title:"RISD Orientation 2028",
-        category:"Id",
+        category:"Identity",
         img:["../Image/archive/orientation/banner.gif","../Image/archive/orientation/1.png",
             "../Image/archive/orientation/2.png","../Image/archive/orientation/links.gif",
             "../Image/archive/orientation/loop_ring.gif",
@@ -242,7 +242,7 @@ const archive=[
         description:"RISD Orientation Identity inspired by the friendship bracelet. Design with Hanna Jeong, Maggie Xian, Andrew Liu"
     },
     {title:"ODC 2024",
-        category:"Id",
+        category:"Identity",
         img:["../Image/archive/odc_1.gif","../Image/archive/odc_2.png","../Image/archive/odc_1.png",
             "../Image/archive/concept.gif","../Image/archive/odc_4.png", 
             "../Image/archive/odc_5.png","../Image/archive/odc_6.png","../Image/archive/odc_7.png"
@@ -252,14 +252,14 @@ const archive=[
         description:"Design pitch for Developer Conference 2024 base on the infinite possibilities inside the empty bracket."
     },
     {title:"Elm",
-        category:"Type",
+        category:"Type Design",
         img:["../Image/archive/elm/regular.png","../Image/archive/elm/1.jpg","../Image/archive/elm/2.jpg"],
         year:"2024",
         class:"Grad Type Design",
         description:"Elm is a textface designed for small-size poems. Inspired by Elm by Sylvia Plath."
     },
     {title:"Which Window will Your Arms Reach",
-        category:"Promo",
+        category:"Advertisement",
         img:["../Image/archive/window.gif","../Image/archive/window-06.jpg","../Image/archive/window-08.jpg",
         "../Image/archive/window-09.jpg","../Image/archive/window-10.jpg","../Image/archive/window2.gif","../Image/archive/window-07.jpg",
         "../Image/archive/window3.gif","../Image/archive/window-11.jpg"],
@@ -270,14 +270,14 @@ const archive=[
         The original and translated poem can be found in this <a href="https://www.are.na/block/24691378">link</a>.`
        },
     {title:"Heads in the cloud",
-     category:"Promo",
+     category:"Advertisement",
      img:["../Image/archive/clouds-05.jpg","../Image/archive/clouds-1.jpg","../Image/archive/clouds-02.jpg","../Image/archive/clouds-04.jpg","../Image/archive/clouds-03.jpg"],
      year:"2023",
      class:"Design Guild",
      description:"Heads in the cloud proposes visual design for RISD Artist Ball 2023. With Riso printed poster, hand rings, and tickets."
     },
     {title:"In the land of everything",
-     category:"Ed,Riso",
+     category:"Editorial,Riso",
      img:["../Image/archive/risobool.gif","../Image/archive/risobool.jpg","../Image/archive/risobool2.jpg","../Image/archive/risobool3.jpg",
      "../Image/archive/risobool4.jpg","../Image/archive/risobool5.jpg","../Image/archive/risobool6.jpg","../Image/archive/risobool7.jpg"],
      year:"2023",
@@ -286,7 +286,7 @@ const archive=[
     },
     {
         title:"One Way Space",
-        category:["Id","Ed"],
+        category:["Advertisement","Editorial"],
         img:["../Image/oneway/page.jpg","../Image/oneway/identity.png","../Image/oneway/page2.png","../Image/oneway/insert2.png",
             "../Image/oneway/page3.jpg","../Image/oneway/page4.png","../Image/oneway/page5.png"],
         year:"2023",
@@ -294,7 +294,7 @@ const archive=[
         description:"Book cover & Event Identity design for Owspace. Art Director: Li Zhaolu",
     },
     {title:"Ways of Communication",
-    category:"Ed",
+    category:"Editorial",
     img:["../Image/archive/communicate.gif","../Image/archive/communicate.PNG","../Image/archive/communicate2.PNG","../Image/archive/c1.jpg",
     "../Image/archive/16.jpg","../Image/archive/12.jpg","../Image/archive/communicate3.PNG"],
     year:"2023",
@@ -302,7 +302,7 @@ const archive=[
     description:"Thematic Book on Writing System printed on newsprint,section sewn."
    },
    {title:"Fortune Bag",
-   category:"Promo",
+   category:"Advertisement",
    img:["../Image/archive/bag-12.jpg","../Image/archive/bag-13.jpg","../Image/archive/bag-14.jpg","../Image/archive/bag-15.jpg",
    "../Image/archive/bag-16.jpg","../Image/archive/bag-17.jpg"],
    year:"2023",
@@ -311,7 +311,7 @@ const archive=[
     I wish to share this memory with an actual experience. As my mom had told me, <i>fortune is always in your hand</i>.`
   },
    {title:"What do you want to say?",
-   category:"Ed",
+   category:"Editorial",
    img:["../Image/archive/w1.jpg","../Image/archive/w2.jpg","../Image/archive/w3.jpg","../Image/archive/w4.jpg","../Image/archive/w5.jpg","../Image/archive/w6.JPG"],
    year:"2022",
    class:"Embodying Feminism",
@@ -325,7 +325,7 @@ const archive=[
         title:"Cyborg Manifesto",
         img:["Image/Cyborg Manifesto/cyborg.gif"],
         year:"2022",
-        category:["Ed"],
+        category:["Editorial"],
         class:'Design Studio 1',
         page:'Pages/cyborg.html'
     },
@@ -347,7 +347,7 @@ const archive=[
     //     page:'Pages/cake.html'
     // },
     {title:"Poster Collection",
-        category:"Promo",
+        category:"Editorial",
         img:["../Image/archive/pos/1.png","../Image/archive/pos/2.png","../Image/archive/pos/Frame 7.png",
             "../Image/archive/pos/4.png",
             "../Image/archive/pos/5.png","../Image/archive/pos/3.png",

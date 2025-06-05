@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://use.typekit.net/lwm3pvk.css">
+        <title>Ash Ma</title>
+        <link rel="stylesheet" href="../style.css">
+        <link rel="stylesheet" href="page.css">
+        <link rel="icon" type="image/png" href="../Image/favicon.png" >
+    </head>
+    <body>
+        <header>
+            <hr id="upline">
+            <div class ="head">
+                <a href="../index.html">ASH MA</a>
+                <p class="desktop"> archive</p>
+                <a class="mobile" onclick=loadNav()>featured</a>
+                <a id="about" href="about.html">About Me</a>
+            </div>
+            <div class="backdrop-div"></div>
+        </header>
+        <div class="border">
+        </div>
+        <main>
+            <div class="container">
+                <div class="description">
+                    <span class="arrow">↓</span>
+                    <p class="title">If Everybody Is A Printer</p>
+                    <div class="type">
+                        <p class="content" style="color:rgb(142, 92, 112)">for Degree Project</p>
+                        <p class="category" style="color:rgb(142, 92, 112)">Editorial, UX, Web / 2025</p>
+                        <br>
+                    </div>
+                    <div class="project-description">
+                    <p class="content"> If Everybody Is A Printer is Ash Ma’s BFA Graphic Design thesis project at the Rhode Island School of Design. It is an inquiry into the entanglement of human hands, machines, and the act of printing.
+                    </p>
+                    <br>
+                    <p class="content">Special thanks to Bob for Meridian Printing, Lois from DWRI, José from Buena Gráfica Social Studio, and Julia from RISD Typeshop, as my dearest friends and also important mentors, for sharing their stories in Providence, RI.</p>
+                    <br>
+                    <p class="content">Their voices are printed in physical books, self-built object readers, and websites. The web version is available at <a href="https://www.if-printer.net/">if-printer.net.</a></p>
+
+                    </div>
+                    <div class="to">
+                    <hr>
+
+                    <p class="content"><b><a href="vok.html">previous project</a></b></p>
+                    <p class="content"><b><a href="liz.html">next project</a></b></p>
+                    </div>
+                </div>
+                <div class="imagery">
+                    <img src="../Image/bodyPrinter/Artboard 1.png" onclick="openModal(this)">
+                    <img src="../Image/bodyPrinter/1.png" onclick="openModal(this)">
+                    <img src="../Image/bodyPrinter/2.png" onclick="openModal(this)">
+                    <img src="../Image/bodyPrinter/3.png" onclick="openModal(this)">
+                    <img src="../Image/bodyPrinter/4.png" onclick="openModal(this)">
+                    <img src="../Image/bodyPrinter/5.png" onclick="openModal(this)">
+                    <img src="../Image/bodyPrinter/6.png" onclick="openModal(this)">
+                    <img src="../Image/bodyPrinter/7.png" onclick="openModal(this)">
+                    <img src="../Image/bodyPrinter/8.png" onclick="openModal(this)">
+                    <img src="../Image/bodyPrinter/9.png" onclick="openModal(this)">
+                    <img src="../Image/bodyPrinter/10.png" onclick="openModal(this)">
+                    <img src="../Image/bodyPrinter/Artboard 2.png" onclick="openModal(this)">
+                    <img src="../Image/bodyPrinter/11.png" onclick="openModal(this)">
+                    <video controls style="width:70%; padding:10%; padding-left:15%;">
+                        <source src="../Image/bodyPrinter/demo.mp4" type="video/mp4">
+                    </video>
+                    <img src="../Image/bodyPrinter/12.png" onclick="openModal(this)">
+                    <img src="../Image/bodyPrinter/13.png" onclick="openModal(this)">
+                    <img src="../Image/bodyPrinter/14.png" onclick="openModal(this)">
+                    <img src="../Image/bodyPrinter/15.png" onclick="openModal(this)">
+                    <img src="../Image/bodyPrinter/16.png" onclick="openModal(this)">
+                    <img src="../Image/bodyPrinter/Artboard 3.png" onclick="openModal(this)">
+                    
+                </div>
+
+                <div id="imageModal" class="modal">
+                    <span class="close" onclick="closeModal()">&times;</span>
+                    <img class="modal-content" id="enlargedImage">
+                    <a class="prev" onclick="changeImage(-1)">&#10094;</a>
+                    <a class="next" onclick="changeImage(1)">&#10095;</a>
+                </div>
+                <div class="footer">
+                    <a id="top" onclick="toTop()"> BACK TO TOP</a>
+                    <div class="c2 content">
+                        <p class="content"><b><a href="vok.html">previous project: Völklingen Ironworks</a></b></p>
+                        <p class="content"><b><a href="liz.html">next project: el lissitzky</a></b></p>
+                    </div>
+                </nav>
+                </div>
+            </div>
+           
+        </main>
+        <nav class="nav" style="top: 100vh;">
+            
+            <ul>            
+            </ul>
+        
+    </nav>
+    <script src="../projectsIndex.js"></script>
+    <script src="../Scripts/feature_nav.js"></script>
+        <script src="../Scripts/load.js"></script>
+</html>

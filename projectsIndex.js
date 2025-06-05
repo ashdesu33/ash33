@@ -21,7 +21,17 @@ const projects =[
         team:"instructed by Doug Scott",
         description:"Speculative branding project for UNESCO World Heritage site Völklingen Ironworks, with custom type design inspired by the architect jungle of the factory." ,
     },
-    
+    {
+        cover:"Image/bodyPrinter/1.png",
+        title:"If Everybody Is A Printer",
+        category:["Editorial, UX, Web"],
+        class:'prj0',
+        time: "2025",
+        page:'Pages/bodyPrinter.html',
+        client: "Degree Project",
+        team:"instructed by Anastasiia Raina",
+        description:"If Everybody Is A Printer is Ash Ma’s BFA Graphic Design thesis project at the Rhode Island School of Design. It is an inquiry into the entanglement of human hands, machines, and the act of printing."
+    },
     {
         title:"Here for Now",
         category:["Web"],
@@ -38,6 +48,7 @@ const projects =[
         title:"el lissitzky",
         category:["Editorial, Packaging"],
         class:'prj0',
+        time: "2024",
         page:'Pages/liz.html',
         client: "Grad Type III",
         team:"instructed by Doug Scott",

@@ -299,6 +299,9 @@ ul{
     
 
 @media screen and (min-width: 900px) {
+    .main{
+        pointer-events: none;
+    }
     .caption{
         display: block;
     }
@@ -359,6 +362,7 @@ ul{
     .projectContainer.visible{
         opacity: 0;
         transform: translateY(0);
+        pointer-events: none;
     }
     
 

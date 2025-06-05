@@ -152,7 +152,7 @@ const archive=[
     },
     {
         title:"If Everybody Is A Printer",
-        img:["Image/bodyPrinter/1.png"],
+        img:["Image/bodyprinter/1.png"],
         year:"2025",
         category:["Editorial, UX, Web"],
         class:'Design Guild',

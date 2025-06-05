@@ -142,77 +142,22 @@ const archive=[
         class:"",
         description:""
     },
-    // {
-    //     title:"The Will to the End",
-    //     category:["Ed,Web"],
-    //     img:["Image/will to the end/layout.jpg"],
-    //     year:"2023",
-    //     class:'TypeIII',
-    //     page:'Pages/end.html'
-    // },
-    // {
-    //     title:"The Indy",
-    //     img:["Image/indy/page2-min.png"],
-    //     category:["Ed"],
-    //     year:"2024",
-    //     class:'The College Hill Independence',
-    //     page:'Pages/indy.html'
-    // },
-    // {
-    //     title:"el lissitzky",
-    //     img:["Image/Liz/5.png"],
-    //     category:["Ed"],
-    //     year:"2024",
-    //     class:'Grad Type III',
-    //     page:'Pages/liz.html'
-    // },
-    // {
-    //     title:"RISD 2024 Yearbook",
-    //     img:["Image/archive/yearbook24/1.jpg"],
-    //     year:"2024",
-    //     category:["Ed"],
-    //     class:'Design Guild',
-    //     page:'Pages/yearbook.html'
-    // },
-    // {
-    //     title:"Knoll Workplace Research Library",
-    //     img:["Image/Knoll/cover.png"],
-    //     year:"2024",
-    //     category:["Id"],
-    //     class:'Design Studio 4',
-    //     page:'Pages/knoll.html'
-    // },
-    // {
-    //     title:"Collection of Knots",
-    //     img:["Image/Collection/collection.jpg"],
-    //     year:"2023",
-    //     category:["Poster","Sign"],
-    //     class:'Design Studio 3',
-    //     page:'Pages/collection.html'
-    // },
-    // {
-    //     title:"Cyborg Manifesto",
-    //     img:["Image/Cyborg Manifesto/cyborg.gif"],
-    //     year:"2022",
-    //     category:["Ed"],
-    //     class:'Design Studio 1',
-    //     page:'Pages/cyborg.html'
-    // },
-    // {title:"Feetwashing Heaven",
-    //     category:"Exhib",
-    //     img:["../Image/archive/feet/cover.JPG",
-    //         "../Image/archive/feet/ASH_MA_FWH_1.jpg",
-    //         "../Image/archive/feet/ASH_MA_FWH_2.jpg",
-    //         "../Image/archive/feet/ASH_MA_FWH_3.jpg",
-    //         "../Image/archive/feet/p1.JPG",
-    //         "../Image/archive/feet/p2.JPG",
-            
-
-    //     ],
-    //     year:"2025",
-    //     class:"Collaborate Self-initiated Project",
-    //     description:""
-    // },
+    {
+        title:"RISD 2025 Yearbook",
+        img:["Image/yearbook25/yearbook252.png"],
+        year:"2025",
+        category:["Editorial"],
+        class:'Design Guild',
+        page:'Pages/yearbook25.html'
+    },
+    {
+        title:"If Everybody Is A Printer",
+        img:["Image/bodyPrinter/1.png"],
+        year:"2025",
+        category:["Editorial, UX, Web"],
+        class:'Design Guild',
+        page:'Pages/bodyprinter.html'
+    },
     {title:"Feet-washing Heaven",
         category:"Exhibition",
         img:["../Image/archive/fwh/Frame 1.png","../Image/archive/fwh/Frame 2.png","../Image/archive/fwh/Frame 3.png",
@@ -225,9 +170,33 @@ const archive=[
         description:"Drawing inspiration from the space we live in, we(Ash Ma, Lily Wu, Nor Wu) use everyday objects to construct non-sense dialogues. Together, we soak our feet in the warm water of collective making, letting the rituals wash over the boundaries of reason.  The installations are relics of our mundane life in the sanctuary of our imaginative Feet-washing House. "
     },
     {
+        title:"The Indy",
+        img:["Image/indy/page2-min.png"],
+        category:["Editorial"],
+        year:"2024",
+        class:'The College Hill Independence',
+        page:'Pages/indy.html'
+    },
+    {
+        title:"el lissitzky",
+        img:["Image/Liz/5.png"],
+        category:["Editorial"],
+        year:"2024",
+        class:'Grad Type III',
+        page:'Pages/liz.html'
+    },
+    {
+        title:"Knoll Workplace Research Library",
+        img:["Image/Knoll/cover.png"],
+        year:"2024",
+        category:["Identity"],
+        class:'Design Studio 4',
+        page:'Pages/knoll.html'
+    },
+    {
         title:"RISD Yearbook 2024",
         category:["Editorial"],
-        year:"2025",
+        year:"2024",
         class:'Rhode Island School of Design',
         img:["../Image/archive/yearbook24/1.jpg","../Image/archive/yearbook24/3.jpg","../Image/archive/yearbook24/4.jpg","../Image/archive/yearbook24/5.jpg"],
         description:"The 2024 yearbook takes the viewer away from their common beginnings at RISD into an imagined future where each graduating student is famous. Where and who will they be by 2034? Design with wonderful people @ Design Guild",
@@ -268,6 +237,22 @@ const archive=[
         year:"2024",
         class:"Grad Type Design",
         description:"Elm is a textface designed for small-size poems. Inspired by Elm by Sylvia Plath."
+    },
+    {
+        title:"The Will to the End",
+        category:["Editorial, Web"],
+        img:["Image/will to the end/layout.jpg"],
+        year:"2023",
+        class:'TypeIII',
+        page:'Pages/end.html'
+    },
+    {
+        title:"Collection of Knots",
+        img:["Image/Collection/collection.jpg"],
+        year:"2023",
+        category:["Poster", "Signage"],
+        class:'Design Studio 3',
+        page:'Pages/collection.html'
     },
     {title:"Which Window will Your Arms Reach",
         category:"Advertisement",

@@ -152,11 +152,11 @@ const archive=[
     },
     {
         title:"If Everybody Is A Printer",
-        img:["Image/bodyprinter/1.png"],
+        img:["Image/bodyPrinter/1.png"],
         year:"2025",
         category:["Editorial, UX, Web"],
         class:'Design Guild',
-        page:'Pages/bodyprinter.html'
+        page:'Pages/bodyPrinter.html'
     },
     {title:"Feet-washing Heaven",
         category:"Exhibition",
@@ -169,6 +169,18 @@ const archive=[
         class:"Collaborative Study Project",
         description:"Drawing inspiration from the space we live in, we(Ash Ma, Lily Wu, Nor Wu) use everyday objects to construct non-sense dialogues. Together, we soak our feet in the warm water of collective making, letting the rituals wash over the boundaries of reason.  The installations are relics of our mundane life in the sanctuary of our imaginative Feet-washing House. "
     },
+    {
+        cover:"Image/vok/doc8.jpg",
+        title:"Völklingen Ironworks",
+        category:["Branding"],
+        class:'prj0',
+        page:'Pages/vok.html',
+        time: "2024",
+        client: "Grad Type III",
+        team:"instructed by Doug Scott",
+        description:"Speculative branding project for UNESCO World Heritage site Völklingen Ironworks, with custom type design inspired by the architect jungle of the factory." ,
+    },
+
     {
         title:"The Indy",
         img:["Image/indy/page2-min.png"],

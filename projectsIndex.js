@@ -170,7 +170,7 @@ const archive=[
         description:"Drawing inspiration from the space we live in, we(Ash Ma, Lily Wu, Nor Wu) use everyday objects to construct non-sense dialogues. Together, we soak our feet in the warm water of collective making, letting the rituals wash over the boundaries of reason.  The installations are relics of our mundane life in the sanctuary of our imaginative Feet-washing House. "
     },
     {
-        cover:"Image/vok/doc8.jpg",
+        img:"Image/vok/doc8.jpg",
         title:"Völklingen Ironworks",
         category:["Branding"],
         class:'prj0',

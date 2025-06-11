@@ -175,7 +175,7 @@ const archive=[
         category:["Branding"],
         class:'prj0',
         page:'Pages/vok.html',
-        time: "2024",
+        year: "2024",
         client: "Grad Type III",
         team:"instructed by Doug Scott",
         description:"Speculative branding project for UNESCO World Heritage site Völklingen Ironworks, with custom type design inspired by the architect jungle of the factory." ,

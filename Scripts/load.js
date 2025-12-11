@@ -67,31 +67,6 @@ function loadNav(){
     }
     
 }
-function startAutoScroll() {
-    const gallery = document.getElementById('scroll');
-    let scrollAmount = 0;
-    const step = 1; // Number of pixels to scroll each step
-    const interval = 20; // Milliseconds between each scroll step
-
-    function scrollStep() {
-        if(gallery.scrollLeft >= (gallery.scrollWidth - gallery.clientWidth)) {
-            // Reset scroll to start
-            gallery.scrollLeft = 0;
-            scrollAmount = 0;
-        } else {
-            gallery.scrollLeft += step;
-            scrollAmount += step;
-            console.log(gallery.clientWidth);
-            console.log(gallery.scrollWidth);
-        }
-    }
-
-    setInterval(scrollStep, interval);
-}
-
-
-
-
 
 let currentIndex = 0; // To keep track of the current image
 

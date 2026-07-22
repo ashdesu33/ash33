@@ -10,13 +10,15 @@ function feature_nav(){
     }
     projects.forEach((project, index) => {
         
+        const clickAction = project.page && project.page.startsWith('http')
+            ? `window.open('${project.page}', '_blank'); loadNav();`
+            : `scrollToProject(${index}); loadNav();`;
+
         if (currentPage.endsWith('index.html') || window.location.pathname === '/') {
-            
-            navContainer += `<li onclick="goTo('${project.page}');"><hr><a href="${project.page}">+ ${project.title} </a><span>(${project.category})</span></li>`
+            navContainer += `<li onclick="${clickAction}"><hr><a href="#" onclick="event.preventDefault(); ${clickAction}">+ ${project.title} </a><span>(${project.category})</span></li>`
         }
         else{
-            const projectPage = project.page.replace('Pages/', '');
-            navContainer += `<li onclick="goTo('${project.page}');"><hr><a href="${projectPage}">+ ${project.title} </a><span>(${project.category})</span></li>`
+            navContainer += `<li onclick="${clickAction}"><hr><a href="#" onclick="event.preventDefault(); ${clickAction}">+ ${project.title} </a><span>(${project.category})</span></li>`
         }
     });
     navbar.innerHTML += navContainer;
@@ -30,19 +32,3 @@ function toTop(){
     });
   }
 feature_nav();
-
-// function checkScrollPosition() {
-//     const projectContainer = document.querySelector('.mainpage');
-//     if (!projectContainer) return;
-
-//     const rect = projectContainer.getBoundingClientRect();
-//     const isAtTop = rect.top <= window.innerHeight * 0.2 && rect.bottom > 0;
-
-//     if (isAtTop) {
-//         loadNav();
-//     }
-// }
-
-
-
-window.addEventListener("scroll", checkScrollPosition);

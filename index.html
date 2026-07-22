@@ -7,6 +7,7 @@
     <title>Ash Ma</title>
     <link rel="icon" type="image/png" href="Image/favicon.png" >
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="homepage.css">
     <link rel="stylesheet" href="archive.css">
 </head>
 <body>
@@ -22,20 +23,11 @@
                     <p>To see a <a href="https://memo.ashdesu.info">memo...</a></p>
                 </div>
             </div>
-            <a class="self"  id="show" onclick="loadNav()"> ⭑hide</a>
-            <a class="self" id="archive" onclick="toArchive()" > full index</a>
-           
-            <a class="mobile" onclick="loadNav()">featured</a>
             <a id="about" href="Pages/about.html">About Me</a>
         </div>
         <div class="backdrop-div"></div>
     </header>
     
-    <nav class="nav" id="homenav">
-        <div class="nav_tag"></div>
-            <ul>
-            </ul>
-    </nav>
     <div class="clock-wrapper">
     <div class="clock">
         <div class="clock-face">
@@ -46,21 +38,21 @@
         </div>
     </div>
 </div>
-    <main>
-        <div class="projectInfo">
-            <p class="caption">Title</p>
-            <p class="category">Category</p>
+    <main class="home">
+        <div class="project-meta project-meta--header">
+            <p class="caption project-meta__title">Title</p>
+            <p class="category project-meta__category">Category</p>
         </div>
-        <div class="projectBottom">
-            <p class="description"></p>
+        <div class="project-meta project-meta--description">
+            <p class="description project-meta__text"></p>
         </div>
-        <div class="projectRight">
-            <p class="time">Year</p>
-            <p class="client">for</p>
-            <p class="team">Team</p>
+        <div class="project-meta project-meta--side">
+            <p class="time project-meta__time">Year</p>
+            <p class="client project-meta__client">for</p>
+            <p class="team project-meta__team">Team</p>
         </div>
-            <div class="projectContainer"id="scroll">
-            </div>
+        <section class="project-scroll" id="scroll">
+        </section>
 
                 
         
@@ -108,10 +100,12 @@
     </main>
 
     <script src="projectsIndex.js"></script>
+    <script src="imageManifest.js"></script>
+    <script src="Scripts/images.js"></script>
+    <script src="Scripts/gallery.js"></script>
     <script src="Scripts/homepage.js"></script>
     <script src="Scripts/load.js"></script>
-    <script src="Scripts/archive.js"></script>
-    <script src="Scripts/feature_nav.js"></script>
+    <!-- <script src="Scripts/archive.js"></script> -->
     <script src="Scripts/clock.js"></script>
 </body>
 </html>

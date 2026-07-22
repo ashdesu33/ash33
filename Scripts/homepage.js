@@ -1,89 +1,95 @@
 function addProject(){
-  const projectContainer = document.querySelector('.projectContainer');
-    const currentContent = document.querySelector('.projectContainer').innerHTML;
+  const projectContainer = document.querySelector('.project-scroll');
     let delay = 0;
-    projects.forEach((project) => {
+    projects.forEach((project, index) => {
       const projectElement = document.createElement("div");
-      projectElement.classList.add("project");
+      projectElement.classList.add("project-card", "project");
       projectElement.dataset.title = project.title;
       projectElement.dataset.category = project.category;
       projectElement.dataset.description = project.description;
       projectElement.dataset.client = project.client;
       projectElement.dataset.team = project.team;
       projectElement.dataset.time = project.time;
-      projectElement.style.opacity = "0"; // Initially hidden
-      projectElement.style.transform = "translateY(20px)"; // Move down
+      projectElement.style.opacity = "0";
+      projectElement.style.transform = "translateY(20px)";
 
-      const hasWebp = project.webpCover;
+      const coverSrc = getWebpCoverPath(project) || getCoverPath(project);
 
-      projectElement.innerHTML = hasWebp ? `
-        <picture onclick="goTo('${project.page}')">
-          <source srcset="${project.webpCover}" type="image/webp">
-          <img src="${project.cover}" alt="${project.title}" />
-        </picture>
-        <div class='project-info'>
-        </div>
-      ` : `
-        <img src="${project.cover}" alt="${project.title}" onclick="goTo('${project.page}');" />
-        <div class='project-info'>
-        </div>
+      const clickAction = project.page && project.page.startsWith('http')
+        ? `window.open('${project.page}', '_blank')`
+        : `advanceProjectImage(${index})`;
+
+      projectElement.innerHTML = `
+        <div class="project-card__frame project-frame" onclick="${clickAction}"></div>
       `;
 
-      // Add a slight delay before showing each project
       setTimeout(() => {
           projectElement.style.opacity = "1";
           projectElement.style.transform = "translateY(0)";
       }, delay);
 
-      delay += 80; // Increase delay for the next project
+      delay += 80;
       projectContainer.appendChild(projectElement);
+      initProjectFrame(projectElement.querySelector('.project-frame'), coverSrc, project.title);
       });
 
       observeProjects();
+      syncHeaderPointerEvents();
+      syncVisibleVideos();
 }
 
+function syncHeaderPointerEvents() {
+  const head = document.querySelector('.head');
+  if (!head) return;
 
+  const headerBottom = head.getBoundingClientRect().bottom;
 
+  document.querySelectorAll('.project-card__frame').forEach((frame) => {
+    const rect = frame.getBoundingClientRect();
+    const overHeader = rect.top < headerBottom && rect.bottom > 0;
+    frame.style.pointerEvents = overHeader ? 'none' : 'auto';
+  });
+}
+
+window.addEventListener('scroll', syncHeaderPointerEvents, { passive: true });
+window.addEventListener('resize', syncHeaderPointerEvents);
 
 addProject();
-const projectsElements = document.querySelectorAll('.project');
-console.log(projectsElements);
 
-
-function updateProjectInfo(title, category,description, time, client, team) {
-  const captionEl = document.querySelector('.projectInfo .caption');
-  const categoryEl = document.querySelector('.projectInfo .category');
-  const descriptionEl = document.querySelector('.projectBottom .description');
-  const timeEl = document.querySelector('.projectRight .time');
-  const clientEl = document.querySelector('.projectRight .client');
-  const teamEl = document.querySelector('.projectRight .team');
-  captionEl.textContent = title;
-  categoryEl.textContent = category;
-  descriptionEl.textContent = description;
-  timeEl.textContent = time;
-  clientEl.textContent = client;
-  teamEl.textContent = team;
-
+function updateProjectInfo(title, category, description, time, client, team) {
+  document.querySelector('.project-meta__title').textContent = title;
+  document.querySelector('.project-meta__category').textContent = category;
+  document.querySelector('.project-meta__text').textContent = description;
+  document.querySelector('.project-meta__time').textContent = time;
+  document.querySelector('.project-meta__client').textContent = client;
+  document.querySelector('.project-meta__team').textContent = team;
 }
 
 function observeProjects() {
   const options = {
     root: null,
     rootMargin: '0px',
-    threshold: 0.5 // 50% visible
+    threshold: 0.5
   };
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         const el = entry.target;
-        updateProjectInfo(el.dataset.title, el.dataset.category, el.dataset.description,
-         el.dataset.time, el.dataset.client, el.dataset.team);
+        updateProjectInfo(
+          el.dataset.title,
+          el.dataset.category,
+          el.dataset.description,
+          el.dataset.time,
+          el.dataset.client,
+          el.dataset.team
+        );
       }
     });
+    syncVisibleVideos();
   }, options);
 
-  document.querySelectorAll('.project').forEach(project => {
+  document.querySelectorAll('.project-card').forEach(project => {
     observer.observe(project);
   });
 }
@@ -94,7 +100,3 @@ function toArchive(){
         mainpage.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 }
-
-
-
-

@@ -46,12 +46,10 @@ setInterval(setClock, 1000);
 setClock();
 
 function showProject(){
-    const container = document.querySelector('.projectContainer');
-    container.classList.toggle('visible');
-    const projects = document.querySelectorAll('.project');
-    projects.forEach(element => {
-        element.classList.toggle('visible');
+    const container = document.querySelector('.project-scroll');
+    container.classList.toggle('is-hidden');
+    document.querySelectorAll('.project-card').forEach(element => {
+        element.classList.toggle('is-hidden');
     });
-
 }
 

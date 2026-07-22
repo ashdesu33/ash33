@@ -1,0 +1,183 @@
+/* ============================================================
+   HOMEPAGE LAYOUT  →  homepage.css
+   Class map:
+     .project-scroll          scroll / snap container
+     .project-meta--header    title + category overlay
+     .project-meta--description
+     .project-meta--side      year / client / team
+     .project-card            each project row
+     .project-card__frame     clickable image frame
+   Typography stays in style.css (.caption, .category, etc.)
+   ============================================================ */
+
+/* --- Scroll container --- */
+.project-scroll {
+    margin-top: 0;
+    padding-top: 14vh;
+    padding-bottom: 18vh;
+}
+
+.project-card__frame img,
+.project-card__frame video {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
+/* --- Header vs scroll: images cover header, nav links stay clickable --- */
+.head {
+    z-index: 0;
+    pointer-events: none;
+}
+
+.head a {
+    pointer-events: auto;
+    position: relative;
+}
+
+/* --- Fixed metadata overlays --- */
+.project-meta {
+    position: fixed;
+    z-index: 10;
+    pointer-events: none;
+}
+
+/* Title + category (top on mobile, left on desktop) */
+.project-meta--header {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    column-gap: 0.6em;
+    align-items: start;
+    top: 20vh;
+    left: 4vw;
+    right: 4vw;
+}
+
+.project-meta__title {
+    grid-column: 1;
+}
+
+.project-meta__category {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+/* Description (bottom on mobile, lower-center on desktop) */
+.project-meta--description {
+    display: block;
+    padding: 0 0.5rem;
+    bottom: 2vh;
+    width: auto;
+    max-height: 16vh;
+    overflow-y: auto;
+}
+
+/* Year / client / team (top-right on mobile, right on desktop) */
+.project-meta--side {
+    display: block;
+    top: calc(20vh + 2.4em);
+    left: 50%;
+    transform: translate(-50%, 0%);
+    text-align: center;
+}
+
+.project-meta--side p {
+    margin: 0;
+}
+
+/* --- Project cards in scroll --- */
+.project-card {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+    margin-bottom: 0;
+    width: 100%;
+    padding: 0;
+    padding-top: 10vh;
+    overflow: visible;
+    position: relative;
+    z-index: 1;
+    pointer-events: none;
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    box-sizing: border-box;
+}
+
+.project-card__frame {
+    overflow: visible;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: auto;
+    flex-shrink: 0;
+    pointer-events: auto;
+}
+
+/* --- Desktop --- */
+@media screen and (min-width: 900px) {
+    .project-scroll {
+        pointer-events: none;
+        padding-top: 0;
+        padding-bottom: 0;
+        width: 100%;
+    }
+
+    .project-scroll.is-hidden {
+        opacity: 0;
+        transform: translateY(0);
+        pointer-events: none;
+    }
+
+    .project-card {
+        width: 100%;
+        padding-top: 0;
+    }
+
+    .project-card.is-hidden {
+        pointer-events: none;
+    }
+
+    .project-meta--header {
+        top: 50vh;
+        left: 1.5rem;
+        right: auto;
+        max-width: 20vw;
+        transform: translateY(-50%);
+    }
+
+    .project-meta--description {
+        display: flex;
+        top: 85vh;
+        bottom: auto;
+        left:50%;
+        transform: translateX(-50%);
+        width: 55vw;
+        max-height: none;
+        overflow: visible;
+        padding: 0;
+    }
+
+    .project-meta--side {
+        top: 50vh;
+        left:100%;
+        transform: translateX(-100%);
+        width: 20vw;
+    }
+
+    .project-card__frame {
+        cursor: url('font/no.ico'), auto;
+    }
+
+    .project-card__frame img {
+        box-shadow: 0px 0px 0px rgb(255, 197, 197);
+        transition: box-shadow 0.5s;
+    }
+
+    .project-card__frame img:hover {
+        filter: none;
+    }
+}

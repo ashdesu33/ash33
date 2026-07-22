@@ -108,7 +108,7 @@ function initialDisplay() {
             });
 
             // Set the source for the image
-            imgElement.src = project.img[0];
+            imgElement.src = getProjectImages(project)[0];
             imgElement.loading="lazy";
 
             // Append the image to the container
@@ -181,13 +181,13 @@ function displayProject(project,index) {
     const projectContent = projectDisplayArea.querySelector('.project-content');
     const imgContainer = projectDisplayArea.querySelector('.prj_img');
     let imagesLoaded = 0;
-    const totalImages = project.img.length;
+    const totalImages = getProjectImages(project).length;
     let currentSlide = 0
     if(window.innerWidth<=768){
         let autoplayInterval;
 
         // Load images and create slides
-        project.img.forEach((imageSrc, index) => {
+        getProjectImages(project).forEach((imageSrc, index) => {
             const imgElement = new Image();
             imgElement.onload = () => {
                 imagesLoaded++;
@@ -221,7 +221,7 @@ function displayProject(project,index) {
 
     }
     else{
-    project.img.forEach((imageSrc) => {
+    getProjectImages(project).forEach((imageSrc) => {
         const imgElement = new Image();
         imgElement.onload = () => {
             imagesLoaded++;

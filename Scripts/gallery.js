@@ -187,7 +187,7 @@ function initProjectFrame(frame, src, alt) {
   loadIntoFrame(frame, src, alt, true);
 }
 
-function advanceProjectImage(projectIndex) {
+function changeProjectImage(projectIndex, direction) {
   const project = projects[projectIndex];
   if (!project) return;
 
@@ -200,12 +200,21 @@ function advanceProjectImage(projectIndex) {
   if (images.length <= 1) return;
 
   const current = projectImageIndex[projectIndex] ?? 0;
-  projectImageIndex[projectIndex] = (current + 1) % images.length;
+  const next = (current + direction + images.length) % images.length;
+  projectImageIndex[projectIndex] = next;
 
   const frame = document.querySelectorAll('.project')[projectIndex]?.querySelector('.project-frame');
   if (!frame) return;
 
-  loadIntoFrame(frame, images[projectImageIndex[projectIndex]], project.title, false);
+  loadIntoFrame(frame, images[next], project.title, false);
+}
+
+function advanceProjectImage(projectIndex) {
+  changeProjectImage(projectIndex, 1);
+}
+
+function retreatProjectImage(projectIndex) {
+  changeProjectImage(projectIndex, -1);
 }
 
 function scrollToProject(projectIndex) {

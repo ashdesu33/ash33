@@ -20,8 +20,8 @@
 
 .clock {
     width: 300px;
-    height: 50px;
-    border: 3px solid #a67979;
+    height: 35px;
+    border: 1.5px solid #a67979;
     border-style: dotted;
     border-radius: 50%;
     position: fixed;
@@ -101,6 +101,10 @@ body{
     font-style: normal;
 }
 
+.homepage{
+    font-family:"Elm Mono";
+}
+
 
 
 /* #upline{
@@ -114,9 +118,16 @@ body{
 
 .backdrop-div{
   }
-  .self{
-    display: none;
-    
+
+
+.self{
+    display: block;  
+}
+
+.self p{
+    margin-top: 0.2rem;
+    margin-bottom: 0;
+    font-size: 12px;
 }
 .head{
     width: 100%-10px;
@@ -126,13 +137,13 @@ body{
     display: flex;
     padding: 5px;
     justify-content: space-between; /* Distribute items evenly and justify them */
-    align-items: center; 
+    align-items: top; 
     position: fixed;
     font-size: 16px;
     z-index: 100;
     backdrop-filter: blur(20px);
     background-color: #f3f3f3;
-    
+
 }
 a{
     text-decoration: none;
@@ -140,7 +151,7 @@ a{
 }
 #about{
     font-family: "Libre Barcode 128 Text";
-    font-size: 28px;
+    font-size: 24px;
 }
 .head img{
     width: 15%;
@@ -165,11 +176,14 @@ ul{
     margin-bottom: 0;
     color:#806464;
     font-size: 14px;
+    text-decoration: underline ;
+    text-underline-offset: 2px;
     font-family: 'Times New Roman', Times, serif;
 }
 .time, .team, .client{
     font-size: 14px;
 }
+
 .caption, .category {
     opacity: 1;
     transition: opacity 0.3s ease-in-out;
@@ -189,6 +203,7 @@ ul{
     /* margin-top: 0px; */
     font-size: 12px;
     padding-left: 5px;
+    margin-top: 0.2rem;
     color: #a67979;
     font-family: 'Elm Mono';
     white-space: nowrap;
@@ -288,6 +303,7 @@ ul{
         padding-right: 1.5rem;
         padding-bottom: 1rem;
         z-index: 0;
+        align-items: center; 
         /* background-color: aliceblue; */
         
       }
@@ -320,6 +336,7 @@ ul{
 
     .caption{
         font-size: 20px;
+        text-decoration: none;
     }
     .category{
         opacity: 1;
@@ -470,6 +487,10 @@ ul{
 /* .center img{
     width: 100%;
 } */
+
+#about{
+    font-size:32px;
+}
 
     
 

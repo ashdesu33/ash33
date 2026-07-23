@@ -77,7 +77,7 @@
 /* Year / client / team (top-right on mobile, right on desktop) */
 .project-meta--side {
     display: block;
-    top: calc(20vh + 2.4em);
+    top: calc(20vh + 3.4em);
     left: 50%;
     transform: translate(-50%, 0%);
     text-align: center;
@@ -99,7 +99,7 @@
     margin-bottom: 0;
     width: 100%;
     padding: 0;
-    padding-top: 10vh;
+    padding-top: 15vh;
     overflow: visible;
     position: relative;
     z-index: 1;
@@ -110,17 +110,64 @@
 
 .project-card__frame {
     overflow: visible;
-    cursor: pointer;
     margin-left: auto;
     margin-right: auto;
     flex-shrink: 0;
+    pointer-events: none;
+    position: relative;
+    z-index: 1;
+}
+
+.project-card__nav {
+    position: absolute;
+    top: var(--header-height, 48px);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    z-index: 2;
     pointer-events: auto;
+}
+
+.project-card__nav-zone {
+    flex: 1;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    appearance: none;
+    pointer-events: auto;
+}
+
+.project-card__nav-zone--prev {
+    cursor: url('font/no-prev.png') 17 17, w-resize;
+}
+
+.project-card__nav-zone--next {
+    cursor: url('font/no-next.png') 17 17, e-resize;
+}
+
+.project-card__nav--external .project-card__nav-zone--link {
+    flex: 1;
+    cursor: url('font/no.ico'), pointer;
+}
+
+/* --- Mobile: slower custom scroll snap --- */
+@media screen and (max-width: 899px) {
+    html.mobile-snap-js {
+        scroll-behavior: auto;
+        scroll-snap-type: none;
+    }
+
+    html.mobile-snap-js .project-card {
+        scroll-snap-align: none;
+        scroll-snap-stop: normal;
+    }
 }
 
 /* --- Desktop --- */
 @media screen and (min-width: 900px) {
     .project-scroll {
-        pointer-events: none;
         padding-top: 0;
         padding-bottom: 0;
         width: 100%;
@@ -168,8 +215,16 @@
         width: 20vw;
     }
 
-    .project-card__frame {
-        cursor: url('font/no.ico'), auto;
+    .project-card__nav-zone--prev {
+        cursor: url('font/no-prev.png') 17 17, w-resize;
+    }
+
+    .project-card__nav-zone--next {
+        cursor: url('font/no-next.png') 17 17, e-resize;
+    }
+
+    .project-card__nav--external .project-card__nav-zone--link {
+        cursor: url('font/no.ico'), pointer;
     }
 
     .project-card__frame img {

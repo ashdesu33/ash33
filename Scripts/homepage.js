@@ -82,12 +82,23 @@ function addProject() {
   syncNavLayout();
   syncVisibleVideos();
   initMobileScrollSnap();
+  initLastSnapIndex();
+}
+
+function initLastSnapIndex() {
+  const cards = [...document.querySelectorAll('.project-card')];
+  if (cards.length) lastSnapIndex = findCurrentCardIndex(cards);
 }
 
 const MOBILE_SNAP_DURATION = 900;
+const MOBILE_SNAP_ALIGN = 0.5;
+const MOBILE_SNAP_STEP = 0.14;
+const MOBILE_SNAP_INTENT = 0.06;
 let mobileSnapping = false;
 let mobileTouching = false;
 let mobileSnapTimer;
+let scrollAtTouchStart = 0;
+let lastSnapIndex = 0;
 
 function isMobileSnap() {
   return window.matchMedia('(max-width: 899px)').matches;
@@ -101,6 +112,7 @@ function initMobileScrollSnap() {
 
   window.addEventListener('touchstart', () => {
     mobileTouching = true;
+    scrollAtTouchStart = window.scrollY;
     clearTimeout(mobileSnapTimer);
   }, { passive: true });
 
@@ -111,7 +123,7 @@ function initMobileScrollSnap() {
 
   if ('onscrollend' in window) {
     window.addEventListener('scrollend', () => {
-      if (!mobileTouching) scheduleMobileSnap();
+      if (!mobileTouching && !mobileSnapping) scheduleMobileSnap();
     });
   }
 
@@ -126,37 +138,71 @@ function scheduleMobileSnap() {
   mobileSnapTimer = setTimeout(snapToNearestProject, 120);
 }
 
-function snapToNearestProject() {
-  if (!isMobileSnap() || mobileSnapping || mobileTouching) return;
+function findCurrentCardIndex(cards) {
+  const snapLine = window.scrollY + window.innerHeight * MOBILE_SNAP_ALIGN;
+  let bestIndex = 0;
+  let bestDist = Infinity;
 
-  const cards = document.querySelectorAll('.project-card');
-  if (!cards.length) return;
-
-  const viewportCenter = window.scrollY + window.innerHeight / 2;
-  let nearest = cards[0];
-  let minDist = Infinity;
-
-  cards.forEach((card) => {
-    const rect = card.getBoundingClientRect();
-    const cardCenter = window.scrollY + rect.top + rect.height / 2;
-    const dist = Math.abs(viewportCenter - cardCenter);
-    if (dist < minDist) {
-      minDist = dist;
-      nearest = card;
+  cards.forEach((card, index) => {
+    const center = card.offsetTop + card.offsetHeight / 2;
+    const dist = Math.abs(snapLine - center);
+    if (dist < bestDist) {
+      bestDist = dist;
+      bestIndex = index;
     }
   });
 
-  const rect = nearest.getBoundingClientRect();
-  const target = window.scrollY + rect.top + rect.height / 2 - window.innerHeight / 2;
-  const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-  const clampedTarget = Math.max(0, Math.min(target, maxScroll));
-
-  if (Math.abs(window.scrollY - clampedTarget) < 8) return;
-
-  smoothScrollTo(clampedTarget, MOBILE_SNAP_DURATION);
+  return bestIndex;
 }
 
-function smoothScrollTo(targetY, duration) {
+function getMobileSnapTarget(cards, index) {
+  const card = cards[index];
+  return card.offsetTop + card.offsetHeight / 2 - window.innerHeight * MOBILE_SNAP_ALIGN;
+}
+
+function pickSnapIndex(cards) {
+  const anchorIndex = Math.max(0, Math.min(lastSnapIndex, cards.length - 1));
+  const anchorCenter = cards[anchorIndex].offsetTop + cards[anchorIndex].offsetHeight / 2;
+  const snapLineScroll = window.scrollY + window.innerHeight * MOBILE_SNAP_ALIGN;
+  const offset = snapLineScroll - anchorCenter;
+  const stepThreshold = window.innerHeight * MOBILE_SNAP_STEP;
+  const intentThreshold = window.innerHeight * MOBILE_SNAP_INTENT;
+  const scrollDelta = window.scrollY - scrollAtTouchStart;
+
+  let targetIndex = anchorIndex;
+
+  if (scrollDelta > intentThreshold && anchorIndex < cards.length - 1) {
+    targetIndex = anchorIndex + 1;
+  } else if (scrollDelta < -intentThreshold && anchorIndex > 0) {
+    targetIndex = anchorIndex - 1;
+  } else if (offset > stepThreshold && anchorIndex < cards.length - 1) {
+    targetIndex = anchorIndex + 1;
+  } else if (offset < -stepThreshold && anchorIndex > 0) {
+    targetIndex = anchorIndex - 1;
+  }
+
+  return Math.max(anchorIndex - 1, Math.min(anchorIndex + 1, targetIndex));
+}
+
+function snapToNearestProject() {
+  if (!isMobileSnap() || mobileSnapping || mobileTouching) return;
+
+  const cards = [...document.querySelectorAll('.project-card')];
+  if (!cards.length) return;
+
+  const targetIndex = pickSnapIndex(cards);
+  const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+  const clampedTarget = Math.max(0, Math.min(getMobileSnapTarget(cards, targetIndex), maxScroll));
+
+  if (Math.abs(window.scrollY - clampedTarget) < 8) {
+    lastSnapIndex = targetIndex;
+    return;
+  }
+
+  smoothScrollTo(clampedTarget, MOBILE_SNAP_DURATION, targetIndex);
+}
+
+function smoothScrollTo(targetY, duration, snapIndex) {
   mobileSnapping = true;
   const startY = window.scrollY;
   const distance = targetY - startY;
@@ -170,6 +216,7 @@ function smoothScrollTo(targetY, duration) {
       requestAnimationFrame(step);
     } else {
       mobileSnapping = false;
+      if (typeof snapIndex === 'number') lastSnapIndex = snapIndex;
     }
   }
 

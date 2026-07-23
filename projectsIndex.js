@@ -7,7 +7,7 @@ const projects =[
         class:'prj0',
         time: "2026",
         page:'Pages/bodyPrinter.html',
-        client: "Wen Zhang",
+        client: "for Wen Zhang",
         team:"",
         description:"Book design for performance artist Wen Zhang's thesis project. Imagining when time is a stack of images, they overlapped like the body, rotate and repeat itself. "
     },
@@ -18,7 +18,7 @@ const projects =[
         cover: "herefornow.png",
         files: ["herefornow.png"],
         time: "2025",
-        client: "RISD GD",
+        client: "for RISD GD",
         team:"with Ashley Cai & Li Huang",
         page:'https://www.herefornow.risd.gd/',
         description:"Web design & development for RISD GD senior show. To be is to leave a trace—however slight, however fleeting. Seen, felt, then gone, reminding us that we, too, are only here for now.",
@@ -41,9 +41,33 @@ const projects =[
         class:'prj0',
         time: "2025",
         page:'Pages/bodyPrinter.html',
-        client: "Degree Project",
+        client: "for Degree Project",
         team:"instructed by Anastasiia Raina",
         description:"If Everybody Is A Printer is Ash Ma’s BFA Graphic Design thesis project at the Rhode Island School of Design. It is an inquiry into the entanglement of human hands, machines, and the act of printing."
+    },
+    {
+        folder: "maca",
+        cover: "1.mp4",
+        title:"I,M  U,R",
+        category:["Poster"],
+        class:'prj0',
+        time: "2026",
+        page:'Pages/bodyPrinter.html',
+        client: "for MACA",
+        team:"",
+        description:"Little event visual for @macaartcenter ‘s latest public program. For performances arises from hands, cloths, music notes, and all the mundane moments in life."
+    },
+    {
+        folder: "Knoll",
+        cover: "1.png",
+        title:"Knoll Workplace Research Library",
+        category:["Branding"],
+        class:'prj0',
+        page:'Pages/knoll.html',
+        time: "2023",
+        client: "for Design Studio 4",
+        team:"instructed by Mingkyoung Kim",
+        description:"The Knoll Workplace Research Library is dedicated to providing innovative insights on creating superior work environments. With this commitment in mind, the rebranding project of the Knoll Research Library derived from the idea of “dashes”. Not only do these dashes serve to define clean spaces, but they are also the most simple unit in the formulation of idea sketches."
     },
     {
         title: "RISD Yearbook 2025",
@@ -68,18 +92,6 @@ const projects =[
         client: "Grad Type III",
         team:"instructed by Doug Scott",
         description:"If you can see the sound in El Lissitzky's work... Vinyl design featuring El Lissitzky's take on typography."
-    },
-    {
-        folder: "Knoll",
-        cover: "1.png",
-        title:"Knoll Workplace Research Library",
-        category:["Branding"],
-        class:'prj0',
-        page:'Pages/knoll.html',
-        time: "2023",
-        client: "for Design Studio 4",
-        team:"instructed by Mingkyoung Kim",
-        description:"The Knoll Workplace Research Library is dedicated to providing innovative insights on creating superior work environments. With this commitment in mind, the rebranding project of the Knoll Research Library derived from the idea of “dashes”. Not only do these dashes serve to define clean spaces, but they are also the most simple unit in the formulation of idea sketches."
     },
     {
         folder: "Collection",

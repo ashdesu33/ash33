@@ -152,7 +152,7 @@
     cursor: url('font/no.ico'), pointer;
 }
 
-/* --- Mobile: slower custom scroll snap --- */
+/* --- Mobile: custom scroll snap (JS only, no layout changes) --- */
 @media screen and (max-width: 899px) {
     html.mobile-snap-js {
         scroll-behavior: auto;

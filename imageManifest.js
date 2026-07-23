@@ -271,6 +271,11 @@ const imageManifest = {
     "Image/indy/vol48.png",
     "Image/indy/vol482.png"
   ],
+  "maca": [
+    "Image/maca/1.mp4",
+    "Image/maca/2.png",
+    "Image/maca/3.png"
+  ],
   "oneway": [
     "Image/oneway/book2.png",
     "Image/oneway/identity.png",

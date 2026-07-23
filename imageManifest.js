@@ -38,16 +38,23 @@ const imageManifest = {
     "Image/Cyborg Manifesto/img5.png"
   ],
   "Knoll": [
-    "Image/Knoll/1.png",
-    "Image/Knoll/2.gif",
-    "Image/Knoll/3.png",
-    "Image/Knoll/4.png",
-    "Image/Knoll/5.png",
-    "Image/Knoll/6.mp4",
-    "Image/Knoll/7.png",
-    "Image/Knoll/8.png",
-    "Image/Knoll/9.png",
-    "Image/Knoll/10.png"
+    "Image/Knoll/cover.gif",
+    "Image/Knoll/cover.png",
+    "Image/Knoll/knoll_.png",
+    "Image/Knoll/knoll_2.png",
+    "Image/Knoll/knoll_3.png",
+    "Image/Knoll/knoll_5.png",
+    "Image/Knoll/knoll_brandguide2.png",
+    "Image/Knoll/knoll.png",
+    "Image/Knoll/knoll2.png",
+    "Image/Knoll/knoll3.png",
+    "Image/Knoll/knoll4.png",
+    "Image/Knoll/knoll5.png",
+    "Image/Knoll/knoll6.png",
+    "Image/Knoll/knoll7.png",
+    "Image/Knoll/knoll8.png",
+    "Image/Knoll/maybe.gif",
+    "Image/Knoll/slides.gif"
   ],
   "Liz": [
     "Image/Liz/1.png",
@@ -121,7 +128,6 @@ const imageManifest = {
     "Image/archive/communicate2.PNG",
     "Image/archive/communicate3.PNG",
     "Image/archive/concept.gif",
-    "Image/archive/concept.mov",
     "Image/archive/herefornow.png",
     "Image/archive/odc_1.gif",
     "Image/archive/odc_1.png",
@@ -199,9 +205,7 @@ const imageManifest = {
     "Image/archive/orientation/4.jpg",
     "Image/archive/orientation/banner.gif",
     "Image/archive/orientation/links.gif",
-    "Image/archive/orientation/links.mp4",
-    "Image/archive/orientation/loop_ring.gif",
-    "Image/archive/orientation/loop_ring.mov"
+    "Image/archive/orientation/loop_ring.gif"
   ],
   "archive/pos": [
     "Image/archive/pos/1.png",
@@ -216,7 +220,6 @@ const imageManifest = {
   ],
   "archive/yearbook24": [
     "Image/archive/yearbook24/1.jpg",
-    "Image/archive/yearbook24/2.mp4",
     "Image/archive/yearbook24/3.jpg",
     "Image/archive/yearbook24/4.jpg",
     "Image/archive/yearbook24/5.jpg"
@@ -240,14 +243,7 @@ const imageManifest = {
     "Image/bodyPrinter/16.png",
     "Image/bodyPrinter/Artboard 1.png",
     "Image/bodyPrinter/Artboard 2.png",
-    "Image/bodyPrinter/Artboard 3.png",
-    "Image/bodyPrinter/demo.mp4"
-  ],
-  "bonnie'cigar": [
-    "Image/bonnie'cigar/1.gif",
-    "Image/bonnie'cigar/2.png",
-    "Image/bonnie'cigar/3.png",
-    "Image/bonnie'cigar/4.png"
+    "Image/bodyPrinter/Artboard 3.png"
   ],
   "indy": [
     "Image/indy/dearindy.png",
@@ -271,11 +267,6 @@ const imageManifest = {
     "Image/indy/vol48.png",
     "Image/indy/vol482.png"
   ],
-  "maca": [
-    "Image/maca/1.mp4",
-    "Image/maca/2.png",
-    "Image/maca/3.png"
-  ],
   "oneway": [
     "Image/oneway/book2.png",
     "Image/oneway/identity.png",
@@ -293,7 +284,6 @@ const imageManifest = {
   ],
   "printer": [
     "Image/printer/ comp1.png",
-    "Image/printer/clip1_3.mp4",
     "Image/printer/comp.png",
     "Image/printer/comp2.png",
     "Image/printer/comp3.png",
@@ -305,7 +295,6 @@ const imageManifest = {
     "Image/printer/p4.jpg",
     "Image/printer/p5.jpg",
     "Image/printer/p6.jpg",
-    "Image/printer/printer.mp4",
     "Image/printer/web_demo1.gif",
     "Image/printer/web_demo2.gif"
   ],
@@ -318,29 +307,25 @@ const imageManifest = {
     "Image/vok/doc6.jpg",
     "Image/vok/doc7.jpg",
     "Image/vok/doc8.jpg",
-    "Image/vok/pattern.mp4",
     "Image/vok/type.jpg",
-    "Image/vok/type.mp4",
-    "Image/vok/type1.mp4",
     "Image/vok/Untitled-7.jpg",
-    "Image/vok/Untitled-72.jpg",
-    "Image/vok/web.mp4"
+    "Image/vok/Untitled-72.jpg"
   ],
   "wen": [
     "Image/wen/1.png",
+    "Image/wen/2_1.png",
+    "Image/wen/2.png",
+    "Image/wen/3_1.png",
     "Image/wen/3_2.png",
-    "Image/wen/3_3.png",
     "Image/wen/4.png",
     "Image/wen/5.png",
     "Image/wen/6.png",
     "Image/wen/7.png",
     "Image/wen/8.png",
-    "Image/wen/9.png",
     "Image/wen/10.png"
   ],
   "will to the end": [
     "Image/will to the end/cover.png",
-    "Image/will to the end/desktop.mp4",
     "Image/will to the end/insert.jpg",
     "Image/will to the end/insert.png",
     "Image/will to the end/insert2.jpg",
@@ -366,13 +351,8 @@ const imageManifest = {
     "Image/will to the end/layout11.png",
     "Image/will to the end/layout12.png",
     "Image/will to the end/layout13.png",
-    "Image/will to the end/layout14.png",
-    "Image/will to the end/layout15.png",
-    "Image/will to the end/mobile.mp4",
-    "Image/will to the end/no sound.mp4",
-    "Image/will to the end/nosound2.mp4",
-    "Image/will to the end/overall.mov",
-    "Image/will to the end/overall2.mov"
+    "Image/will to the end/layouF14.png",
+    "Image/will to the end/layout15.png"
   ],
   "yearbook25": [
     "Image/yearbook25/Frame 2.png",

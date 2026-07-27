@@ -4,7 +4,8 @@ const DESKTOP_MAX_HEIGHT_VH = 60;
 const frameLoads = new WeakMap();
 
 function resolveSrc(src) {
-  return new URL(src, window.location.href).href;
+  const encoded = src.split('/').map((segment) => encodeURIComponent(segment)).join('/');
+  return new URL(encoded, window.location.href).href;
 }
 
 function isVideoSrc(src) {

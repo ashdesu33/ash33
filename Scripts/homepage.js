@@ -24,7 +24,8 @@ function buildProjectCard(project, index) {
   projectElement.style.transform = 'translateY(20px)';
 
   const isExternal = project.page && project.page.startsWith('http');
-  const hasSlides = getProjectImages(project).length > 1;
+  const images = getProjectImages(project);
+  const hasSlides = images.length > 1;
 
   if (isExternal) {
     projectElement.innerHTML = `
@@ -52,6 +53,19 @@ function buildProjectCard(project, index) {
 
     projectElement.querySelector('.project-card__nav-zone--next').addEventListener('click', (event) => {
       handleSlideClick(event, index, 1);
+    });
+  } else if (project.page && !isExternal) {
+    projectElement.innerHTML = `
+      <div class="project-card__frame project-frame"></div>
+      <div class="project-card__nav project-card__nav--external">
+        <button type="button" class="project-card__nav-zone project-card__nav-zone--link" aria-label="Open project"></button>
+      </div>
+    `;
+
+    projectElement.querySelector('.project-card__nav-zone--link').addEventListener('click', (event) => {
+      const head = document.querySelector('.head');
+      if (head && event.clientY < head.getBoundingClientRect().bottom) return;
+      window.location.href = project.page;
     });
   } else {
     projectElement.innerHTML = `<div class="project-card__frame project-frame"></div>`;

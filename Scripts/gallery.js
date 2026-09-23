@@ -78,16 +78,30 @@ function loadImageIntoFrame(frame, src, alt, load, resize) {
   if (!img) {
     img = document.createElement('img');
     img.className = 'project-card__image';
+    img.decoding = 'async';
+    img.sizes = '(max-width: 899px) 90vw, 55vw';
     frame.appendChild(img);
   }
 
-  const loader = new Image();
-  loader.onload = () => {
+  const optimized = typeof toOptimizedPath === 'function' ? toOptimizedPath(src) : src;
+  const fallbacks = [];
+  if (optimized !== src) {
+    fallbacks.push(src);
+  } else if (/\.(png|jpe?g)\.webp(\?|$)/i.test(src)) {
+    fallbacks.push(src.replace(/(\.(png|jpe?g))\.webp(\?|$)/i, '$1$3'));
+  } else if (/\.webp(\?|$)/i.test(src)) {
+    fallbacks.push(src.replace(/\.webp(\?|$)/i, '.png$1'), src.replace(/\.webp(\?|$)/i, '.jpg$1'));
+  }
+  let fallbackIndex = 0;
+
+  const applyImage = (loaded) => {
     if (load.cancelled) return;
 
-    img.src = src;
+    img.src = loaded.src;
     img.alt = alt;
     img.dataset.src = src;
+    img.loading = frame.dataset.eager === 'true' ? 'eager' : 'lazy';
+    if (frame.dataset.eager === 'true') img.fetchPriority = 'high';
 
     if (resize || !frame.dataset.sized) {
       sizeFrame(frame, img);
@@ -96,10 +110,17 @@ function loadImageIntoFrame(frame, src, alt, load, resize) {
 
     if (frameLoads.get(frame) === load) frameLoads.delete(frame);
   };
+
+  const loader = new Image();
+  loader.onload = () => applyImage(loader);
   loader.onerror = () => {
+    if (fallbackIndex < fallbacks.length) {
+      loader.src = fallbacks[fallbackIndex++];
+      return;
+    }
     if (frameLoads.get(frame) === load) frameLoads.delete(frame);
   };
-  loader.src = src;
+  loader.src = optimized;
 }
 
 function loadVideoIntoFrame(frame, src, alt, load, resize) {
@@ -113,6 +134,7 @@ function loadVideoIntoFrame(frame, src, alt, load, resize) {
     video.muted = true;
     video.loop = true;
     video.autoplay = true;
+    video.preload = 'metadata';
     video.setAttribute('playsinline', '');
     frame.appendChild(video);
   }
@@ -182,10 +204,25 @@ function loadIntoFrame(frame, src, alt, resize = false) {
   }
 }
 
-function initProjectFrame(frame, src, alt) {
+function initProjectFrame(frame, src, alt, eager = false) {
   if (!frame || frame.dataset.initialized) return;
   frame.dataset.initialized = 'true';
-  loadIntoFrame(frame, src, alt, true);
+  if (eager) frame.dataset.eager = 'true';
+
+  if (eager || !('IntersectionObserver' in window)) {
+    loadIntoFrame(frame, src, alt, true);
+    return;
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      loadIntoFrame(frame, src, alt, true);
+      observer.disconnect();
+    });
+  }, { rootMargin: '280px 0px' });
+
+  observer.observe(frame);
 }
 
 function changeProjectImage(projectIndex, direction) {

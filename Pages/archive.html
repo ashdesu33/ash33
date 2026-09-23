@@ -3,9 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://use.typekit.net/lwm3pvk.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="../font/Elm-Mono.ttf" as="font" type="font/ttf" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Barcode+128+Text&display=swap" rel="stylesheet">
     <title>Ash Ma</title>
-    <link rel="icon" type="image/png" href="../Image/favicon.png" >
+    <link rel="icon" type="image/png" href="../Image/icon.png">
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="about.css">
     <link rel="stylesheet" href="archive.css">
@@ -19,11 +22,11 @@
         <div class ="head">
             <a href="../index.html">ASH MA</a>
             <div class="menu" onclick=loadNav()>
-                <img src="../Image/favicon.png">
+                <img loading="lazy" decoding="async" src="../Image/favicon.png">
                 <a>featured</a>
             </div>
             <div class="menu">
-                <img src="../Image/littlething.gif">
+                <img loading="lazy" decoding="async" src="../Image/littlething.gif">
                 <a href="archive.html">archive</a>
             </div>
             <a id="about" href="about.html">About Me</a>

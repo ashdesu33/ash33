@@ -4,16 +4,55 @@ const isHomePage = pathParts.length === 2 && (pathParts[1] === '' || pathParts[1
     
 const isDesktopView = window.matchMedia("(min-width: 768px)").matches;
 
+if ('serviceWorker' in navigator && document.currentScript) {
+    navigator.serviceWorker.register(new URL('../sw.js', document.currentScript.src).href).catch(() => {});
+}
+
+function upgradeImageSrc(image, src) {
+    if (!src || /\.(gif|svg|webp|mp4|webm|mov)(\?|$)/i.test(src)) return src;
+    if (!/\.(png|jpe?g)(\?|$)/i.test(src)) return src;
+    if (/icon\.png$/i.test(src)) return src;
+    const webp = src.replace(/(\.(png|jpe?g))(\?|$)/i, '$1.webp$3');
+    image.dataset.originalSrc = src;
+    image.addEventListener('error', function fallback() {
+        image.removeEventListener('error', fallback);
+        if (image.dataset.originalSrc) image.src = image.dataset.originalSrc;
+    });
+    return webp;
+}
+
     document.addEventListener("DOMContentLoaded", () => {
         const imagery = document.querySelector(".imagery");
+        const pageImages = document.querySelectorAll('img');
+
+        pageImages.forEach((image, index) => {
+            const rawSrc = image.getAttribute('src') || image.dataset.src;
+            const nextSrc = upgradeImageSrc(image, rawSrc);
+            if (image.dataset.src) {
+                image.dataset.src = nextSrc;
+            } else if (nextSrc && nextSrc !== rawSrc) {
+                image.src = nextSrc;
+            }
+            const isFirstContentImage = imagery && image === imagery.querySelector('img');
+            if (isFirstContentImage) {
+                image.loading = 'eager';
+                image.fetchPriority = 'high';
+            } else if (!image.hasAttribute('loading')) {
+                image.loading = index === 0 ? 'eager' : 'lazy';
+            }
+            image.decoding = 'async';
+        });
+
         const lazyImages = document.querySelectorAll(".lazy");
         let loadedCount = 0;
     
         const checkAllImagesLoaded = () => {
-            if (loadedCount === lazyImages.length) {
-                imagery.classList.add("loaded"); // Reveal the imagery container
+            if (imagery && loadedCount === lazyImages.length) {
+                imagery.classList.add("loaded");
             }
         };
+
+        if (imagery) imagery.classList.add("loaded");
     
         lazyImages.forEach((image, index) => {
             const src = image.dataset.src;
@@ -21,25 +60,22 @@ const isDesktopView = window.matchMedia("(min-width: 768px)").matches;
     
             image.onload = () => {
                 setTimeout(() => {
-                    image.classList.add("visible"); // Staggered effect
-                }, index * 150); // Adjust the delay for staggering
+                    image.classList.add("visible");
+                }, index * 150);
                 loadedCount++;
                 checkAllImagesLoaded();
             };
     
             image.onerror = () => {
-                console.error(`Image failed to load: ${src}`);
                 loadedCount++;
                 checkAllImagesLoaded();
             };
     
-            // For cached images
             if (image.complete) {
                 image.onload();
             }
         });
     
-        // Check immediately in case no images need loading
         if (lazyImages.length === 0 || loadedCount === lazyImages.length) {
             checkAllImagesLoaded();
         }

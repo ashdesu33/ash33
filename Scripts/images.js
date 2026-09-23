@@ -14,10 +14,27 @@ function isVideoPath(src) {
   return /\.(mp4|mov|webm)(\?|$)/i.test(src || '');
 }
 
+function toOptimizedPath(src) {
+  if (!src || isVideoPath(src)) return src;
+  if (/\.(gif|svg)(\?|$)/i.test(src)) return src;
+  if (/\.(png|jpe?g)\.webp(\?|$)/i.test(src)) return src;
+  if (/\.(png|jpe?g)(\?|$)/i.test(src)) {
+    return src.replace(/(\.(png|jpe?g))(\?|$)/i, '$1.webp$3');
+  }
+  return src;
+}
+
+function toOriginalPath(src) {
+  if (!src) return src;
+  return src.replace(/(\.(png|jpe?g))\.webp(\?|$)/i, '$1$3');
+}
+
 function getCoverPath(item) {
   if (!item.cover) {
-    const images = getProjectImages(item);
-    return images[0] || '';
+    if (item.folder && typeof imageManifest !== 'undefined' && imageManifest[item.folder]?.length) {
+      return imageManifest[item.folder][0];
+    }
+    return '';
   }
 
   const cover = Array.isArray(item.cover) ? item.cover[0] : item.cover;
@@ -33,22 +50,20 @@ function getCoverPath(item) {
 }
 
 function getWebpCoverPath(item) {
-  if (!item.webpCover || isVideoPath(item.cover)) return null;
-  if (item.webpCover.startsWith('Image/')) return item.webpCover;
-  if (item.folder) return imagePath(item.folder, item.webpCover);
-  return item.webpCover;
+  const cover = getCoverPath(item);
+  return cover ? toOptimizedPath(cover) : null;
 }
 
 function getProjectImages(item) {
   if (!item) return [];
 
   if (item.img?.length) {
-    return item.img.map(normalizeImagePath);
+    return item.img.map(src => toOptimizedPath(normalizeImagePath(src)));
   }
 
   if (!item.folder || !imageManifest[item.folder]) {
     const cover = getCoverPath(item);
-    return cover ? [cover] : [];
+    return cover ? [toOptimizedPath(cover)] : [];
   }
 
   let images = [...imageManifest[item.folder]];
@@ -60,10 +75,10 @@ function getProjectImages(item) {
     });
   }
 
-  const cover = getCoverPath(item);
+  const cover = item.cover ? getCoverPath(item) : '';
   if (cover) {
-    images = [cover, ...images.filter(src => src !== cover)];
+    images = [cover, ...images.filter(src => src !== cover && src !== toOptimizedPath(cover))];
   }
 
-  return images;
+  return images.map(toOptimizedPath);
 }

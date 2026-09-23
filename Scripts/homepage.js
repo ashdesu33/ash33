@@ -89,7 +89,7 @@ function addProject() {
 
     delay += 80;
     projectContainer.appendChild(projectElement);
-    initProjectFrame(projectElement.querySelector('.project-frame'), coverSrc, project.title);
+    initProjectFrame(projectElement.querySelector('.project-frame'), coverSrc, project.title, index < 2);
   });
 
   observeProjects();

@@ -20,12 +20,14 @@ function listMediaInDir(dir) {
     .sort(naturalSort);
 }
 
-function dedupeWebp(filenames) {
+function preferOptimized(filenames) {
   const names = new Set(filenames);
   return filenames.filter(name => {
-    if (!name.toLowerCase().endsWith('.webp')) return true;
-    const png = name.replace(/\.webp$/i, '.png');
-    return !names.has(png);
+    const lower = name.toLowerCase();
+    if (lower.endsWith('.png') || lower.endsWith('.jpg') || lower.endsWith('.jpeg')) {
+      return !names.has(`${name}.webp`);
+    }
+    return true;
   });
 }
 
@@ -35,7 +37,7 @@ function scanFolders(dir, relativePath = '') {
   if (relativePath) {
     const images = listMediaInDir(dir);
     if (images.length) {
-      manifest[relativePath] = dedupeWebp(images).map(name => `Image/${relativePath}/${name}`);
+      manifest[relativePath] = preferOptimized(images).map(name => `Image/${relativePath}/${name}`);
     }
   }
 

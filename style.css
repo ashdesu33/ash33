@@ -1,21 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=Libre+Barcode+128+Text&display=swap');
 @font-face {
     font-family: 'Elm';
     src: url('font/Elm-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
 }
 @font-face {
     font-family: 'Elm Mono';
     src: url('font/Elm-Mono.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
 }
 @font-face {
     font-family: 'authentic';
     src: url('font/authentic-sans-90.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
 }
 
 .clock {

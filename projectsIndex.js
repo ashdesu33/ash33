@@ -13,7 +13,7 @@ const projects =[
     },
     {
         title:"Here for Now",
-        category:["Web"],
+        category:["Web, Dev"],
         folder: "archive",
         cover: "herefornow.png",
         files: ["herefornow.png"],
@@ -35,7 +35,7 @@ const projects =[
     },
         {
         title:"flashbook",
-        category:["Identity,Web"],
+        category:["Identity,Web, Dev"],
         folder: "flashbook",
         cover: "cover.mov",
         files: ["cover.mov"],

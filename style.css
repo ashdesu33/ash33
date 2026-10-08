@@ -91,6 +91,12 @@
 html {
     scroll-behavior: smooth;
     scroll-snap-type: y mandatory;
+    touch-action: manipulation;
+}
+
+body,
+body * {
+    touch-action: manipulation;
 }
 
 body{

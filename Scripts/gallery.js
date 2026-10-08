@@ -182,22 +182,59 @@ function loadImageIntoFrame(frame, src, alt, load, resize) {
 }
 
 function loadVideoIntoFrame(frame, src, alt, load, resize) {
-  warmSlide(src).then((video) => {
+  const video = document.createElement('video');
+  video.className = 'project-card__video';
+  video.dataset.src = src;
+  video.muted = true;
+  video.defaultMuted = true;
+  video.playsInline = true;
+  video.autoplay = true;
+  video.loop = true;
+  video.preload = 'auto';
+  video.setAttribute('muted', '');
+  video.setAttribute('playsinline', '');
+  video.setAttribute('webkit-playsinline', '');
+  video.src = src;
+
+  if (!frame.style.width) {
+    const width = getFrameBaseWidth(frame);
+    frame.style.width = `${width}px`;
+    frame.style.height = `${Math.round(width * 9 / 16)}px`;
+  }
+
+  // iOS only buffers a video that is already in the page.
+  frame.insertBefore(video, frame.firstChild);
+
+  const abandon = () => {
+    if (frameLoads.get(frame) !== load) video.remove();
+  };
+
+  video.addEventListener('loadedmetadata', () => {
     if (load.cancelled || frameLoads.get(frame) !== load) return;
-    if (!video) {
-      frameLoads.delete(frame);
+    sizeFrame(frame, video);
+    frame.dataset.sized = 'true';
+  });
+
+  video.addEventListener('loadeddata', () => {
+    if (load.cancelled || frameLoads.get(frame) !== load) {
+      abandon();
       return;
     }
-
-    video.className = 'project-card__video';
-    video.dataset.src = src;
-    video.loop = true;
-    video.autoplay = true;
-    video.muted = true;
-    video.playsInline = true;
-    video.setAttribute('playsinline', '');
     placeMedia(frame, video, video, resize, load);
-  });
+  }, { once: true });
+
+  video.addEventListener('error', () => {
+    if (load.cancelled || frameLoads.get(frame) !== load) return;
+    video.remove();
+    frameLoads.delete(frame);
+  }, { once: true });
+
+  if (video.readyState >= 2) {
+    placeMedia(frame, video, video, resize, load);
+    return;
+  }
+
+  playFrameVideo(video);
 }
 
 function loadIntoFrame(frame, src, alt, resize = false) {
@@ -257,7 +294,7 @@ function initProjectFrame(frame, src, alt, eager = false) {
     });
   }, { rootMargin: '280px 0px' });
 
-  observer.observe(frame);
+  observer.observe(frame.closest('.project-card') || frame);
 }
 
 function changeProjectImage(projectIndex, direction) {

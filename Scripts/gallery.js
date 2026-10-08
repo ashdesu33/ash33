@@ -2,8 +2,10 @@ const projectImageIndex = {};
 const FRAME_WIDTH_VW = 55;
 const DESKTOP_MAX_HEIGHT_VH = 60;
 const frameLoads = new WeakMap();
+const warmedSlides = new Map();
 
 function resolveSrc(src) {
+  if (!src || /^https?:\/\//i.test(src)) return src;
   const encoded = src.split('/').map((segment) => encodeURIComponent(segment)).join('/');
   return new URL(encoded, window.location.href).href;
 }
@@ -55,116 +57,147 @@ function sizeFrame(frame, media) {
   frame.style.height = `${height}px`;
 }
 
-function pauseFrameVideo(frame) {
-  const video = frame?.querySelector('video');
-  if (video) video.pause();
-}
-
-function removeOtherMedia(frame, keepTag) {
-  frame.querySelector('picture')?.remove();
-  if (keepTag !== 'IMG') frame.querySelector('img')?.remove();
-  if (keepTag !== 'VIDEO') frame.querySelector('video')?.remove();
-}
-
 function playFrameVideo(video) {
   video.muted = true;
   video.play().catch(() => {});
 }
 
-function loadImageIntoFrame(frame, src, alt, load, resize) {
-  removeOtherMedia(frame, 'IMG');
+function placeMedia(frame, node, measure, resize, load) {
+  if (load.cancelled || frameLoads.get(frame) !== load) return;
 
-  let img = frame.querySelector('img');
-  if (!img) {
-    img = document.createElement('img');
-    img.className = 'project-card__image';
+  if (node.parentElement !== frame) frame.appendChild(node);
+  if (resize || !frame.dataset.sized) {
+    sizeFrame(frame, measure || node);
+    frame.dataset.sized = 'true';
+  }
+
+  frame.querySelectorAll('img, video, picture').forEach((child) => {
+    if (child === node) return;
+    if (child.tagName === 'VIDEO') child.pause();
+    child.remove();
+  });
+
+  if (node.tagName === 'VIDEO') playFrameVideo(node);
+  frameLoads.delete(frame);
+}
+
+function warmSlide(src) {
+  if (!src) return Promise.resolve(null);
+  const resolved = resolveSrc(src);
+  if (warmedSlides.has(resolved)) return warmedSlides.get(resolved);
+
+  let promise;
+  if (isVideoSrc(resolved)) {
+    const video = document.createElement('video');
+    video.preload = 'auto';
+    video.muted = true;
+    video.playsInline = true;
+    video.src = resolved;
+    promise = new Promise((resolve) => {
+      if (video.readyState >= 2) {
+        resolve(video);
+        return;
+      }
+      video.onloadeddata = () => resolve(video);
+      video.onerror = () => resolve(null);
+    });
+  } else {
+    const img = new Image();
     img.decoding = 'async';
-    img.sizes = '(max-width: 899px) 90vw, 55vw';
-    frame.appendChild(img);
+    promise = new Promise((resolve) => {
+      img.onload = () => {
+        const decoded = img.decode ? img.decode().catch(() => {}) : Promise.resolve();
+        decoded.then(() => resolve(img));
+      };
+      img.onerror = () => resolve(null);
+    });
+    img.src = resolved;
   }
 
+  warmedSlides.set(resolved, promise);
+  return promise;
+}
+
+function warmProjectSlides(projectIndex) {
+  if (typeof projects === 'undefined' || typeof getProjectImages !== 'function') return;
+  const project = projects[projectIndex];
+  if (!project) return;
+
+  const images = getProjectImages(project);
+  if (images.length <= 1) return;
+
+  const current = projectImageIndex[projectIndex] ?? 0;
+  const seen = new Set([current]);
+  [1, -1].forEach((step) => {
+    const index = (current + step + images.length) % images.length;
+    if (seen.has(index)) return;
+    seen.add(index);
+    warmSlide(images[index]);
+  });
+}
+
+function imageCandidates(src) {
   const optimized = typeof toOptimizedPath === 'function' ? toOptimizedPath(src) : src;
-  const fallbacks = [];
+  const urls = [optimized];
   if (optimized !== src) {
-    fallbacks.push(src);
+    urls.push(src);
   } else if (/\.(png|jpe?g)\.webp(\?|$)/i.test(src)) {
-    fallbacks.push(src.replace(/(\.(png|jpe?g))\.webp(\?|$)/i, '$1$3'));
+    urls.push(src.replace(/(\.(png|jpe?g))\.webp(\?|$)/i, '$1$3'));
   } else if (/\.webp(\?|$)/i.test(src)) {
-    fallbacks.push(src.replace(/\.webp(\?|$)/i, '.png$1'), src.replace(/\.webp(\?|$)/i, '.jpg$1'));
+    urls.push(src.replace(/\.webp(\?|$)/i, '.png$1'), src.replace(/\.webp(\?|$)/i, '.jpg$1'));
   }
-  let fallbackIndex = 0;
+  return urls;
+}
 
-  const applyImage = (loaded) => {
-    if (load.cancelled) return;
+function loadImageIntoFrame(frame, src, alt, load, resize) {
+  const urls = imageCandidates(src);
 
-    img.src = loaded.src;
-    img.alt = alt;
-    img.dataset.src = src;
-    img.loading = frame.dataset.eager === 'true' ? 'eager' : 'lazy';
-    if (frame.dataset.eager === 'true') img.fetchPriority = 'high';
-
-    if (resize || !frame.dataset.sized) {
-      sizeFrame(frame, img);
-      frame.dataset.sized = 'true';
-    }
-
-    if (frameLoads.get(frame) === load) frameLoads.delete(frame);
-  };
-
-  const loader = new Image();
-  loader.onload = () => applyImage(loader);
-  loader.onerror = () => {
-    if (fallbackIndex < fallbacks.length) {
-      loader.src = fallbacks[fallbackIndex++];
+  const tryUrl = (index) => {
+    if (load.cancelled || frameLoads.get(frame) !== load) return;
+    if (index >= urls.length) {
+      frameLoads.delete(frame);
       return;
     }
-    if (frameLoads.get(frame) === load) frameLoads.delete(frame);
+
+    warmSlide(urls[index]).then((loaded) => {
+      if (load.cancelled || frameLoads.get(frame) !== load) return;
+      if (!loaded) {
+        tryUrl(index + 1);
+        return;
+      }
+
+      const next = document.createElement('img');
+      next.className = 'project-card__image';
+      next.alt = alt;
+      next.dataset.src = src;
+      next.decoding = 'sync';
+      next.src = loaded.src;
+      const commit = () => placeMedia(frame, next, loaded, resize, load);
+      if (next.decode) next.decode().then(commit).catch(commit);
+      else commit();
+    });
   };
-  loader.src = optimized;
+
+  tryUrl(0);
 }
 
 function loadVideoIntoFrame(frame, src, alt, load, resize) {
-  removeOtherMedia(frame, 'VIDEO');
-
-  let video = frame.querySelector('video');
-  if (!video) {
-    video = document.createElement('video');
-    video.className = 'project-card__video';
-    video.playsInline = true;
-    video.muted = true;
-    video.loop = true;
-    video.autoplay = true;
-    video.preload = 'metadata';
-    video.setAttribute('playsinline', '');
-    frame.appendChild(video);
-  }
-
-  const onReady = () => {
-    if (load.cancelled) return;
-
-    if (resize || !frame.dataset.sized) {
-      sizeFrame(frame, video);
-      frame.dataset.sized = 'true';
+  warmSlide(src).then((video) => {
+    if (load.cancelled || frameLoads.get(frame) !== load) return;
+    if (!video) {
+      frameLoads.delete(frame);
+      return;
     }
 
-    playFrameVideo(video);
-
-    if (frameLoads.get(frame) === load) frameLoads.delete(frame);
-  };
-
-  video.onloadedmetadata = onReady;
-  video.onerror = () => {
-    if (frameLoads.get(frame) === load) frameLoads.delete(frame);
-  };
-
-  if (video.dataset.src === src && video.readyState >= 1) {
-    onReady();
-    return;
-  }
-
-  video.dataset.src = src;
-  video.src = src;
-  video.load();
+    video.className = 'project-card__video';
+    video.dataset.src = src;
+    video.loop = true;
+    video.autoplay = true;
+    video.muted = true;
+    video.playsInline = true;
+    video.setAttribute('playsinline', '');
+    placeMedia(frame, video, video, resize, load);
+  });
 }
 
 function loadIntoFrame(frame, src, alt, resize = false) {
@@ -187,12 +220,8 @@ function loadIntoFrame(frame, src, alt, resize = false) {
   const pending = frameLoads.get(frame);
   if (pending) pending.cancelled = true;
 
-  pauseFrameVideo(frame);
-
   const load = { cancelled: false };
   frameLoads.set(frame, load);
-
-  if (mediaChanged) delete frame.dataset.sized;
 
   frame.dataset.src = resolved;
   const shouldResize = resize || mediaChanged || !frame.dataset.sized;
@@ -209,15 +238,21 @@ function initProjectFrame(frame, src, alt, eager = false) {
   frame.dataset.initialized = 'true';
   if (eager) frame.dataset.eager = 'true';
 
-  if (eager || !('IntersectionObserver' in window)) {
+  const begin = () => {
+    const projectIndex = Number(frame.closest('.project')?.dataset.projectIndex);
+    if (!Number.isNaN(projectIndex)) warmProjectSlides(projectIndex);
     loadIntoFrame(frame, src, alt, true);
+  };
+
+  if (eager || !('IntersectionObserver' in window)) {
+    begin();
     return;
   }
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (!entry.isIntersecting) return;
-      loadIntoFrame(frame, src, alt, true);
+      begin();
       observer.disconnect();
     });
   }, { rootMargin: '280px 0px' });
@@ -245,6 +280,7 @@ function changeProjectImage(projectIndex, direction) {
   if (!frame) return;
 
   loadIntoFrame(frame, images[next], project.title, false);
+  warmProjectSlides(projectIndex);
 }
 
 function advanceProjectImage(projectIndex) {

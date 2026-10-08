@@ -252,7 +252,7 @@ addProject();
 function updateProjectInfo(title, category, description, time, client, team) {
   document.querySelector('.project-meta__title').textContent = title;
   document.querySelector('.project-meta__category').textContent = category;
-  document.querySelector('.project-meta__text').textContent = description;
+  document.querySelector('.project-meta__text').innerHTML = renderDescription(description);
   document.querySelector('.project-meta__time').textContent = time;
   document.querySelector('.project-meta__client').textContent = client;
   document.querySelector('.project-meta__team').textContent = team;

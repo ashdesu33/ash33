@@ -249,6 +249,18 @@ const imageManifest = {
     "Image/bonnie'cigar/3.png.webp",
     "Image/bonnie'cigar/4.png.webp"
   ],
+  "familyoffice": [
+    "Image/familyoffice/1_cover.mp4",
+    "Image/familyoffice/3_still1.png.webp",
+    "Image/familyoffice/4_ui_2.mp4",
+    "Image/familyoffice/5_still2.png.webp",
+    "Image/familyoffice/6_ui_1.mp4",
+    "Image/familyoffice/7_still3.png.webp",
+    "Image/familyoffice/8_newsletter1.mp4"
+  ],
+  "flashbook": [
+    "Image/flashbook/cover.mov"
+  ],
   "indy": [
     "Image/indy/dearindy.png.webp",
     "Image/indy/dearIndyi6.jpg.webp",

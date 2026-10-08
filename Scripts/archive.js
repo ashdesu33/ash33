@@ -171,7 +171,7 @@ function displayProject(project,index) {
                 <div class="col">
                     <p>project description </p>
                     <hr>
-                    <p id="description">${project.description}</p>
+                    <p id="description">${renderDescription(project.description)}</p>
                 </div>
             </div>
             <div class="prj_img"></div>

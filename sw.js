@@ -1,4 +1,7 @@
-const CACHE_NAME = 'ash33-static-v1';
+// command to reflush: 
+// python3 Scripts/optimizeImages.py
+//node Scripts/generateImageManifest.js
+const CACHE_NAME = 'ash33-static-v2';
 const PRECACHE = [
   './',
   './index.html',

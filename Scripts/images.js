@@ -54,6 +54,22 @@ function getWebpCoverPath(item) {
   return cover ? toOptimizedPath(cover) : null;
 }
 
+function renderDescription(text) {
+  const escaped = String(text ?? '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+
+  return escaped.replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, (match, label, href) => {
+    const allowed = /^(https?:\/\/|mailto:|\/|\.{1,2}\/|Pages\/)/.test(href);
+    if (!allowed) return match;
+    const external = /^https?:\/\//.test(href);
+    const attrs = external ? ' target="_blank" rel="noopener noreferrer"' : '';
+    return `<a href="${href}"${attrs}>${label}</a>`;
+  });
+}
+
 function getProjectImages(item) {
   if (!item) return [];
 

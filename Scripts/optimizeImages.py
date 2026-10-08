@@ -7,9 +7,12 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent / "Image"
-MAX_EDGE = 1400
-QUALITY = 80
+MAX_EDGE = 2400
+QUALITY = 92
+METHOD = 6
 SRC_EXTS = {".png", ".jpg", ".jpeg"}
+STAMP = Path(__file__).resolve().parent / ".webp-settings"
+SETTINGS = f"edge={MAX_EDGE};q={QUALITY};m={METHOD};sharp_yuv"
 
 
 def sips_dims(path: Path):
@@ -45,18 +48,20 @@ def convert(src: Path) -> str:
             target_w, target_h = 0, MAX_EDGE
 
     needs_resize = max(width, height) > MAX_EDGE
+    target_long = min(max(width, height), MAX_EDGE)
+    settings_current = STAMP.is_file() and STAMP.read_text().strip() == SETTINGS
     already_good = (
-        dest.exists()
+        settings_current
+        and dest.exists()
         and dest.stat().st_size > 0
         and existing_w > 0
-        and max(existing_w, existing_h) <= MAX_EDGE
+        and abs(max(existing_w, existing_h) - target_long) <= 2
         and dest.stat().st_mtime >= src.stat().st_mtime
-        and dest.stat().st_size < src.stat().st_size
     )
     if already_good:
         return f"keep: {dest}"
 
-    cmd = ["cwebp", "-quiet", "-q", str(QUALITY), "-m", "4"]
+    cmd = ["cwebp", "-quiet", "-q", str(QUALITY), "-m", str(METHOD), "-sharp_yuv", "-alpha_q", "100", "-metadata", "none"]
     if needs_resize:
         cmd += ["-resize", str(target_w), str(target_h)]
     cmd += [str(src), "-o", str(dest)]
@@ -89,6 +94,8 @@ def main():
         else:
             fail += 1
     print(f"\nDone. converted={ok} kept={keep} failed={fail}")
+    if fail == 0:
+        STAMP.write_text(SETTINGS + "\n")
     return 0 if fail == 0 else 1
 
 

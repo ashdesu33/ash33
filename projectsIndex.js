@@ -6,7 +6,6 @@ const projects =[
         category:["Editorial"],
         class:'prj0',
         time: "2026",
-        page:'Pages/bodyPrinter.html',
         client: "for Wen Zhang",
         team:"",
         description:"Book design for performance artist Wen Zhang's thesis project. Imagining when time is a stack of images, they overlapped like the body, rotate and repeat itself. "
@@ -22,6 +21,16 @@ const projects =[
         team:"with Ashley Cai & Li Huang",
         page:'https://www.herefornow.risd.gd/',
         description:"Web design & development for RISD GD senior show. To be is to leave a trace—however slight, however fleeting. Seen, felt, then gone, reminding us that we, too, are only here for now.",
+    },
+    {
+        title:"The Family Office",
+        category:["Web, Digital"],
+        folder: "familyoffice",
+        cover: "1_cover.mp4",
+        time: "2026",
+        client: "for The Family Office",
+        team:"with W-E studio (Branding). Designed at Decimal",
+        description:"The Family Office is a residential real estate advisory within Compass that takes a highly personal approach to home and portfolio management. Expanding on the brand strategy & identity developed by W—E studio we brought The Family Office online. Prioritizing an elevated experience that sought to capture the evolving meaning of home. Website lived at [https://www.thefamilyoffice.com/](https://www.thefamilyoffice.com/)",
     },
     {
         title:"bonnie'cigar",
@@ -55,7 +64,7 @@ const projects =[
         page:'Pages/bodyPrinter.html',
         client: "for Degree Project",
         team:"instructed by Anastasiia Raina",
-        description:"If Everybody Is A Printer is Ash Ma’s BFA Graphic Design thesis project at the Rhode Island School of Design. It is an inquiry into the entanglement of human hands, machines, and the act of printing."
+        description:"If Everybody Is A Printer is Ash Ma’s BFA Graphic Design thesis project at the Rhode Island School of Design. It is an inquiry into the entanglement of human hands, machines, and the act of printing. Website lived at [https://www.if-printer.net/](https://www.if-printer.net/)"
     },
     {
         folder: "maca",

@@ -195,6 +195,20 @@ ul{
     line-height: 1.1;
 }
 
+.description a,
+#description a {
+    pointer-events: auto;
+    color: inherit;
+    text-decoration: none;
+}
+
+.description a:hover,
+#description a:hover {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    cursor: url('font/no.ico'), pointer;
+}
+
 .border{
     text-align: center;
     color: #dababa;
